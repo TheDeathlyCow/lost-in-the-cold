@@ -146,6 +146,10 @@ publishing {
     }
 }
 
+loom {
+    splitEnvironmentSourceSets()
+}
+
 sourceSets {
     test {
         compileClasspath += main.compileClasspath
@@ -157,6 +161,22 @@ sourceSets {
         compileClasspath += main.output
         runtimeClasspath += main.output
     }
+
+    testmodClient {
+        compileClasspath += main.compileClasspath
+        runtimeClasspath += main.runtimeClasspath
+        compileClasspath += client.compileClasspath
+        runtimeClasspath += client.runtimeClasspath
+        compileClasspath += main.output
+        runtimeClasspath += main.output
+        compileClasspath += client.output
+        runtimeClasspath += client.output
+
+        compileClasspath += testmod.compileClasspath
+        runtimeClasspath += testmod.runtimeClasspath
+        compileClasspath += testmod.output
+        runtimeClasspath += testmod.output
+    }
 }
 
 subprojects {
@@ -167,13 +187,25 @@ subprojects {
 }
 
 loom {
+    mods {
+        "frostiful" {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+
+        "frostiful-test" {
+            sourceSet sourceSets.testmod
+            sourceSet sourceSets.testmodClient
+        }
+    }
+
     accessWidenerPath = file("src/main/resources/frostiful.accesswidener")
     runs {
         testmodClient {
             client()
             ideConfigGenerated project.rootProject == project
             name = "Testmod Client"
-            source sourceSets.testmod
+            source sourceSets.testmodClient
         }
         testmodServer {
             server()
