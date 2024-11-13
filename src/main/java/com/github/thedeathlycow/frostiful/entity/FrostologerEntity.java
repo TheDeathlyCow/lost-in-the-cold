@@ -496,7 +496,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
     @Override
     public SoundEvent getCelebratingSound() {
-        return FSoundEvents.ENTITY_CHILLAGER_CELEBRATE;
+        return FSoundEvents.ENTITY_FROSTOLOGER_CELEBRATE;
     }
 
     @Override
