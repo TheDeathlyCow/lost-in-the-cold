@@ -154,6 +154,8 @@ sourceSets {
     test {
         compileClasspath += main.compileClasspath
         runtimeClasspath += main.runtimeClasspath
+        compileClasspath += client.compileClasspath
+        runtimeClasspath += client.runtimeClasspath
     }
     testmod {
         compileClasspath += main.compileClasspath
