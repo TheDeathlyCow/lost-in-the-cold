@@ -72,12 +72,10 @@ public class Frostiful implements ModInitializer {
         FPotions.initialize();
         FItemGroups.initialize();
         FLootConditionTypes.initialize();
-
         FFeatures.registerAll();
         FPlacedFeatures.placeFeatures();
 
         this.registerThermooEventListeners();
-        FSmithingTemplateItem.addTemplatesToLoot();
         PayloadTypeRegistry.playS2C().register(
                 PointWindSpawnPacket.PACKET_ID,
                 PointWindSpawnPacket.PACKET_CODEC

@@ -310,6 +310,7 @@ public class FItems {
 
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful items");
+        FSmithingTemplateItem.addTemplatesToLoot();
     }
 
     private static Item register(String id, Item item) {
