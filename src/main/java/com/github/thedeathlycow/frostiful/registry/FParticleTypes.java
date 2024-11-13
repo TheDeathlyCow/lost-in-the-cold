@@ -24,6 +24,7 @@ public class FParticleTypes {
     );
 
     public static void registerParticleTypes() {
+        Frostiful.LOGGER.debug("Initialized Frostiful particle types");
         register("heat_drain", HEAT_DRAIN);
         register("wind", WIND);
         register("wind_flipped", WIND_FLIPPED);

@@ -16,6 +16,7 @@ public class FLootConditionTypes {
     );
 
     public static void registerAll() {
+        Frostiful.LOGGER.debug("Initialized Frostiful loot condition types");
         register("rooted", ROOTED);
         register("chest_equipped_with_trinket", CHEST_EQUPPED_WITH_TRINKET);
     }

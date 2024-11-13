@@ -16,6 +16,7 @@ public class FArmorTrimPatterns {
     public static final RegistryKey<ArmorTrimPattern> FROSTY = of("frosty");
 
     public static void bootstrap(Registerable<ArmorTrimPattern> registry) {
+        Frostiful.LOGGER.debug("Bootstrap Frostiful armor trim patterns");
         register(registry, FItems.FROSTY_ARMOR_TRIM_SMITHING_TEMPLATE, FROSTY);
     }
 

@@ -81,6 +81,7 @@ public class FEntityTypes {
             .build();
 
     public static void registerEntities() {
+        Frostiful.LOGGER.debug("Initialized Frostiful entity types");
         register("frostologer", FROSTOLOGER);
         register("chillager", CHILLAGER);
         register("biter", BITER);

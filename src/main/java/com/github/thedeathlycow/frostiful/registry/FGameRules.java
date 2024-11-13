@@ -35,7 +35,7 @@ public class FGameRules {
             );
 
     public static void initialize() {
-        // game rules already registered - calling this method just loads this class
+        Frostiful.LOGGER.debug("Initialized Frostiful game rules");
     }
 
     private FGameRules() {

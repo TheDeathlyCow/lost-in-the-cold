@@ -87,6 +87,7 @@ public class FItemGroups {
     }
 
     public static void registerAll() {
+        Frostiful.LOGGER.debug("Initialized Frostiful item groups");
         Registry.register(Registries.ITEM_GROUP, Frostiful.id("main"), FROSTIFUL);
     }
 

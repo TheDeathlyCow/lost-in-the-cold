@@ -26,6 +26,7 @@ public class FPotions {
     );
 
     public static void initialize() {
+        Frostiful.LOGGER.debug("Initialized Frostiful potions");
         FabricBrewingRecipeRegistryBuilder.BUILD.register(
                 builder -> {
                     builder.registerPotionRecipe(Potions.AWKWARD, FItems.ICICLE, FPotions.FREEZING);

@@ -38,7 +38,7 @@ public class FStatusEffects {
     );
 
     public static void initialize() {
-        // load this class
+        Frostiful.LOGGER.debug("Initialized Frostiful status effects");
     }
 
     private static RegistryEntry<StatusEffect> registerReference(String name, StatusEffect statusEffect) {

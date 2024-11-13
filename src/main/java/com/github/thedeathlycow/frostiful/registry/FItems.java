@@ -176,6 +176,7 @@ public class FItems {
     );
 
     public static void registerItems() {
+        Frostiful.LOGGER.debug("Initialized Frostiful items");
         register("fur_helmet", FUR_HELMET);
         register("fur_chestplate", FUR_CHESTPLATE);
         register("fur_leggings", FUR_LEGGINGS);

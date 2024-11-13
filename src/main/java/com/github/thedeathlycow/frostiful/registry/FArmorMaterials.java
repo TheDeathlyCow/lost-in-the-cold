@@ -53,7 +53,7 @@ public class FArmorMaterials {
 
 
     public static void initialize() {
-        // ensure this class is loaded
+        Frostiful.LOGGER.debug("Initialized Frostiful armor materials");
     }
 
     private static RegistryEntry<ArmorMaterial> register(
