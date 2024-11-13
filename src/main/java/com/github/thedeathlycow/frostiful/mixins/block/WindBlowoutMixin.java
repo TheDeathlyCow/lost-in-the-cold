@@ -1,7 +1,7 @@
 package com.github.thedeathlycow.frostiful.mixins.block;
 
 import com.github.thedeathlycow.frostiful.registry.FEntityTypes;
-import com.github.thedeathlycow.frostiful.sound.FSoundEvents;
+import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.github.thedeathlycow.frostiful.survival.wind.WindManager;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;

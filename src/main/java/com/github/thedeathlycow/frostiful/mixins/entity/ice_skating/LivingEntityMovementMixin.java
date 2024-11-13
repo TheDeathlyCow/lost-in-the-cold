@@ -4,7 +4,7 @@ import com.github.thedeathlycow.frostiful.entity.IceSkater;
 import com.github.thedeathlycow.frostiful.entity.component.LivingEntityComponents;
 import com.github.thedeathlycow.frostiful.entity.damage.FDamageSources;
 import com.github.thedeathlycow.frostiful.registry.FComponents;
-import com.github.thedeathlycow.frostiful.sound.FSoundEvents;
+import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.github.thedeathlycow.frostiful.registry.tag.FItemTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;

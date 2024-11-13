@@ -1,7 +1,7 @@
 package com.github.thedeathlycow.frostiful.mixins.entity.ice_skating;
 
 import com.github.thedeathlycow.frostiful.entity.IceSkater;
-import com.github.thedeathlycow.frostiful.sound.FSoundEvents;
+import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;

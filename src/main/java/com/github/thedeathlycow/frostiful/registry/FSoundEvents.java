@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.sound;
+package com.github.thedeathlycow.frostiful.registry;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
 import net.minecraft.registry.Registries;
