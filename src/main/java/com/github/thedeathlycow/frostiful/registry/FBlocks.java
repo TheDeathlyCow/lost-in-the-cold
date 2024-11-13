@@ -2,6 +2,7 @@ package com.github.thedeathlycow.frostiful.registry;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.block.*;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
@@ -247,6 +248,7 @@ public class FBlocks {
         Frostiful.LOGGER.debug("Initialized Frostiful blocks");
         DispenserBlock.registerProjectileBehavior(FItems.GLACIAL_ARROW);
         DispenserBlock.registerProjectileBehavior(FItems.PACKED_SNOWBALL);
+        UseBlockCallback.EVENT.register(new CampfireUseEventListener());
     }
 
     private static Block register(String id, Block block) {

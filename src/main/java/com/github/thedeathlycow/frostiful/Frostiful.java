@@ -58,7 +58,6 @@ public class Frostiful implements ModInitializer {
                     });
         }
 
-
         LootTableEvents.MODIFY.register(StrayLootTableModifier::addFrostTippedArrows);
 
         FArmorMaterials.initialize();
@@ -80,7 +79,6 @@ public class Frostiful implements ModInitializer {
                 PointWindSpawnPacket.PACKET_ID,
                 PointWindSpawnPacket.PACKET_CODEC
         );
-        UseBlockCallback.EVENT.register(new CampfireUseEventListener());
 
         LOGGER.info("Initialized Frostiful!");
     }
