@@ -68,8 +68,8 @@ public class Frostiful implements ModInitializer {
         FPotions.initialize();
         FItemGroups.initialize();
         FLootConditionTypes.initialize();
-        FFeatures.registerAll();
-        FPlacedFeatures.placeFeatures();
+        FFeatures.initialize();
+        FPlacedFeatures.initialize();
 
         this.registerThermooEventListeners();
         PayloadTypeRegistry.playS2C().register(

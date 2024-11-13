@@ -16,7 +16,8 @@ public class FPlacedFeatures {
     public static final RegistryKey<PlacedFeature> SUN_LICHEN_COVERED_ROCK = of("sun_lichen_covered_rock");
     public static final RegistryKey<PlacedFeature> ICICLE_CLUSTER = of("icicle_cluster");
 
-    public static void placeFeatures() {
+    public static void initialize() {
+        Frostiful.LOGGER.debug("Initialized Frostiful placed features");
 
         BiomeModification modification = BiomeModifications.create(Frostiful.id("vegetation"));
 
@@ -47,4 +48,7 @@ public class FPlacedFeatures {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Frostiful.id(id));
     }
 
+    private FPlacedFeatures() {
+
+    }
 }
