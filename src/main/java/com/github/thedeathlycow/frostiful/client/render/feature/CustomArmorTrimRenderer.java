@@ -1,6 +1,6 @@
 package com.github.thedeathlycow.frostiful.client.render.feature;
 
-import com.github.thedeathlycow.frostiful.client.FTexturedRenderLayers;
+import com.github.thedeathlycow.frostiful.client.registry.FTexturedRenderLayers;
 import com.github.thedeathlycow.frostiful.registry.tag.FTrimTags;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumer;

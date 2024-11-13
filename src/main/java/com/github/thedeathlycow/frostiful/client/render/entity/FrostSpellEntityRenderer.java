@@ -20,7 +20,7 @@ public class FrostSpellEntityRenderer extends EntityRenderer<SpellEntity> {
     private static final Identifier TEXTURE = Frostiful.id("textures/entity/frost_spell.png");
     private static final RenderLayer LAYER;
 
-    protected FrostSpellEntityRenderer(EntityRendererFactory.Context ctx) {
+    public FrostSpellEntityRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
     }
 

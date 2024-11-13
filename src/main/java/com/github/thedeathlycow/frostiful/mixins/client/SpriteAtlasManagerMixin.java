@@ -1,6 +1,6 @@
 package com.github.thedeathlycow.frostiful.mixins.client;
 
-import com.github.thedeathlycow.frostiful.client.FTexturedRenderLayers;
+import com.github.thedeathlycow.frostiful.client.registry.FTexturedRenderLayers;
 import net.minecraft.client.render.model.SpriteAtlasManager;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
