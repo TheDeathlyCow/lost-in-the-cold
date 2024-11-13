@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.server.world.gen.feature;
+package com.github.thedeathlycow.frostiful.registry;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.registry.tag.FHasFeatureTags;
