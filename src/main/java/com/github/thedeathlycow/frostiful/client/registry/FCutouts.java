@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.block;
+package com.github.thedeathlycow.frostiful.client.registry;
 
 import com.github.thedeathlycow.frostiful.registry.FBlocks;
 import net.fabricmc.api.EnvType;
@@ -9,7 +9,7 @@ import net.minecraft.client.render.RenderLayer;
 @Environment(EnvType.CLIENT)
 public class FCutouts {
 
-    public static void registerCutouts() {
+    public static void initialize() {
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICICLE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.COLD_SUN_LICHEN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.COOL_SUN_LICHEN, RenderLayer.getCutout());
@@ -20,4 +20,7 @@ public class FCutouts {
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICE_PANE, RenderLayer.getTranslucent());
     }
 
+    private FCutouts() {
+
+    }
 }

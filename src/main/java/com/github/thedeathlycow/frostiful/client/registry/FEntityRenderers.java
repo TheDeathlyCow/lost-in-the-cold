@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.frostiful.client.registry;
 
+import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.client.model.IceSkateModel;
 import com.github.thedeathlycow.frostiful.client.render.entity.*;
 import com.github.thedeathlycow.frostiful.client.render.feature.IceSkateFeatureRenderer;
@@ -13,7 +14,8 @@ import net.minecraft.client.render.entity.*;
 @Environment(EnvType.CLIENT)
 public class FEntityRenderers {
 
-    public static void registerEntityRenderers() {
+    public static void initialize() {
+        Frostiful.LOGGER.debug("Initialized Frostiful entity renderers");
         EntityRendererRegistry.register(FEntityTypes.GLACIAL_ARROW, GlacialArrowEntityRenderer::new);
         EntityRendererRegistry.register(FEntityTypes.FROST_SPELL, FrostSpellEntityRenderer::new);
         EntityRendererRegistry.register(FEntityTypes.FROSTOLOGER, FrostologerEntityRenderer::new);

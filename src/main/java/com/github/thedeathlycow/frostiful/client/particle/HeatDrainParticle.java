@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.particle.client;
+package com.github.thedeathlycow.frostiful.client.particle;
 
 import com.github.thedeathlycow.frostiful.particle.HeatDrainParticleEffect;
 import net.fabricmc.api.EnvType;

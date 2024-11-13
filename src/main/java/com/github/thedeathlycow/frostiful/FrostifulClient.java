@@ -1,13 +1,13 @@
 package com.github.thedeathlycow.frostiful;
 
-import com.github.thedeathlycow.frostiful.block.FCutouts;
+import com.github.thedeathlycow.frostiful.client.registry.FCutouts;
 import com.github.thedeathlycow.frostiful.client.FrostifulModelLoadingPlugin;
 import com.github.thedeathlycow.frostiful.client.FrozenHeartsOverlay;
 import com.github.thedeathlycow.frostiful.client.registry.FEntityModelLayers;
 import com.github.thedeathlycow.frostiful.client.render.FrostWandItemRenderer;
 import com.github.thedeathlycow.frostiful.client.registry.FEntityRenderers;
 import com.github.thedeathlycow.frostiful.compat.FoodIntegration;
-import com.github.thedeathlycow.frostiful.particle.client.FParticleFactoryRegistry;
+import com.github.thedeathlycow.frostiful.client.registry.FParticleFactoryRegistry;
 import com.github.thedeathlycow.frostiful.registry.FItems;
 import com.github.thedeathlycow.frostiful.server.network.PointWindSpawnPacket;
 import com.github.thedeathlycow.frostiful.server.network.PointWindSpawnPacketListener;
@@ -26,11 +26,10 @@ import net.minecraft.resource.ResourceType;
 public class FrostifulClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        FCutouts.registerCutouts();
-        FParticleFactoryRegistry.registerFactories();
-
+        FCutouts.initialize();
+        FParticleFactoryRegistry.initialize();
         FEntityModelLayers.initialize();
-        FEntityRenderers.registerEntityRenderers();
+        FEntityRenderers.initialize();
 
         FrostWandItemRenderer frostWandRenderer = new FrostWandItemRenderer(FEntityModelLayers.FROST_WAND);
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(frostWandRenderer);
