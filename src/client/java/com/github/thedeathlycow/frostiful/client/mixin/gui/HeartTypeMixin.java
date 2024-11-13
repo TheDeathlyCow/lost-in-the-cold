@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.mixins.client.gui;
+package com.github.thedeathlycow.frostiful.client.mixin.gui;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.gui.hud.InGameHud;

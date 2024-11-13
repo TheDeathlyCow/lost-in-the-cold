@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.mixins.client.entity_renderer;
+package com.github.thedeathlycow.frostiful.client.mixin.entity_renderer;
 
 import com.github.thedeathlycow.frostiful.survival.SurvivalUtils;
 import net.fabricmc.api.EnvType;

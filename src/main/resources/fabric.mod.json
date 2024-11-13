@@ -36,11 +36,15 @@
             "com.github.thedeathlycow.frostiful.registry.FComponents"
         ],
         "colorfulhearts": [
-            "com.github.thedeathlycow.frostiful.compat.ColorfulHeartsIntegration"
+            "com.github.thedeathlycow.frostiful.client.compat.ColorfulHeartsIntegration"
         ]
     },
     "mixins": [
-        "frostiful.mixins.json"
+        "frostiful.mixins.json",
+        {
+            "config": "frostiful.client.mixins.json",
+            "environment": "client"
+        }
     ],
     "depends": {
         "fabricloader": ">=0.15.11",

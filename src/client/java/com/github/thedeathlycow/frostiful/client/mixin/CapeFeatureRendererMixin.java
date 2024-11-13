@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.mixins.client;
+package com.github.thedeathlycow.frostiful.client.mixin;
 
 import com.github.thedeathlycow.frostiful.item.cloak.AbstractFrostologyCloakItem;
 import com.github.thedeathlycow.frostiful.registry.tag.FItemTags;

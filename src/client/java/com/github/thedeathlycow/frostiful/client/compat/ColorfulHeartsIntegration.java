@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.compat;
+package com.github.thedeathlycow.frostiful.client.compat;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;

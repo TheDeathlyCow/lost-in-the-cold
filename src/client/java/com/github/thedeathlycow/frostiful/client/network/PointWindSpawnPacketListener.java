@@ -1,7 +1,8 @@
-package com.github.thedeathlycow.frostiful.server.network;
+package com.github.thedeathlycow.frostiful.client.network;
 
 import com.github.thedeathlycow.frostiful.particle.WindParticleEffect;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
+import com.github.thedeathlycow.frostiful.server.network.PointWindSpawnPacket;
 import com.github.thedeathlycow.frostiful.survival.wind.PointWindSpawnStrategy;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

@@ -1,9 +1,8 @@
-package com.github.thedeathlycow.frostiful.mixins.client.gui;
+package com.github.thedeathlycow.frostiful.client.mixin.gui;
 
 import com.github.thedeathlycow.frostiful.client.gui.FrostOverlayRenderer;
 import com.github.thedeathlycow.frostiful.client.gui.RootedOverlayRenderer;
 import com.github.thedeathlycow.frostiful.entity.RootedEntity;
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -15,7 +14,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 

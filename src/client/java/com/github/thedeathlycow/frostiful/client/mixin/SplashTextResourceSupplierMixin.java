@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.mixins.client;
+package com.github.thedeathlycow.frostiful.client.mixin;
 
 import net.minecraft.client.gui.screen.SplashTextRenderer;
 import net.minecraft.client.resource.SplashTextResourceSupplier;

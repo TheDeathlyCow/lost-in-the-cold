@@ -36,21 +36,6 @@
         "world.WindSpawningMixin",
         "world.spawner.PatrolSpawnerMixin"
     ],
-    "client": [
-        "client.ArmorFeatureRendererMixin",
-        "client.CapeFeatureRendererMixin",
-        "client.DrippingWetPlayerMixin",
-        "client.SplashTextResourceSupplierMixin",
-        "client.SpriteAtlasManagerMixin",
-        "client.entity_renderer.PolarBearShearedTextureMixin",
-        "client.entity_renderer.RootedEffectRenderer",
-        "client.entity_renderer.ShakingRendererMixin",
-        "client.gui.HeartTypeMixin",
-        "client.gui.InGameHudMixin",
-        "client.gui.ShiveringRenderer",
-        "client.ice_skate_fx.GameRendererMixin",
-        "client.ice_skate_fx.ModelMixin"
-    ],
     "injectors": {
         "defaultRequire": 1
     }

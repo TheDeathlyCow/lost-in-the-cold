@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.mixins.client;
+package com.github.thedeathlycow.frostiful.client.mixin;
 
 import com.github.thedeathlycow.frostiful.client.render.feature.CustomArmorTrimRenderer;
 import net.minecraft.client.render.VertexConsumerProvider;

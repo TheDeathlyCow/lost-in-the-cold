@@ -1,4 +1,4 @@
-package com.github.thedeathlycow.frostiful.mixins.client.ice_skate_fx;
+package com.github.thedeathlycow.frostiful.client.mixin.ice_skate_fx;
 
 import com.github.thedeathlycow.frostiful.entity.IceSkater;
 import net.minecraft.client.model.ModelPart;
