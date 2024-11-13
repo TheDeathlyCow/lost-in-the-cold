@@ -26,7 +26,7 @@ public record ChestEquippedWithTrinketLootCondition(
 
     @Override
     public LootConditionType getType() {
-        return FLootConditionTypes.ROOTED;
+        return FLootConditionTypes.CHEST_EQUPPED_WITH_TRINKET;
     }
 
     @Override

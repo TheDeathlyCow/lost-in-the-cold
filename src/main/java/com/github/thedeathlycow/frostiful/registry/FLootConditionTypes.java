@@ -10,19 +10,21 @@ import net.minecraft.registry.Registry;
 public class FLootConditionTypes {
 
 
-    public static final LootConditionType ROOTED = new LootConditionType(RootedLootCondition.CODEC);
-    public static final LootConditionType CHEST_EQUPPED_WITH_TRINKET = new LootConditionType(
-            ChestEquippedWithTrinketLootCondition.CODEC
+    public static final LootConditionType ROOTED = register(
+            "rooted",
+            new LootConditionType(RootedLootCondition.CODEC)
+    );
+    public static final LootConditionType CHEST_EQUPPED_WITH_TRINKET = register(
+            "chest_equipped_with_trinket",
+            new LootConditionType(ChestEquippedWithTrinketLootCondition.CODEC)
     );
 
-    public static void registerAll() {
+    public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful loot condition types");
-        register("rooted", ROOTED);
-        register("chest_equipped_with_trinket", CHEST_EQUPPED_WITH_TRINKET);
     }
 
-    private static void register(String name, LootConditionType lootCondition) {
-        Registry.register(Registries.LOOT_CONDITION_TYPE, Frostiful.id(name), lootCondition);
+    private static LootConditionType register(String name, LootConditionType lootCondition) {
+        return Registry.register(Registries.LOOT_CONDITION_TYPE, Frostiful.id(name), lootCondition);
     }
 
     private FLootConditionTypes() {
