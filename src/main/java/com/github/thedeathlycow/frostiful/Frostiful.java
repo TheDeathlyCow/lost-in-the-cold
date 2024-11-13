@@ -68,7 +68,7 @@ public class Frostiful implements ModInitializer {
         FGameRules.initialize();
         FSoundEvents.registerSoundEvents();
         FStatusEffects.initialize();
-        FParticleTypes.registerParticleTypes();
+        FParticleTypes.initialize();
         FPotions.initialize();
         FItemGroups.initialize();
         FLootConditionTypes.initialize();
