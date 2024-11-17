@@ -73,6 +73,8 @@ public class FItemGroups {
                         entries.add(new ItemStack(FItems.GLACIAL_ARROW));
                         entries.add(new ItemStack(FItems.FROZEN_TORCH));
 
+                        entries.add(new ItemStack(FItems.ICY_TRIAL_SPAWNER));
+                        entries.add(new ItemStack(FItems.ICY_VAULT));
                         entries.add(new ItemStack(FItems.FROSTOLOGER_SPAWN_EGG));
                         entries.add(new ItemStack(FItems.CHILLAGER_SPAWN_EGG));
                         entries.add(new ItemStack(FItems.BITER_SPAWN_EGG));
