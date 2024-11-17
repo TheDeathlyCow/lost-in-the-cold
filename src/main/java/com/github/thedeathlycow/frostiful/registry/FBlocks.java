@@ -4,6 +4,7 @@ import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.block.*;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.enums.TrialSpawnerState;
 import net.minecraft.block.enums.VaultState;
@@ -278,6 +279,8 @@ public class FBlocks {
         DispenserBlock.registerProjectileBehavior(FItems.GLACIAL_ARROW);
         DispenserBlock.registerProjectileBehavior(FItems.PACKED_SNOWBALL);
         UseBlockCallback.EVENT.register(new CampfireUseEventListener());
+        BlockEntityType.TRIAL_SPAWNER.addSupportedBlock(ICY_TRIAL_SPAWNER);
+        BlockEntityType.VAULT.addSupportedBlock(ICY_VAULT);
     }
 
     private static Block register(String id, Block block) {
