@@ -69,16 +69,11 @@ dependencies {
     modImplementation "com.github.thedeathlycow:thermoo:v${project.thermoo_version}"
 
     //// Optional Dependencies ////
-
-    // Colorful Hearts https://modrinth.com/mod/colorful-hearts
     modCompileOnly("maven.modrinth:colorful-hearts:${project.colorful_hearts_version}") { transitive = false }
 
 
-    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
-    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
-    // Includes Cardinal Components API as a Jar-in-Jar dependency (optional but recommended)
-    include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
-    include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
+    modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+    modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
 
     // Trinkets https://github.com/emilyploszaj/trinkets
     modCompileOnlyApi("dev.emi:trinkets:${project.trinkets_version}") {
