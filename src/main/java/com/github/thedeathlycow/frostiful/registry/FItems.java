@@ -318,6 +318,11 @@ public class FItems {
             new BlockItem(FBlocks.ICY_VAULT, new Item.Settings())
     );
 
+    public static final Item CASTLE_KEY = register(
+            "castle_key",
+            new Item(new Item.Settings())
+    );
+
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful items");
         FSmithingTemplateItem.addTemplatesToLoot();
