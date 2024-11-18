@@ -18,6 +18,8 @@ public class FCutouts {
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.FROZEN_TORCH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.FROZEN_WALL_TORCH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICE_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICY_TRIAL_SPAWNER, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICY_VAULT, RenderLayer.getTranslucent());
     }
 
     private FCutouts() {
