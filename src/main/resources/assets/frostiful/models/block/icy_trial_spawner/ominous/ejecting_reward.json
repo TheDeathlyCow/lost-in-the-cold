@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/cube_bottom_top_inner_faces",
+    "textures": {
+        "bottom": "frostiful:block/icy_trial_spawner/ominous/bottom",
+        "side": "frostiful:block/icy_trial_spawner/ominous/side_inactive",
+        "top": "frostiful:block/icy_trial_spawner/ominous/top_ejecting_reward"
+    }
+}

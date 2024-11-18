@@ -1,40 +1,40 @@
 {
     "variants": {
         "ominous=false,trial_spawner_state=active": {
-            "model": "frostiful:block/icy_trial_spawner/active"
+            "model": "frostiful:block/icy_trial_spawner/normal/active"
         },
         "ominous=false,trial_spawner_state=cooldown": {
-            "model": "frostiful:block/icy_trial_spawner/inactive"
+            "model": "frostiful:block/icy_trial_spawner/normal/inactive"
         },
         "ominous=false,trial_spawner_state=ejecting_reward": {
-            "model": "frostiful:block/icy_trial_spawner/ejecting_reward"
+            "model": "frostiful:block/icy_trial_spawner/normal/ejecting_reward"
         },
         "ominous=false,trial_spawner_state=inactive": {
-            "model": "frostiful:block/icy_trial_spawner/inactive"
+            "model": "frostiful:block/icy_trial_spawner/normal/inactive"
         },
         "ominous=false,trial_spawner_state=waiting_for_players": {
-            "model": "frostiful:block/icy_trial_spawner/active"
+            "model": "frostiful:block/icy_trial_spawner/normal/active"
         },
         "ominous=false,trial_spawner_state=waiting_for_reward_ejection": {
-            "model": "frostiful:block/icy_trial_spawner/active"
+            "model": "frostiful:block/icy_trial_spawner/normal/active"
         },
         "ominous=true,trial_spawner_state=active": {
-            "model": "frostiful:block/icy_trial_spawner/active_ominous"
+            "model": "frostiful:block/icy_trial_spawner/ominous/active"
         },
         "ominous=true,trial_spawner_state=cooldown": {
-            "model": "frostiful:block/icy_trial_spawner/inactive_ominous"
+            "model": "frostiful:block/icy_trial_spawner/ominous/inactive"
         },
         "ominous=true,trial_spawner_state=ejecting_reward": {
-            "model": "frostiful:block/icy_trial_spawner/ejecting_reward_ominous"
+            "model": "frostiful:block/icy_trial_spawner/ominous/ejecting_reward"
         },
         "ominous=true,trial_spawner_state=inactive": {
-            "model": "frostiful:block/icy_trial_spawner/inactive_ominous"
+            "model": "frostiful:block/icy_trial_spawner/ominous/inactive"
         },
         "ominous=true,trial_spawner_state=waiting_for_players": {
-            "model": "frostiful:block/icy_trial_spawner/active_ominous"
+            "model": "frostiful:block/icy_trial_spawner/ominous/active"
         },
         "ominous=true,trial_spawner_state=waiting_for_reward_ejection": {
-            "model": "frostiful:block/icy_trial_spawner/active_ominous"
+            "model": "frostiful:block/icy_trial_spawner/ominous/active"
         }
     }
 }
