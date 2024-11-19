@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.EnumSet;
 import java.util.Set;
+import java.util.UUID;
 
 public interface IceSkater {
 

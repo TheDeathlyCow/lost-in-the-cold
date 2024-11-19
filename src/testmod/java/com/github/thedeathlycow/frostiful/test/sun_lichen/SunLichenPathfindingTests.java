@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.frostiful.test.sun_lichen;
 
+import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
 import com.github.thedeathlycow.thermoo.api.temperature.TemperatureAware;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

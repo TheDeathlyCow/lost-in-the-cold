@@ -10,6 +10,8 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.util.Identifier;
 
+import java.util.function.BiConsumer;
+
 @Environment(EnvType.CLIENT)
 public final class FrostOverlayRenderer {
 
