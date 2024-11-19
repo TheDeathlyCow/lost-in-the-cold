@@ -1,0 +1,124 @@
+{
+    "variants": {
+        "facing=east,ominous=false,vault_state=active": {
+            "model": "frostiful:block/icy_vault/normal/active",
+            "y": 90
+        },
+        "facing=east,ominous=false,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/normal/ejecting_reward",
+            "y": 90
+        },
+        "facing=east,ominous=false,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/normal/inactive",
+            "y": 90
+        },
+        "facing=east,ominous=false,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/normal/unlocking",
+            "y": 90
+        },
+        "facing=east,ominous=true,vault_state=active": {
+            "model": "frostiful:block/icy_vault/ominous/active",
+            "y": 90
+        },
+        "facing=east,ominous=true,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/ominous/ejecting_reward",
+            "y": 90
+        },
+        "facing=east,ominous=true,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/ominous/inactive",
+            "y": 90
+        },
+        "facing=east,ominous=true,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/ominous/unlocking",
+            "y": 90
+        },
+        "facing=north,ominous=false,vault_state=active": {
+            "model": "frostiful:block/icy_vault/normal/active"
+        },
+        "facing=north,ominous=false,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/normal/ejecting_reward"
+        },
+        "facing=north,ominous=false,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/normal/inactive"
+        },
+        "facing=north,ominous=false,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/normal/unlocking"
+        },
+        "facing=north,ominous=true,vault_state=active": {
+            "model": "frostiful:block/icy_vault/ominous/active"
+        },
+        "facing=north,ominous=true,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/ominous/ejecting_reward"
+        },
+        "facing=north,ominous=true,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/ominous/inactive"
+        },
+        "facing=north,ominous=true,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/ominous/unlocking"
+        },
+        "facing=south,ominous=false,vault_state=active": {
+            "model": "frostiful:block/icy_vault/normal/active",
+            "y": 180
+        },
+        "facing=south,ominous=false,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/normal/ejecting_reward",
+            "y": 180
+        },
+        "facing=south,ominous=false,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/normal/inactive",
+            "y": 180
+        },
+        "facing=south,ominous=false,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/normal/unlocking",
+            "y": 180
+        },
+        "facing=south,ominous=true,vault_state=active": {
+            "model": "frostiful:block/icy_vault/ominous/active",
+            "y": 180
+        },
+        "facing=south,ominous=true,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/ominous/ejecting_reward",
+            "y": 180
+        },
+        "facing=south,ominous=true,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/ominous/inactive",
+            "y": 180
+        },
+        "facing=south,ominous=true,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/ominous/unlocking",
+            "y": 180
+        },
+        "facing=west,ominous=false,vault_state=active": {
+            "model": "frostiful:block/icy_vault/normal/active",
+            "y": 270
+        },
+        "facing=west,ominous=false,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/normal/ejecting_reward",
+            "y": 270
+        },
+        "facing=west,ominous=false,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/normal/inactive",
+            "y": 270
+        },
+        "facing=west,ominous=false,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/normal/unlocking",
+            "y": 270
+        },
+        "facing=west,ominous=true,vault_state=active": {
+            "model": "frostiful:block/icy_vault/ominous/active",
+            "y": 270
+        },
+        "facing=west,ominous=true,vault_state=ejecting": {
+            "model": "frostiful:block/icy_vault/ominous/ejecting_reward",
+            "y": 270
+        },
+        "facing=west,ominous=true,vault_state=inactive": {
+            "model": "frostiful:block/icy_vault/ominous/inactive",
+            "y": 270
+        },
+        "facing=west,ominous=true,vault_state=unlocking": {
+            "model": "frostiful:block/icy_vault/ominous/unlocking",
+            "y": 270
+        }
+    }
+}
