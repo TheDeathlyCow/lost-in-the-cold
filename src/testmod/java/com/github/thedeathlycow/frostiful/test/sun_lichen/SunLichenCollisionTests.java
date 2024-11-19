@@ -1,9 +1,6 @@
 package com.github.thedeathlycow.frostiful.test.sun_lichen;
 
 import com.github.thedeathlycow.frostiful.registry.FBlocks;
-import com.github.thedeathlycow.frostiful.block.SunLichenBlock;
-import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
-import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentControllerDecorator;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentManager;
 import com.github.thedeathlycow.thermoo.api.temperature.TemperatureAware;

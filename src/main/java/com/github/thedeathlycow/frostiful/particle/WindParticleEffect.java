@@ -1,22 +1,14 @@
 package com.github.thedeathlycow.frostiful.particle;
 
 import com.github.thedeathlycow.frostiful.registry.FParticleTypes;
-import com.github.thedeathlycow.frostiful.util.FPacketCodecs;
-import com.mojang.brigadier.StringReader;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleType;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Vec3d;
-
-import java.util.Locale;
 
 public record WindParticleEffect(
         boolean flipped

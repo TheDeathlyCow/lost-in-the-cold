@@ -1,7 +1,6 @@
 package com.github.thedeathlycow.frostiful.registry;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
-import com.github.thedeathlycow.frostiful.registry.FItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.trim.ArmorTrimPattern;
 import net.minecraft.registry.Registerable;

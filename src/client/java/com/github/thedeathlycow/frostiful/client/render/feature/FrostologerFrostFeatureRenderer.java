@@ -9,7 +9,6 @@ import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.ColorHelper;
 
 @Environment(EnvType.CLIENT)
 public class FrostologerFrostFeatureRenderer extends FeatureRenderer<FrostologerEntity, FrostologerEntityModel<FrostologerEntity>> {

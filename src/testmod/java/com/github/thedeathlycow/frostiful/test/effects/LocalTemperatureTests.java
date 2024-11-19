@@ -1,19 +1,14 @@
 package com.github.thedeathlycow.frostiful.test.effects;
 
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentController;
-import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentControllerDecorator;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentManager;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.VillagerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.test.AfterBatch;
-import net.minecraft.test.BeforeBatch;
 import net.minecraft.test.GameTest;
 import net.minecraft.test.TestContext;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 @SuppressWarnings("unused")
 public class LocalTemperatureTests {

@@ -6,8 +6,6 @@ import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 
 @Config(name = Frostiful.MODID)
 public class FrostifulConfig extends PartitioningSerializer.GlobalData {

@@ -1,8 +1,8 @@
 package com.github.thedeathlycow.frostiful.entity;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
-import com.github.thedeathlycow.frostiful.registry.FStatusEffects;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
+import com.github.thedeathlycow.frostiful.registry.FStatusEffects;
 import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.TargetPredicate;

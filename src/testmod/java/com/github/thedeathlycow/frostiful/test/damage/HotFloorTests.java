@@ -1,8 +1,9 @@
 package com.github.thedeathlycow.frostiful.test.damage;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
-import com.github.thedeathlycow.thermoo.api.temperature.*;
-import net.minecraft.block.BlockState;
+import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentControllerDecorator;
+import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentManager;
+import com.github.thedeathlycow.thermoo.api.temperature.TemperatureAware;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -14,8 +15,6 @@ import net.minecraft.test.GameTest;
 import net.minecraft.test.TestContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import java.util.function.Function;
 
 @SuppressWarnings("unused")
 public class HotFloorTests {

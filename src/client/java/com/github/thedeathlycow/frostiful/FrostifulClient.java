@@ -1,16 +1,16 @@
 package com.github.thedeathlycow.frostiful;
 
-import com.github.thedeathlycow.frostiful.client.registry.FCutouts;
 import com.github.thedeathlycow.frostiful.client.FrostifulModelLoadingPlugin;
 import com.github.thedeathlycow.frostiful.client.FrozenHeartsOverlay;
+import com.github.thedeathlycow.frostiful.client.network.PointWindSpawnPacketListener;
+import com.github.thedeathlycow.frostiful.client.registry.FCutouts;
 import com.github.thedeathlycow.frostiful.client.registry.FEntityModelLayers;
-import com.github.thedeathlycow.frostiful.client.render.FrostWandItemRenderer;
 import com.github.thedeathlycow.frostiful.client.registry.FEntityRenderers;
-import com.github.thedeathlycow.frostiful.compat.FoodIntegration;
 import com.github.thedeathlycow.frostiful.client.registry.FParticleFactoryRegistry;
+import com.github.thedeathlycow.frostiful.client.render.FrostWandItemRenderer;
+import com.github.thedeathlycow.frostiful.compat.FoodIntegration;
 import com.github.thedeathlycow.frostiful.registry.FItems;
 import com.github.thedeathlycow.frostiful.server.network.PointWindSpawnPacket;
-import com.github.thedeathlycow.frostiful.client.network.PointWindSpawnPacketListener;
 import com.github.thedeathlycow.thermoo.api.client.StatusBarOverlayRenderEvents;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;

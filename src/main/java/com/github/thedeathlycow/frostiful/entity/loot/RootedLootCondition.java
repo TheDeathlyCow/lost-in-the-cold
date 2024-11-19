@@ -9,7 +9,6 @@ import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameters;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.NumberRange;
 
 public record RootedLootCondition(

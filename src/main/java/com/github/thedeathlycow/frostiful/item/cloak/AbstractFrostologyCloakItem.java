@@ -3,21 +3,20 @@ package com.github.thedeathlycow.frostiful.item.cloak;
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.compat.FrostifulIntegrations;
 import com.github.thedeathlycow.frostiful.registry.tag.FItemTags;
-import com.github.thedeathlycow.frostiful.util.TextStyles;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.text.Text;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Equipment;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 public abstract class AbstractFrostologyCloakItem extends Item implements Equipment {

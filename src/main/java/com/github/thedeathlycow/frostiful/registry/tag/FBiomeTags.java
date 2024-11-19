@@ -3,7 +3,6 @@ package com.github.thedeathlycow.frostiful.registry.tag;
 import com.github.thedeathlycow.frostiful.Frostiful;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
 
 public class FBiomeTags {
