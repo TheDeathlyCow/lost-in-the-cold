@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:block/template_vault",
+    "textures": {
+        "bottom": "frostiful:block/icy_vault/ominous/bottom",
+        "front": "frostiful:block/icy_vault/ominous/front_ejecting",
+        "side": "frostiful:block/icy_vault/ominous/side_on",
+        "top": "frostiful:block/icy_vault/ominous/top_ejecting"
+    }
+}
