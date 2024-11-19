@@ -24,7 +24,6 @@ public class FItemGroups {
                         entries.add(new ItemStack(FItems.INERT_FROSTOLOGY_CLOAK));
                         addEnchantedFrostologyCloak(context, entries);
                         entries.add(new ItemStack(FItems.GLACIAL_HEART));
-                        entries.add(new ItemStack(FItems.CASTLE_KEY));
 
                         entries.add(new ItemStack(FItems.FUR_HELMET));
                         entries.add(new ItemStack(FItems.FUR_CHESTPLATE));
@@ -76,6 +75,9 @@ public class FItemGroups {
 
                         entries.add(new ItemStack(FItems.ICY_TRIAL_SPAWNER));
                         entries.add(new ItemStack(FItems.ICY_VAULT));
+                        entries.add(new ItemStack(FItems.CASTLE_KEY));
+                        entries.add(new ItemStack(FItems.OMINOUS_CASTLE_KEY));
+
                         entries.add(new ItemStack(FItems.FROSTOLOGER_SPAWN_EGG));
                         entries.add(new ItemStack(FItems.CHILLAGER_SPAWN_EGG));
                         entries.add(new ItemStack(FItems.BITER_SPAWN_EGG));

@@ -323,6 +323,11 @@ public class FItems {
             new Item(new Item.Settings())
     );
 
+    public static final Item OMINOUS_CASTLE_KEY = register(
+            "ominous_castle_key",
+            new Item(new Item.Settings())
+    );
+
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful items");
         FSmithingTemplateItem.addTemplatesToLoot();
