@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.frostiful.mixins.block;
 
 import com.github.thedeathlycow.frostiful.registry.tag.FItemTags;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.block.PowderSnowBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -12,6 +13,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PowderSnowBlock.class)
 public abstract class PowderSnowWalkableMixin {
+    @ModifyReturnValue(
+            method = "canWalkOnPowderSnow",
+            at = @At(
+                    value = "RETURN",
+                    ordinal = 1
+            )
+    )
+    private static boolean ignoreHardCodedLeatherBootsCheck(boolean original) {
+        return false;
+    }
+
     @Inject(
             method = "canWalkOnPowderSnow",
             at = @At("HEAD"),
