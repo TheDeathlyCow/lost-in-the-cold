@@ -7,7 +7,7 @@
             "element": {
                 "element_type": "minecraft:single_pool_element",
                 "projection": "rigid",
-                "location": "frostiful:frostologer_castle/classic_keep/downstairs1",
+                "location": "frostiful:frostologer_castle/classic_keep/upstairs1",
                 "processors": "minecraft:empty"
             }
         },
@@ -16,7 +16,7 @@
             "element": {
                 "element_type": "minecraft:single_pool_element",
                 "projection": "rigid",
-                "location": "frostiful:frostologer_castle/classic_keep/downstairs2",
+                "location": "frostiful:frostologer_castle/classic_keep/upstairs2",
                 "processors": "minecraft:empty"
             }
         }
