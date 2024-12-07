@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.frostiful.block;
 
 import com.github.thedeathlycow.frostiful.registry.FBlockProperties;
+import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
@@ -57,7 +58,7 @@ public class BrittleIceBlock extends TranslucentBlock {
         int nextCrackingLevel = state.get(CRACKING) + 1;
         if (nextCrackingLevel <= MAX_CRACKING) {
             world.setBlockState(pos, state.with(CRACKING, nextCrackingLevel));
-            world.playSound(null, pos, SoundEvents.BLOCK_STONE_STEP, SoundCategory.BLOCKS);
+            world.playSound(null, pos, FSoundEvents.BLOCK_BRITTLE_ICE_CRACK, SoundCategory.BLOCKS);
             world.scheduleBlockTick(pos, this, getCrackDelay(world.getRandom()));
         } else {
             world.breakBlock(pos, false, null);
