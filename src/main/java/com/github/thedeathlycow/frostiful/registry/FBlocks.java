@@ -7,6 +7,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.EntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -269,6 +270,20 @@ public class FBlocks {
                             .luminance(state -> state.get(VaultBlock.VAULT_STATE).getLuminance())
                             .strength(50.0f)
                             .blockVision(Blocks::never)
+            )
+    );
+
+    public static final Block BRITTLE_ICE = register(
+            "brittle_ice",
+            new BrittleIceBlock(
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.PALE_PURPLE)
+                            .slipperiness(0.98f)
+                            .ticksRandomly()
+                            .strength(0.5f)
+                            .sounds(BlockSoundGroup.GLASS)
+                            .nonOpaque()
+                            .solidBlock(Blocks::never)
             )
     );
 

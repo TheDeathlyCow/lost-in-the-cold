@@ -328,6 +328,11 @@ public class FItems {
             new Item(new Item.Settings())
     );
 
+    public static final Item BRITTLE_ICE = register(
+            "brittle_ice",
+            new BlockItem(FBlocks.BRITTLE_ICE, new Item.Settings())
+    );
+
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful items");
         FSmithingTemplateItem.addTemplatesToLoot();
