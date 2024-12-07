@@ -267,7 +267,7 @@ public class FBlocks {
                             .instrument(NoteBlockInstrument.BASEDRUM)
                             .nonOpaque()
                             .sounds(BlockSoundGroup.VAULT)
-                            .luminance(state -> state.get(VaultBlock.VAULT_STATE).getLuminance())
+                            .luminance(state -> state.get(VaultBlock.VAULT_STATE).getLuminance() * 5 / 6)
                             .strength(50.0f)
                             .blockVision(Blocks::never)
             )
