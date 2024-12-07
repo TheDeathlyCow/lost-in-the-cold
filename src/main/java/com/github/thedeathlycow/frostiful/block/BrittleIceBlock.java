@@ -2,10 +2,7 @@ package com.github.thedeathlycow.frostiful.block;
 
 import com.github.thedeathlycow.frostiful.registry.FBlockProperties;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FrostedIceBlock;
-import net.minecraft.block.IceBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -17,7 +14,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
-public class BrittleIceBlock extends Block {
+public class BrittleIceBlock extends TranslucentBlock {
 
     public static final MapCodec<BrittleIceBlock> CODEC = createCodec(BrittleIceBlock::new);
 
