@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "cracking=0": {
+            "model": "minecraft:block/frosted_ice_0"
+        },
+        "cracking=1": {
+            "model": "minecraft:block/frosted_ice_1"
+        },
+        "cracking=2": {
+            "model": "minecraft:block/frosted_ice_2"
+        },
+        "cracking=3": {
+            "model": "minecraft:block/frosted_ice_3"
+        }
+    }
+}
