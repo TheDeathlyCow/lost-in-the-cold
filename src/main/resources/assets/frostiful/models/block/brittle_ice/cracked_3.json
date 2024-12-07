@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "frostiful:block/brittle_ice/cracked_3"
+    }
+}
