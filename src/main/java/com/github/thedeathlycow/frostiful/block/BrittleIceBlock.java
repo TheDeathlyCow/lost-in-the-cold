@@ -1,8 +1,11 @@
 package com.github.thedeathlycow.frostiful.block;
 
 import com.github.thedeathlycow.frostiful.registry.FBlockProperties;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FrostedIceBlock;
+import net.minecraft.block.IceBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -15,17 +18,25 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
 public class BrittleIceBlock extends Block {
+
+    public static final MapCodec<BrittleIceBlock> CODEC = createCodec(BrittleIceBlock::new);
+
     public static final IntProperty CRACKING = FBlockProperties.CRACKING;
 
     public static final int MAX_CRACKING = FBlockProperties.MAX_CRACKING;
 
-    private static final int MIN_CRACK_DELAY = 20;
+    private static final int MIN_CRACK_DELAY = 5;
 
-    private static final int MAX_CRACK_DELAY = 60;
+    private static final int MAX_CRACK_DELAY = 10;
 
     public BrittleIceBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.getDefaultState().with(CRACKING, 0));
+    }
+
+    @Override
+    public MapCodec<BrittleIceBlock> getCodec() {
+        return CODEC;
     }
 
     @Override
