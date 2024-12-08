@@ -55,6 +55,14 @@
 		],
 		"subtitle": "subtitles.block.generic.footsteps"
 	},
+	"block.frostiful.brittle_ice.crack": {
+		"sounds": [
+			"frostiful:block/brittle_ice/crack1",
+			"frostiful:block/brittle_ice/crack2",
+			"frostiful:block/brittle_ice/snap1"
+		],
+		"subtitle": "subtitles.block.frostiful.brittle_ice.crack"
+	},
 	"item.frostiful.frost_wand.cast_spell": {
 		"sounds": [
 			"mob/evocation_illager/cast1",

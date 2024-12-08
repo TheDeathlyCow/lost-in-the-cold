@@ -266,9 +266,23 @@ public class FBlocks {
                             .instrument(NoteBlockInstrument.BASEDRUM)
                             .nonOpaque()
                             .sounds(BlockSoundGroup.VAULT)
-                            .luminance(state -> state.get(VaultBlock.VAULT_STATE).getLuminance())
+                            .luminance(state -> state.get(VaultBlock.VAULT_STATE).getLuminance() * 5 / 6)
                             .strength(50.0f)
                             .blockVision(Blocks::never)
+            )
+    );
+
+    public static final Block BRITTLE_ICE = register(
+            "brittle_ice",
+            new BrittleIceBlock(
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.PALE_PURPLE)
+                            .slipperiness(0.98f)
+                            .ticksRandomly()
+                            .strength(0.5f)
+                            .sounds(BlockSoundGroup.GLASS)
+                            .nonOpaque()
+                            .solidBlock(Blocks::never)
             )
     );
 

@@ -97,6 +97,7 @@
   "block.frostiful.cut_blue_ice_wall": "Cut Blue Ice Wall",
   "block.frostiful.icy_trial_spawner": "Icy Trial Spawner",
   "block.frostiful.icy_vault": "Icy Vault",
+  "block.frostiful.brittle_ice": "Brittle Ice",
   
   "block.minecraft.banner.frostiful.snowflake": "Snowflake",
 
@@ -181,6 +182,7 @@
   "subtitles.entity.frostiful.generic.ice_skate.glide": "Skates glide",
   "subtitles.entity.frostiful.generic.ice_skate.stop": "Skates stop",
   "subtitles.item.frostiful.armor.equip_leather": "Fur armor rustles",
+  "subtitles.block.frostiful.brittle_ice.crack": "Ice cracks",
   
   "effect.frostiful.frost_bite": "Frost Bite",
   "effect.frostiful.warmth": "Warmth",

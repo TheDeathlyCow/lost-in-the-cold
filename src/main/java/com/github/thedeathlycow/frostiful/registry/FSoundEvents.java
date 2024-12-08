@@ -23,6 +23,8 @@ public class FSoundEvents {
     public static final SoundEvent BLOCK_PACKED_SNOW_PLACE = register("block.frostiful.packed_snow.place");
     public static final SoundEvent BLOCK_PACKED_SNOW_STEP = register("block.frostiful.packed_snow.step");
 
+    public static final SoundEvent BLOCK_BRITTLE_ICE_CRACK = register("block.frostiful.brittle_ice.crack");
+
     public static final SoundEvent ENTITY_FROSTOLOGER_CAST_SPELL = register("entity.frostiful.frostologer.cast_spell");
     public static final SoundEvent ENTITY_FROSTOLOGER_PREPARE_CAST_BLIZZARD = register("entity.frostiful.frostologer.prepare_cast.blizzard");
     public static final SoundEvent ENTITY_FROSTOLOGER_AMBIENT = register("entity.frostiful.frostologer.ambient");

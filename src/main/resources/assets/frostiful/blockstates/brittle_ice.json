@@ -1,0 +1,16 @@
+{
+    "variants": {
+        "cracking=0": {
+            "model": "frostiful:block/brittle_ice/cracked_0"
+        },
+        "cracking=1": {
+            "model": "frostiful:block/brittle_ice/cracked_1"
+        },
+        "cracking=2": {
+            "model": "frostiful:block/brittle_ice/cracked_2"
+        },
+        "cracking=3": {
+            "model": "frostiful:block/brittle_ice/cracked_3"
+        }
+    }
+}

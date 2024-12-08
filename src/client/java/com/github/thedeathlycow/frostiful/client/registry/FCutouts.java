@@ -20,6 +20,7 @@ public class FCutouts {
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICE_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICY_TRIAL_SPAWNER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.ICY_VAULT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(FBlocks.BRITTLE_ICE, RenderLayer.getTranslucent());
     }
 
     private FCutouts() {
