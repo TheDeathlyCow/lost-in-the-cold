@@ -2,8 +2,10 @@ package com.github.thedeathlycow.frostiful.block;
 
 import com.github.thedeathlycow.frostiful.registry.FBlockProperties;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
+import com.github.thedeathlycow.frostiful.registry.tag.FEntityTypeTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -17,6 +19,10 @@ public final class BrittleIce {
     private static final int MAX_CRACK_DELAY = 10;
 
     public static final int MAX_CRACKING = FBlockProperties.MAX_CRACKING;
+
+    public static boolean canCrackIce(Entity entity) {
+        return !entity.getType().isIn(FEntityTypeTags.DOES_NOT_BREAK_BRITTLE_ICE);
+    }
 
     public static void crack(Block block, BlockState state, ServerWorld world, BlockPos pos, Random random) {
         int nextCrackingLevel = state.get(FBlockProperties.CRACKING) + 1;

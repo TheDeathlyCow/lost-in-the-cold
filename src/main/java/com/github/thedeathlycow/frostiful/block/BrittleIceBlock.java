@@ -37,7 +37,7 @@ public class BrittleIceBlock extends TranslucentBlock {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        if (!world.isClient()) {
+        if (!world.isClient() && BrittleIce.canCrackIce(entity)) {
             world.scheduleBlockTick(pos, this, BrittleIce.getCrackDelay(world.getRandom()));
         }
     }

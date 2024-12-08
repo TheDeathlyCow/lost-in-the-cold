@@ -12,6 +12,8 @@ public class FEntityTypeTags {
 
     public static final TagKey<EntityType<?>> HEAVY_ENTITY_TYPES = register("heavy_entity_types");
 
+    public static final TagKey<EntityType<?>> DOES_NOT_BREAK_BRITTLE_ICE = register("does_not_break_brittle_ice");
+
     private static TagKey<EntityType<?>> register(String id) {
         return TagKey.of(RegistryKeys.ENTITY_TYPE, Frostiful.id(id));
     }
@@ -20,4 +22,7 @@ public class FEntityTypeTags {
         return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of("c", id));
     }
 
+    private FEntityTypeTags() {
+
+    }
 }

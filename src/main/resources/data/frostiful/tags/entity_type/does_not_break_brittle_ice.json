@@ -1,0 +1,14 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:rabbit",
+        "minecraft:endermite",
+        "minecraft:silverfish",
+        "minecraft:fox",
+        "frostiful:chillager",
+        "frostiful:biter",
+        "frostiful:frostologer",
+        "minecraft:snow_golem",
+        "#minecraft:powder_snow_walkable_mobs"
+    ]
+}
