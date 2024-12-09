@@ -3,6 +3,7 @@ package com.github.thedeathlycow.frostiful;
 import com.github.thedeathlycow.frostiful.compat.FrostifulIntegrations;
 import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
 import com.github.thedeathlycow.frostiful.entity.loot.StrayLootTableModifier;
+import com.github.thedeathlycow.frostiful.item.FrostedBanner;
 import com.github.thedeathlycow.frostiful.item.cloak.AbstractFrostologyCloakItem;
 import com.github.thedeathlycow.frostiful.item.event.FrostResistanceProvider;
 import com.github.thedeathlycow.frostiful.registry.*;
@@ -51,6 +52,12 @@ public class Frostiful implements ModInitializer {
                         WindCommand.register(dispatcher);
                     });
         }
+
+        // TODO: remove to dev only before merge
+        CommandRegistrationCallback.EVENT.register(
+                (dispatcher, registryAccess, environment) -> {
+                    FrostedBanner.registerCommand(dispatcher);
+                });
 
         LootTableEvents.MODIFY.register(StrayLootTableModifier::addFrostTippedArrows);
 
