@@ -1,5 +1,4 @@
 {
-    "name": "frostiful:frostologer_castle/keep",
     "fallback": "minecraft:empty",
     "elements": [
         {
