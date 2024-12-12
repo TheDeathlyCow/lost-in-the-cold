@@ -31,6 +31,7 @@
         "item.EnchantmentEntityEffectMixin",
         "powder_snow_effects.EntityPowderSnowRedirect",
         "powder_snow_effects.LivingEntityPowderSnowDisabler",
+        "world.BiomeAccessor",
         "world.IcicleGrowthMixin",
         "world.ServerChunkManagerMixin",
         "world.WindSpawningMixin",
