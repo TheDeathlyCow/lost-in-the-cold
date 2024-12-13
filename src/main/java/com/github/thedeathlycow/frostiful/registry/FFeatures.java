@@ -1,13 +1,11 @@
 package com.github.thedeathlycow.frostiful.registry;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
-import com.github.thedeathlycow.frostiful.server.world.gen.feature.FreezeBrittleFeature;
 import com.github.thedeathlycow.frostiful.server.world.gen.feature.IcicleFeature;
 import com.github.thedeathlycow.frostiful.server.world.gen.feature.coveredrock.CoveredRockFeature;
 import com.github.thedeathlycow.frostiful.server.world.gen.feature.coveredrock.CoveredRockFeatureConfig;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 
@@ -20,11 +18,6 @@ public class FFeatures {
     public static final Feature<IcicleFeature.IcicleFeatureConfig> ICICLE_PATCH = register(
             "icicle_patch",
             new IcicleFeature(IcicleFeature.IcicleFeatureConfig.CODEC)
-    );
-
-    public static final Feature<DefaultFeatureConfig> BRITTLE_FREEZE_TOP_LAYER = register(
-            "brittle_freeze_top_layer",
-            new FreezeBrittleFeature(DefaultFeatureConfig.CODEC)
     );
 
     public static void initialize() {
