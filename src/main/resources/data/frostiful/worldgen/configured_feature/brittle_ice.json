@@ -17,7 +17,10 @@
             "threshold": 0.2,
             "high_chance": 1,
             "default_state": {
-                "Name": "frostiful:brittle_ice"
+                "Name": "frostiful:brittle_ice",
+                "Properties": {
+                    "frozen": "true"
+                }
             },
             "low_states": [
                 {
@@ -26,7 +29,10 @@
             ],
             "high_states": [
                 {
-                    "Name": "frostiful:brittle_ice"
+                    "Name": "frostiful:brittle_ice",
+                    "Properties": {
+                        "frozen": "true"
+                    }
                 }
             ]
         }
