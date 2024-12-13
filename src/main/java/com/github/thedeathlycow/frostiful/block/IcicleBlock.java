@@ -154,6 +154,7 @@ public class IcicleBlock extends Block implements LandingBlock, Waterloggable {
      * @param ctx Context for placement
      * @return Returns the {@link BlockState} to be placed
      */
+    @Override
     @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         WorldAccess worldAccess = ctx.getWorld();
@@ -263,7 +264,9 @@ public class IcicleBlock extends Block implements LandingBlock, Waterloggable {
 
     @Override
     public FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+        return Boolean.TRUE.equals(state.get(WATERLOGGED))
+                ? Fluids.WATER.getStill(false)
+                : super.getFluidState(state);
     }
 
     @Override
