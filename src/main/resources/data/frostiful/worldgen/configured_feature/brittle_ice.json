@@ -1,0 +1,40 @@
+{
+    "type": "minecraft:simple_block",
+    "config": {
+        "to_place": {
+            "type": "minecraft:noise_threshold_provider",
+            "seed": 1774268504,
+            "noise": {
+                "firstOctave": -7,
+                "amplitudes": [
+                    1,
+                    0,
+                    1,
+                    0
+                ]
+            },
+            "scale": 1,
+            "threshold": 0.2,
+            "high_chance": 1,
+            "default_state": {
+                "Name": "frostiful:brittle_ice",
+                "Properties": {
+                    "frozen": "true"
+                }
+            },
+            "low_states": [
+                {
+                    "Name": "minecraft:water"
+                }
+            ],
+            "high_states": [
+                {
+                    "Name": "frostiful:brittle_ice",
+                    "Properties": {
+                        "frozen": "true"
+                    }
+                }
+            ]
+        }
+    }
+}

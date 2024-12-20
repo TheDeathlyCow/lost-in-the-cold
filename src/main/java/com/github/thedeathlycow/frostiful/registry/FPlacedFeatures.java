@@ -15,6 +15,7 @@ public class FPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> SUN_LICHEN_COVERED_ROCK = of("sun_lichen_covered_rock");
     public static final RegistryKey<PlacedFeature> ICICLE_CLUSTER = of("icicle_cluster");
+    public static final RegistryKey<PlacedFeature> BRITTLE_ICE = of("brittle_ice");
 
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful placed features");
@@ -39,6 +40,17 @@ public class FPlacedFeatures {
                     biomeModificationContext.getGenerationSettings().addFeature(
                             GenerationStep.Feature.UNDERGROUND_DECORATION,
                             FPlacedFeatures.ICICLE_CLUSTER
+                    );
+                }
+        );
+
+        modification.add(
+                ModificationPhase.ADDITIONS,
+                BiomeSelectors.tag(FHasFeatureTags.BRITTLE_ICE),
+                (biomeSelectionContext, biomeModificationContext) -> {
+                    biomeModificationContext.getGenerationSettings().addFeature(
+                            GenerationStep.Feature.TOP_LAYER_MODIFICATION,
+                            FPlacedFeatures.BRITTLE_ICE
                     );
                 }
         );

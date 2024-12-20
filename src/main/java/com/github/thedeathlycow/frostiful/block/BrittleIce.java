@@ -5,6 +5,7 @@ import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.github.thedeathlycow.frostiful.registry.tag.FEntityTypeTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -32,6 +33,9 @@ public final class BrittleIce {
             world.scheduleBlockTick(pos, block, getCrackDelay(random));
         } else {
             world.breakBlock(pos, false, null);
+            if (state.get(FBlockProperties.FROZEN)) {
+                world.setBlockState(pos, Blocks.WATER.getDefaultState());
+            }
         }
     }
 
