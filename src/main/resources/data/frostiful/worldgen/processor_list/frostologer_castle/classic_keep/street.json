@@ -4,55 +4,55 @@
             "processor_type": "minecraft:rule",
             "rules": [
                 {
-                    "location_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:water"
-                    },
                     "input_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:packed_ice"
+                        "block": "minecraft:packed_ice",
+                        "predicate_type": "minecraft:block_match"
+                    },
+                    "location_predicate": {
+                        "block": "minecraft:water",
+                        "predicate_type": "minecraft:block_match"
                     },
                     "output_state": {
                         "Name": "minecraft:blue_ice"
                     }
                 },
                 {
-                    "location_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:ice"
-                    },
                     "input_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:packed_ice"
+                        "block": "minecraft:packed_ice",
+                        "predicate_type": "minecraft:block_match"
+                    },
+                    "location_predicate": {
+                        "block": "minecraft:ice",
+                        "predicate_type": "minecraft:block_match"
                     },
                     "output_state": {
                         "Name": "minecraft:blue_ice"
                     }
                 },
                 {
+                    "input_predicate": {
+                        "block": "minecraft:packed_ice",
+                        "predicate_type": "minecraft:random_block_match",
+                        "probability": 0.2
+                    },
                     "location_predicate": {
                         "predicate_type": "minecraft:always_true"
                     },
-                    "input_predicate": {
-                        "predicate_type": "minecraft:random_block_match",
-                        "block": "minecraft:packed_ice",
-                        "probability": 0.2
-                    },
                     "output_state": {
-                        "Name": "minecraft:powder_snow",
+                        "Name": "minecraft:grass_block",
                         "Properties": {
                             "snowy": "false"
                         }
                     }
                 },
                 {
-                    "location_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:water"
-                    },
                     "input_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:powder_snow"
+                        "block": "minecraft:grass_block",
+                        "predicate_type": "minecraft:block_match"
+                    },
+                    "location_predicate": {
+                        "block": "minecraft:water",
+                        "predicate_type": "minecraft:block_match"
                     },
                     "output_state": {
                         "Name": "minecraft:water",
@@ -62,13 +62,13 @@
                     }
                 },
                 {
-                    "location_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:water"
-                    },
                     "input_predicate": {
-                        "predicate_type": "minecraft:block_match",
-                        "block": "minecraft:dirt"
+                        "block": "minecraft:dirt",
+                        "predicate_type": "minecraft:block_match"
+                    },
+                    "location_predicate": {
+                        "block": "minecraft:water",
+                        "predicate_type": "minecraft:block_match"
                     },
                     "output_state": {
                         "Name": "minecraft:water",

@@ -2,30 +2,84 @@
     "fallback": "minecraft:empty",
     "elements": [
         {
-            "weight": 3,
+            "weight": 1,
             "element": {
                 "element_type": "minecraft:single_pool_element",
                 "projection": "terrain_matching",
                 "location": "frostiful:frostologer_castle/classic_keep/street1",
-                "processors": "minecraft:empty"
-            }
-        },
-        {
-            "weight": 3,
-            "element": {
-                "element_type": "minecraft:single_pool_element",
-                "projection": "terrain_matching",
-                "location": "frostiful:frostologer_castle/classic_keep/street2",
-                "processors": "minecraft:empty"
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
             }
         },
         {
             "weight": 1,
             "element": {
                 "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/street2",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/street3",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/street4",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/street5",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/street6",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
                 "projection": "rigid",
                 "location": "frostiful:frostologer_castle/classic_keep/gate1",
-                "processors": "minecraft:empty"
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "frostiful:frostologer_castle/classic_keep/street_tower1",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 5,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "frostiful:frostologer_castle/classic_keep/street_tower2",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
             }
         }
     ]
