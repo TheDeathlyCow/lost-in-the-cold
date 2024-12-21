@@ -1,5 +1,5 @@
 {
-    "fallback": "minecraft:empty",
+    "fallback": "frostiful:frostologer_castle/classic_keep/street_terminator",
     "elements": [
         {
             "weight": 1,
@@ -56,20 +56,11 @@
             }
         },
         {
-            "weight": 3,
+            "weight": 1,
             "element": {
                 "element_type": "minecraft:single_pool_element",
-                "projection": "rigid",
-                "location": "frostiful:frostologer_castle/classic_keep/gate1",
-                "processors": "frostiful:frostologer_castle/classic_keep/street"
-            }
-        },
-        {
-            "weight": 2,
-            "element": {
-                "element_type": "minecraft:single_pool_element",
-                "projection": "rigid",
-                "location": "frostiful:frostologer_castle/classic_keep/street_tower1",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/street7",
                 "processors": "frostiful:frostologer_castle/classic_keep/street"
             }
         },
@@ -77,8 +68,35 @@
             "weight": 5,
             "element": {
                 "element_type": "minecraft:single_pool_element",
-                "projection": "rigid",
-                "location": "frostiful:frostologer_castle/classic_keep/street_tower2",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/gate_base",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 5,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/gate_base_t",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/gate_base_terminator",
+                "processors": "frostiful:frostologer_castle/classic_keep/street"
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "terrain_matching",
+                "location": "frostiful:frostologer_castle/classic_keep/street_terminator",
                 "processors": "frostiful:frostologer_castle/classic_keep/street"
             }
         }
