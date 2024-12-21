@@ -2,7 +2,7 @@
     "fallback": "minecraft:empty",
     "elements": [
         {
-            "weight": 1,
+            "weight": 3,
             "element": {
                 "element_type": "minecraft:single_pool_element",
                 "projection": "rigid",
@@ -15,7 +15,7 @@
             "element": {
                 "element_type": "minecraft:single_pool_element",
                 "projection": "rigid",
-                "location": "frostiful:frostologer_castle/classic_keep/street_tower",
+                "location": "frostiful:frostologer_castle/classic_keep/ominous_tower",
                 "processors": "minecraft:empty"
             }
         }

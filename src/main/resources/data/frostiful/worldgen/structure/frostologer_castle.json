@@ -15,7 +15,7 @@
         }
     },
     "start_pool": "frostiful:frostologer_castle/keep",
-    "size": 5,
+    "size": 7,
     "step": "surface_structures",
     "terrain_adaptation": "beard_thin",
     "start_height": {

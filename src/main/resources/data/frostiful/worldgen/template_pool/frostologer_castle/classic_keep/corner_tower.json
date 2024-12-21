@@ -2,11 +2,20 @@
     "fallback": "minecraft:empty",
     "elements": [
         {
-            "weight": 1,
+            "weight": 3,
             "element": {
                 "element_type": "minecraft:single_pool_element",
                 "projection": "rigid",
                 "location": "frostiful:frostologer_castle/classic_keep/corner_tower",
+                "processors": "minecraft:empty"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "frostiful:frostologer_castle/classic_keep/ominous_corner_tower",
                 "processors": "minecraft:empty"
             }
         }
