@@ -67,6 +67,23 @@
                     ]
                 }
             ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_randomly",
+                            "options": [
+                                "frostiful:frozen_touch_curse"
+                            ]
+                        }
+                    ],
+                    "name": "minecraft:book"
+                }
+            ]
         }
     ]
 }
