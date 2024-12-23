@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:golden_apple",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:breeze_rod",
+                    "weight": 3
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "frostiful:chests/frostologer_castle/regular/reward_unique"
+}

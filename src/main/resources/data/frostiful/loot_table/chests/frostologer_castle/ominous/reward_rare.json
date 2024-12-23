@@ -6,7 +6,17 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "frostiful:fur_upgrade_template",
+                    "name": "minecraft:emerald_block",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:diamond_block",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:golden_apple",
                     "weight": 4
                 },
                 {
@@ -19,49 +29,6 @@
                                 "max": 20,
                                 "min": 5
                             },
-                            "options": "#minecraft:on_random_loot"
-                        }
-                    ],
-                    "name": "minecraft:crossbow",
-                    "weight": 2
-                },
-                {
-                    "type": "minecraft:item",
-                    "functions": [
-                        {
-                            "function": "minecraft:enchant_with_levels",
-                            "levels": {
-                                "type": "minecraft:uniform",
-                                "max": 10,
-                                "min": 0
-                            },
-                            "options": "#minecraft:on_random_loot"
-                        }
-                    ],
-                    "name": "minecraft:iron_sword",
-                    "weight": 2
-                },
-                {
-                    "type": "minecraft:item",
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": {
-                                "type": "minecraft:uniform",
-                                "max": 2,
-                                "min": 1
-                            },
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "minecraft:golden_carrot",
-                    "weight": 2
-                },
-                {
-                    "type": "minecraft:item",
-                    "functions": [
-                        {
-                            "function": "minecraft:enchant_randomly",
                             "options": [
                                 "frostiful:enervation",
                                 "frostiful:frozen_touch_curse",
@@ -71,13 +38,18 @@
                         }
                     ],
                     "name": "minecraft:book",
-                    "weight": 2
+                    "weight": 4
                 },
                 {
                     "type": "minecraft:item",
                     "functions": [
                         {
-                            "function": "minecraft:enchant_randomly",
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": {
+                                "type": "minecraft:uniform",
+                                "max": 20,
+                                "min": 5
+                            },
                             "options": [
                                 "frostiful:ice_breaker",
                                 "minecraft:frost_walker",
@@ -86,7 +58,7 @@
                         }
                     ],
                     "name": "minecraft:book",
-                    "weight": 2
+                    "weight": 4
                 },
                 {
                     "type": "minecraft:item",
@@ -95,13 +67,13 @@
                             "function": "minecraft:enchant_with_levels",
                             "levels": {
                                 "type": "minecraft:uniform",
-                                "max": 15,
-                                "min": 5
+                                "max": 20,
+                                "min": 10
                             },
                             "options": "#minecraft:on_random_loot"
                         }
                     ],
-                    "name": "minecraft:chainmail_helmet"
+                    "name": "frostiful:fur_padded_chainmail_helmet"
                 },
                 {
                     "type": "minecraft:item",
@@ -110,13 +82,13 @@
                             "function": "minecraft:enchant_with_levels",
                             "levels": {
                                 "type": "minecraft:uniform",
-                                "max": 15,
-                                "min": 5
+                                "max": 20,
+                                "min": 10
                             },
                             "options": "#minecraft:on_random_loot"
                         }
                     ],
-                    "name": "minecraft:chainmail_chestplate"
+                    "name": "frostiful:fur_padded_chainmail_chestplate"
                 },
                 {
                     "type": "minecraft:item",
@@ -125,13 +97,13 @@
                             "function": "minecraft:enchant_with_levels",
                             "levels": {
                                 "type": "minecraft:uniform",
-                                "max": 15,
-                                "min": 5
+                                "max": 20,
+                                "min": 10
                             },
                             "options": "#minecraft:on_random_loot"
                         }
                     ],
-                    "name": "minecraft:chainmail_leggings"
+                    "name": "frostiful:fur_padded_chainmail_leggings"
                 },
                 {
                     "type": "minecraft:item",
@@ -140,17 +112,17 @@
                             "function": "minecraft:enchant_with_levels",
                             "levels": {
                                 "type": "minecraft:uniform",
-                                "max": 15,
-                                "min": 5
+                                "max": 20,
+                                "min": 10
                             },
                             "options": "#minecraft:on_random_loot"
                         }
                     ],
-                    "name": "minecraft:chainmail_boots"
+                    "name": "frostiful:fur_padded_chainmail_boots"
                 }
             ],
             "rolls": 1
         }
     ],
-    "random_sequence": "frostiful:chests/frostologer_castle/regular/reward_rare"
+    "random_sequence": "frostiful:chests/frostologer_castle/ominous/reward_rare"
 }

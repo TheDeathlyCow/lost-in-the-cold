@@ -6,12 +6,12 @@
             "entries": [
                 {
                     "type": "minecraft:loot_table",
-                    "value": "frostiful:chests/frostologer_castle/regular/reward_rare",
+                    "value": "frostiful:chests/frostologer_castle/ominous/reward_rare",
                     "weight": 8
                 },
                 {
                     "type": "minecraft:loot_table",
-                    "value": "frostiful:chests/frostologer_castle/regular/reward_common",
+                    "value": "frostiful:chests/frostologer_castle/ominous/reward_common",
                     "weight": 2
                 }
             ],
@@ -22,7 +22,7 @@
             "entries": [
                 {
                     "type": "minecraft:loot_table",
-                    "value": "frostiful:chests/frostologer_castle/regular/reward_common"
+                    "value": "frostiful:chests/frostologer_castle/ominous/reward_common"
                 }
             ],
             "rolls": {
@@ -35,18 +35,18 @@
             "bonus_rolls": 0,
             "conditions": [
                 {
-                    "chance": 0.25,
+                    "chance": 0.75,
                     "condition": "minecraft:random_chance"
                 }
             ],
             "entries": [
                 {
                     "type": "minecraft:loot_table",
-                    "value": "frostiful:chests/frostologer_castle/regular/reward_unique"
+                    "value": "frostiful:chests/frostologer_castle/ominous/reward_unique"
                 }
             ],
             "rolls": 1
         }
     ],
-    "random_sequence": "frostiful:chests/frostologer_castle/regular/reward"
+    "random_sequence": "frostiful:chests/frostologer_castle/ominous/reward"
 }

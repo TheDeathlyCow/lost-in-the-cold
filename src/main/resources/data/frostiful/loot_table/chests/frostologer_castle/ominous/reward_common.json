@@ -1,0 +1,99 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 10,
+                                "min": 4
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:emerald",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 12,
+                                "min": 8
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:fire_charge",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 12,
+                                "min": 4
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "frostiful:glacial_arrow",
+                    "weight": 3
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 3,
+                                "min": 2
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:diamond",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 1,
+                            "function": "minecraft:set_count"
+                        },
+                        {
+                            "amplifier": {
+                                "type": "minecraft:uniform",
+                                "max": 4,
+                                "min": 2
+                            },
+                            "function": "minecraft:set_ominous_bottle_amplifier"
+                        }
+                    ],
+                    "name": "minecraft:ominous_bottle"
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:breeze_rod"
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "frostiful:chests/frostologer_castle/ominous/reward_common"
+}

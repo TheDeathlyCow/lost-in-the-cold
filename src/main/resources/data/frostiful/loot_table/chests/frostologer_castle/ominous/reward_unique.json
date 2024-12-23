@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:enchanted_golden_apple",
+                    "weight": 3
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "frostiful:snowflake_banner_pattern",
+                    "weight": 3
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "frostiful:frosty_armor_trim_smithing_template",
+                    "weight": 2
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "frostiful:chests/frostologer_castle/ominous/reward_unique"
+}
