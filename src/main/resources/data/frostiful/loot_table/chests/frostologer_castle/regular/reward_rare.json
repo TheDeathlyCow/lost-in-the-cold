@@ -1,0 +1,155 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "frostiful:fur_upgrade_template",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": {
+                                "type": "minecraft:uniform",
+                                "max": 20,
+                                "min": 5
+                            },
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ],
+                    "name": "minecraft:crossbow",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": {
+                                "type": "minecraft:uniform",
+                                "max": 10,
+                                "min": 0
+                            },
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ],
+                    "name": "minecraft:iron_sword",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 2,
+                                "min": 1
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:golden_carrot",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_randomly",
+                            "options": [
+                                "frostiful:enervation",
+                                "frostiful:frozen_touch_curse",
+                                "minecraft:unbreaking"
+                            ]
+                        }
+                    ],
+                    "name": "minecraft:book",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_randomly",
+                            "options": [
+                                "frostiful:ice_breaker",
+                                "minecraft:frost_walker",
+                                "minecraft:unbreaking"
+                            ]
+                        }
+                    ],
+                    "name": "minecraft:book",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": {
+                                "type": "minecraft:uniform",
+                                "max": 15,
+                                "min": 5
+                            },
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ],
+                    "name": "minecraft:chainmail_helmet"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": {
+                                "type": "minecraft:uniform",
+                                "max": 15,
+                                "min": 5
+                            },
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ],
+                    "name": "minecraft:chainmail_chestplate"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": {
+                                "type": "minecraft:uniform",
+                                "max": 15,
+                                "min": 5
+                            },
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ],
+                    "name": "minecraft:chainmail_leggings"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": {
+                                "type": "minecraft:uniform",
+                                "max": 15,
+                                "min": 5
+                            },
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ],
+                    "name": "minecraft:chainmail_boots"
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "frostiful:chests/frostologer_castle/regular/reward_rare"
+}
