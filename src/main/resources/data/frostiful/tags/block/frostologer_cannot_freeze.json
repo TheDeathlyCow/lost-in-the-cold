@@ -2,6 +2,11 @@
     "replace": false,
     "values": [
         "#minecraft:portals",
-        "minecraft:beacon"
+        "minecraft:beacon",
+        "minecraft:vault",
+        "minecraft:trial_spawner",
+        "minecraft:spawner",
+        "frostiful:icy_vault",
+        "frostiful:icy_trial_spawner"
     ]
 }
