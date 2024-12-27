@@ -1,0 +1,199 @@
+{
+    "type": "minecraft:equipment",
+    "pools": [
+        {
+            "rolls": 1,
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "components": {
+                                "minecraft:trim": {
+                                    "material": "minecraft:diamond",
+                                    "pattern": "frostiful:frosty"
+                                }
+                            },
+                            "function": "minecraft:set_components"
+                        },
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:fire_protection": 4,
+                                "minecraft:projectile_protection": 4,
+                                "minecraft:protection": 4
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:chainmail_helmet"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "components": {
+                                "minecraft:trim": {
+                                    "material": "minecraft:diamond",
+                                    "pattern": "frostiful:frosty"
+                                }
+                            },
+                            "function": "minecraft:set_components"
+                        },
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:fire_protection": 4,
+                                "minecraft:projectile_protection": 4,
+                                "minecraft:protection": 4
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:iron_helmet"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "components": {
+                                "minecraft:trim": {
+                                    "material": "minecraft:diamond",
+                                    "pattern": "frostiful:frosty"
+                                }
+                            },
+                            "function": "minecraft:set_components"
+                        },
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:fire_protection": 4,
+                                "minecraft:projectile_protection": 4,
+                                "minecraft:protection": 4
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:diamond_helmet"
+                }
+            ]
+        },
+        {
+            "bonus_rolls": 0,
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "components": {
+                                "minecraft:trim": {
+                                    "material": "minecraft:diamond",
+                                    "pattern": "frostiful:frosty"
+                                }
+                            },
+                            "function": "minecraft:set_components"
+                        },
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:fire_protection": 4,
+                                "minecraft:projectile_protection": 4,
+                                "minecraft:protection": 4
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:chainmail_chestplate"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "components": {
+                                "minecraft:trim": {
+                                    "material": "minecraft:diamond",
+                                    "pattern": "frostiful:frosty"
+                                }
+                            },
+                            "function": "minecraft:set_components"
+                        },
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:fire_protection": 4,
+                                "minecraft:projectile_protection": 4,
+                                "minecraft:protection": 4
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:iron_chestplate"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "components": {
+                                "minecraft:trim": {
+                                    "material": "minecraft:diamond",
+                                    "pattern": "frostiful:frosty"
+                                }
+                            },
+                            "function": "minecraft:set_components"
+                        },
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:fire_protection": 4,
+                                "minecraft:projectile_protection": 4,
+                                "minecraft:protection": 4
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:diamond_chestplate"
+                }
+            ]
+        },
+        {
+            "bonus_rolls": 0,
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:bow",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:power": 1
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:bow"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:punch": 1
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:bow"
+                }
+            ]
+        }
+    ],
+    "random_sequence": "frostiful:equipment/frostologer_castle/stray_ominous"
+}

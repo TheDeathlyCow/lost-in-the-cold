@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:equipment",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:chainmail_helmet"
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "frostiful:equipment/frostologer_castle/stray"
+}

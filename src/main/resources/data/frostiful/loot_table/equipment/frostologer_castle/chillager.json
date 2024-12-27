@@ -10,7 +10,7 @@
                         {
                             "add": false,
                             "enchantments": {
-                                "minecraft:power": 2
+                                "minecraft:power": 3
                             },
                             "function": "minecraft:set_enchantments"
                         }
@@ -23,7 +23,7 @@
                         {
                             "add": false,
                             "enchantments": {
-                                "minecraft:quick_charge": 2
+                                "minecraft:quick_charge": 3
                             },
                             "function": "minecraft:set_enchantments"
                         }
