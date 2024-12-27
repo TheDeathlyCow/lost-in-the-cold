@@ -9,6 +9,8 @@
         "frostiful:biter",
         "frostiful:frostologer",
         "minecraft:snow_golem",
-        "#minecraft:powder_snow_walkable_mobs"
+        "#minecraft:powder_snow_walkable_mobs",
+        "minecraft:bat",
+        "minecraft:stray"
     ]
 }
