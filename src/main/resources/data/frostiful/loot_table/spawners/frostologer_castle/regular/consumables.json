@@ -1,0 +1,101 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 1,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:cooked_chicken",
+                    "weight": 3
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 3,
+                                "min": 1
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:pumpkin_pie",
+                    "weight": 3
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 3,
+                                "min": 1
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:cooked_cod",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 1,
+                            "function": "minecraft:set_count"
+                        },
+                        {
+                            "function": "minecraft:set_potion",
+                            "id": "minecraft:regeneration"
+                        }
+                    ],
+                    "name": "minecraft:potion"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 1,
+                            "function": "minecraft:set_count"
+                        },
+                        {
+                            "function": "minecraft:set_potion",
+                            "id": "minecraft:swiftness"
+                        }
+                    ],
+                    "name": "minecraft:potion"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 4,
+                                "min": 1
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:torch"
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "frostiful:spawners/frostologer_castle/ominous/consumables"
+}
