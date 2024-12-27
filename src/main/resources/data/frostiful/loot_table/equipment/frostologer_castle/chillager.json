@@ -1,0 +1,38 @@
+{
+    "type": "minecraft:equipment",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:power": 2
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:crossbow"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "enchantments": {
+                                "minecraft:quick_charge": 2
+                            },
+                            "function": "minecraft:set_enchantments"
+                        }
+                    ],
+                    "name": "minecraft:crossbow"
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "random_sequence": "frostiful:equipment/frostologer_castle/chillager"
+}
