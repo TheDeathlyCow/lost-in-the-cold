@@ -1,0 +1,46 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "frostiful:chests/frostologer_castle/ominous/reward_rare",
+                    "weight": 2
+                },
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "frostiful:chests/frostologer_castle/ominous/reward_common",
+                    "weight": 1
+                }
+            ],
+            "rolls": {
+                "type": "minecraft:uniform",
+                "max": 3,
+                "min": 1
+            }
+        },
+        {
+            "bonus_rolls": 0,
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "frostiful:glacial_heart"
+                }
+            ]
+        },
+        {
+            "bonus_rolls": 0,
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "frostiful:inert_frostology_cloak"
+                }
+            ]
+        }
+    ],
+    "random_sequence": "frostiful:chests/frostologer_castle/regular/reward_boss"
+}

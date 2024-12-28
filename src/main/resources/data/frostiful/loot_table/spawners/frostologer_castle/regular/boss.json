@@ -10,16 +10,6 @@
                 }
             ],
             "rolls": 1
-        },
-        {
-            "bonus_rolls": 0,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "frostiful:glacial_heart"
-                }
-            ],
-            "rolls": 1
         }
     ],
     "random_sequence": "frostiful:spawners/frostologer_castle/regular/boss"
