@@ -95,7 +95,8 @@
                             "function": "minecraft:set_count"
                         }
                     ],
-                    "name": "frostiful:hot_sun_lichen"
+                    "name": "frostiful:hot_sun_lichen",
+                    "weight": 4
                 }
             ],
             "rolls": 1

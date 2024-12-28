@@ -91,7 +91,8 @@
                             "function": "minecraft:set_count"
                         }
                     ],
-                    "name": "minecraft:torch"
+                    "name": "minecraft:torch",
+                    "weight": 4
                 }
             ],
             "rolls": 1
