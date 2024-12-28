@@ -5,11 +5,16 @@
             "rolls": 1,
             "entries": [
                 {
-                    "type": "minecraft:item",
-                    "name": "frostiful:glacial_heart",
-                    "conditions": [
+                    "type": "minecraft:tag",
+                    "name": "c:icicles",
+                    "expand": true,
+                    "functions": [
                         {
-                            "condition": "minecraft:killed_by_player"
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 0,
+                                "max": 2
+                            }
                         }
                     ]
                 }
