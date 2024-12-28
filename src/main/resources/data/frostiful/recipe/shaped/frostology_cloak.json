@@ -1,13 +1,24 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "I I",
+        "P#P",
+        "PCP"
+    ],
+    "key": {
+        "#": {
             "item": "frostiful:glacial_heart"
         },
-        {
+        "I": {
+            "tag": "c:icicles"
+        },
+        "P": {
+            "item": "frostiful:fur_padding"
+        },
+        "C": {
             "item": "frostiful:inert_frostology_cloak"
         }
-    ],
+    },
     "result": {
         "id": "frostiful:frostology_cloak",
         "count": 1,
