@@ -14,9 +14,12 @@ public class FArmorTrimPatterns {
 
     public static final RegistryKey<ArmorTrimPattern> FROSTY = of("frosty");
 
+    public static final RegistryKey<ArmorTrimPattern> GLACIAL = of("glacial");
+
     public static void bootstrap(Registerable<ArmorTrimPattern> registry) {
         Frostiful.LOGGER.debug("Bootstrap Frostiful armor trim patterns");
         register(registry, FItems.FROSTY_ARMOR_TRIM_SMITHING_TEMPLATE, FROSTY);
+        register(registry, FItems.GLACIAL_ARMOR_TRIM_SMITHING_TEMPLATE, GLACIAL);
     }
 
     private static void register(Registerable<ArmorTrimPattern> registry, Item template, RegistryKey<ArmorTrimPattern> key) {
