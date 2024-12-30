@@ -11,7 +11,7 @@
                 },
                 {
                     "type": "minecraft:item",
-                    "name": "minecraft:breeze_rod",
+                    "name": "frostiful:frozen_rod",
                     "weight": 3
                 }
             ],
