@@ -20,6 +20,7 @@ public class FItemGroups {
                     .icon(() -> new ItemStack(FItems.FROST_WAND))
                     .displayName(Text.translatable("itemGroup.frostiful.frostiful"))
                     .entries((context, entries) -> {
+                        entries.add(new ItemStack(FItems.FROZEN_ROD));
                         entries.add(new ItemStack(FItems.FROST_WAND));
                         entries.add(new ItemStack(FItems.INERT_FROSTOLOGY_CLOAK));
                         addEnchantedFrostologyCloak(context, entries);

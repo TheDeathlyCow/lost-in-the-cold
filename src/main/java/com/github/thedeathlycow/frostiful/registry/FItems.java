@@ -333,6 +333,11 @@ public class FItems {
             new BlockItem(FBlocks.BRITTLE_ICE, new Item.Settings())
     );
 
+    public static final Item FROZEN_ROD = register(
+            "frozen_rod",
+            new Item(new Item.Settings())
+    );
+
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful items");
         FSmithingTemplateItem.addTemplatesToLoot();
