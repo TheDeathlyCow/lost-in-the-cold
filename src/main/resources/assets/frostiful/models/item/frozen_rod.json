@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/handheld",
     "textures": {
-        "layer0": "minecraft:item/breeze_rod"
+        "layer0": "frostiful:item/frozen_rod"
     }
 }
