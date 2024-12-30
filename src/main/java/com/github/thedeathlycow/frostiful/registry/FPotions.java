@@ -29,7 +29,7 @@ public class FPotions {
         Frostiful.LOGGER.debug("Initialized Frostiful potions");
         FabricBrewingRecipeRegistryBuilder.BUILD.register(
                 builder -> {
-                    builder.registerPotionRecipe(Potions.AWKWARD, FItems.ICICLE, FPotions.FREEZING);
+                    builder.registerPotionRecipe(Potions.AWKWARD, FItems.FROZEN_ROD, FPotions.FREEZING);
                     builder.registerPotionRecipe(FPotions.FREEZING, Items.REDSTONE, FPotions.FREEZING_LONG);
                     builder.registerPotionRecipe(FPotions.FREEZING, Items.GLOWSTONE_DUST, FPotions.FREEZING_STRONG);
                 }

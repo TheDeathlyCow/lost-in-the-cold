@@ -11,8 +11,18 @@
                 },
                 {
                     "type": "minecraft:item",
-                    "name": "frostiful:frozen_rod",
-                    "weight": 3
+                    "name": "minecraft:blue_ice",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 1,
+                                "min": 3
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ]
                 }
             ],
             "rolls": 1

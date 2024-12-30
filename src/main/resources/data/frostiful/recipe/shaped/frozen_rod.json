@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:blue_ice"
+        }
+    },
+    "result": {
+        "id": "frostiful:frozen_rod",
+        "count": 1
+    }
+}
