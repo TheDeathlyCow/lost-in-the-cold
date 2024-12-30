@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#S#",
+        "#C#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:diamond"
+        },
+        "C": [
+            {
+                "item": "frostiful:cut_blue_ice"
+            },
+            {
+                "item": "minecraft:blue_ice"
+            }
+        ],
+        "S": {
+            "item": "frostiful:glacial_armor_trim_smithing_template"
+        }
+    },
+    "result": {
+        "id": "frostiful:glacial_armor_trim_smithing_template",
+        "count": 2
+    }
+}
