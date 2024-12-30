@@ -340,7 +340,7 @@ public class FItems {
 
     public static final Item GLACIAL_ARMOR_TRIM_SMITHING_TEMPLATE = register(
             "glacial_armor_trim_smithing_template",
-            SmithingTemplateItem.of(FArmorTrimPatterns.FROSTY)
+            SmithingTemplateItem.of(FArmorTrimPatterns.GLACIAL)
     );
 
     public static void initialize() {
