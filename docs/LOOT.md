@@ -13,9 +13,11 @@
 
 ### Everywhere
 * Heat Drain Enchantments
-* Frosty Trim (Ominous)
-* Snowflake Banner (Ominous)
+* Frosty Trim (Regular)
+* Snowflake Banner (Regular)
+* Glacial Trim (Ominous)
+* Icicle Banner (Ominous)
 
-### Frostologer Room Only
+### Frostologer Room
 * Glacial Heart
 * Inert Frostology Cloak (Ominous)
