@@ -8,15 +8,16 @@
 * Chainmail Armour
 * Fur Tufts
 * Fur Padding
+* Snowflake Banner
 
 # Frostologer Castle
 
 ### Everywhere
 * Heat Drain Enchantments
 * Frosty Trim (Regular)
-* Snowflake Banner (Regular)
+* Icicle Banner (Regular)
 * Glacial Trim (Ominous)
-* Icicle Banner (Ominous)
+* Frostology Banner (Ominous)
 
 ### Frostologer Room
 * Glacial Heart
