@@ -546,7 +546,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             World world = frostologer.getWorld();
 
             int heatDrain = Frostiful.getConfig().combatConfig.getFrostologerHeatDrainPerTick();
-            frostologer.thermoo$addTemperature(60);
+            frostologer.thermoo$addTemperature(heatDrain);
 
             for (LivingEntity victim : world.getEntitiesByClass(LivingEntity.class, box, entity -> entity != frostologer)) {
                 victim.thermoo$addTemperature(-heatDrain, HeatingModes.ACTIVE);
