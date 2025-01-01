@@ -2,6 +2,7 @@ package com.github.thedeathlycow.frostiful.entity.frostologer;
 
 import com.github.thedeathlycow.frostiful.registry.FItems;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
+import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.ProjectileAttackGoal;
 import net.minecraft.util.Hand;
@@ -37,9 +38,12 @@ class FrostWandCastGoal extends ProjectileAttackGoal {
         frostologerEntity.setAttacking(false);
         frostologerEntity.clearActiveItem();
         this.stopUsingFrostWand();
+        if (frostologerEntity.isTargetRooted()) {
+            frostologerEntity.thermoo$addTemperature(-500);
+        }
     }
 
-    void startUsingFrostWand() {
+    private void startUsingFrostWand() {
         frostologerEntity.playSound(
                 FSoundEvents.ITEM_FROST_WAND_PREPARE_CAST,
                 1.0f, 1.0f
@@ -47,7 +51,7 @@ class FrostWandCastGoal extends ProjectileAttackGoal {
         frostologerEntity.getDataTracker().set(FrostologerEntity.IS_USING_FROST_WAND, true);
     }
 
-    void stopUsingFrostWand() {
+    private void stopUsingFrostWand() {
         frostologerEntity.getDataTracker().set(FrostologerEntity.IS_USING_FROST_WAND, false);
     }
 }

@@ -28,15 +28,9 @@ public class CombatConfigGroup implements ConfigData {
 
     float packedSnowballVulnerableTypesDamage = 5.0f;
 
-    int frostologerPassiveFreezingPerTick = 2;
-
-    float frostologerMaxPassiveFreezing = 0.5f;
-
     int biterFrostBiteMaxAmplifier = 2;
 
     float chillagerFireDamageMultiplier = 1.5f;
-
-    int frostologerIntolerableHeat = 9;
 
     @ConfigEntry.Gui.RequiresRestart
     float furUpgradeTemplateGenerateChance = 0.5f;
@@ -88,24 +82,12 @@ public class CombatConfigGroup implements ConfigData {
         return packedSnowballVulnerableTypesDamage;
     }
 
-    public int getFrostologerPassiveFreezingPerTick() {
-        return frostologerPassiveFreezingPerTick;
-    }
-
-    public float getFrostologerMaxPassiveFreezing() {
-        return frostologerMaxPassiveFreezing;
-    }
-
     public int getBiterFrostBiteMaxAmplifier() {
         return Math.max(0, this.biterFrostBiteMaxAmplifier);
     }
 
     public float getChillagerFireDamageMultiplier() {
         return chillagerFireDamageMultiplier;
-    }
-
-    public int getFrostologerIntolerableHeat() {
-        return frostologerIntolerableHeat;
     }
 
     public float getFurUpgradeTemplateGenerateChance() {

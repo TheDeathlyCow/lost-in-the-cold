@@ -107,18 +107,8 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32.0)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 150.0)
-                .add(ThermooAttributes.MIN_TEMPERATURE, 5.0);
-    }
-
-    public boolean isInHeatedArea() {
-        World world = this.getWorld();
-        EnvironmentController controller = EnvironmentManager.INSTANCE.getController();
-
-        CombatConfigGroup config = Frostiful.getConfig().combatConfig;
-        int intolerableHeat = config.getFrostologerIntolerableHeat();
-
-        return world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)
-                && controller.getHeatAtLocation(world, this.getBlockPos()) > intolerableHeat;
+                .add(ThermooAttributes.MIN_TEMPERATURE, 5.0)
+                .add(ThermooAttributes.MAX_TEMPERATURE, 0.0);
     }
 
     public boolean isAtMaxPower() {
@@ -248,6 +238,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             @Nullable EntityData entityData
     ) {
         this.initEquipment(world.getRandom(), difficulty);
+        this.updateEnchantments(world, random, difficulty);
         return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
@@ -255,8 +246,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
     public void initEquipment(Random random, LocalDifficulty difficulty) {
         this.setStackInHand(Hand.MAIN_HAND, new ItemStack(FItems.FROST_WAND));
         this.equipStack(EquipmentSlot.CHEST, new ItemStack(FItems.FROSTOLOGY_CLOAK));
-        // TODO: figure out enchanting equipment
-        // this.enchantMainHandItem(this.getWorld(), random, difficulty.getClampedLocalDifficulty());
 
         // equipment drops handled with loot table
         this.setEquipmentDropChance(EquipmentSlot.MAINHAND, 0.0f);
@@ -277,14 +266,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         if (this.getWorld().isClient && this.isAtMaxPower()) {
             this.spawnPowerParticles();
-        }
-
-        FrostifulConfig config = Frostiful.getConfig();
-        if (this.isTargetPlayer() && this.thermoo$getTemperatureScale() > -config.combatConfig.getFrostologerMaxPassiveFreezing()) {
-            this.thermoo$addTemperature(
-                    -config.combatConfig.getFrostologerPassiveFreezingPerTick(),
-                    HeatingModes.PASSIVE
-            );
         }
     }
 
@@ -330,7 +311,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         stepPositionsPool[0] = frostologerPos;
         stepPositionsPool[1] = frostologerPos.down();
         for (BlockPos blockPos : stepPositionsPool) {
-
             BlockState blockState = world.getBlockState(blockPos);
             if (EnvironmentManager.INSTANCE.getController().isHeatSource(blockState)) {
                 this.destroyHeatSource(serverWorld, blockState, blockPos);
@@ -554,30 +534,25 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         @Override
         public void tick() {
+            FrostologerEntity frostologer = FrostologerEntity.this;
 
-            Box box = FrostologerEntity.this.getBoundingBox().expand(this.range);
+            Box box = frostologer.getBoundingBox().expand(this.range);
 
-            @Nullable
-            ServerWorld serverWorld = null;
-            World world = FrostologerEntity.this.getWorld();
-            if (!world.isClient) {
-                serverWorld = (ServerWorld) world;
+            if (frostologer.isOnFire()) {
+                frostologer.extinguish();
+                frostologer.playExtinguishSound();
             }
 
-            if (FrostologerEntity.this.isOnFire()) {
-                FrostologerEntity.this.extinguish();
-                FrostologerEntity.this.playExtinguishSound();
-            }
+            World world = frostologer.getWorld();
 
             int heatDrain = Frostiful.getConfig().combatConfig.getFrostologerHeatDrainPerTick();
-            FrostologerEntity.this.thermoo$addTemperature(heatDrain, HeatingModes.ACTIVE);
-            for (LivingEntity victim : world.getEntitiesByClass(LivingEntity.class, box, entity -> true)) {
+            frostologer.thermoo$addTemperature(60);
+
+            for (LivingEntity victim : world.getEntitiesByClass(LivingEntity.class, box, entity -> entity != frostologer)) {
                 victim.thermoo$addTemperature(-heatDrain, HeatingModes.ACTIVE);
 
-                if (serverWorld != null) {
-                    HeatDrainEnchantmentEffect.addHeatDrainParticles(
-                            serverWorld, victim, FrostologerEntity.this, 5, 0.08
-                    );
+                if (world instanceof ServerWorld serverWorld) {
+                    HeatDrainEnchantmentEffect.addHeatDrainParticles(serverWorld, victim, frostologer, 5, 0.08);
                 }
             }
 
