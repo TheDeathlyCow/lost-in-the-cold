@@ -228,6 +228,7 @@
   "text.autoconfig.frostiful.option.combatConfig.frostWandCooldown": "Frost Wand cool down (ticks)",
   "text.autoconfig.frostiful.option.combatConfig.frostWandRootTime": "Frost Wand root time (ticks)",
   "text.autoconfig.frostiful.option.combatConfig.frostologerHeatDrainPerTick": "Frostologer heat drain per tick",
+  "text.autoconfig.frostiful.option.combatConfig.frostologerCoolingFromFrostWandHit": "Frostologer Cooling from Frost Wand hit",
   "text.autoconfig.frostiful.option.combatConfig.packedSnowballFreezeAmount": "Packed snowball freeze amount",
   "text.autoconfig.frostiful.option.combatConfig.packedSnowballDamage": "Packed snowball damage",
   "text.autoconfig.frostiful.option.combatConfig.packedSnowballVulnerableTypesDamage": "Packed snowball vulnerable types damage",

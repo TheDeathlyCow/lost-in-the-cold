@@ -22,6 +22,8 @@ public class CombatConfigGroup implements ConfigData {
 
     int frostologerHeatDrainPerTick = 30;
 
+    int frostologerCoolingFromFrostWandHit = 6300 / 6;
+
     int packedSnowballFreezeAmount = 500;
 
     float packedSnowballDamage = 2.0f;
@@ -68,6 +70,10 @@ public class CombatConfigGroup implements ConfigData {
     public int getFrostologerHeatDrainPerTick() {
         // multiply by 2 as goals only twice at half the rate of normal
         return 2 * frostologerHeatDrainPerTick;
+    }
+
+    public int getFrostologerCoolingFromFrostWandHit() {
+        return frostologerCoolingFromFrostWandHit;
     }
 
     public int getPackedSnowballFreezeAmount() {

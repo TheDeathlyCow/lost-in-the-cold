@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.frostiful.entity.frostologer;
 
+import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.registry.FItems;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
@@ -39,7 +40,8 @@ class FrostWandCastGoal extends ProjectileAttackGoal {
         frostologerEntity.clearActiveItem();
         this.stopUsingFrostWand();
         if (frostologerEntity.isTargetRooted()) {
-            frostologerEntity.thermoo$addTemperature(-500);
+            int cooling = -Frostiful.getConfig().combatConfig.getFrostologerCoolingFromFrostWandHit();
+            frostologerEntity.thermoo$addTemperature(cooling);
         }
     }
 
