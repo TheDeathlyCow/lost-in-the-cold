@@ -199,8 +199,8 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         this.goalSelector.add(2, new FleeEntityGoal<>(this, IronGolemEntity.class, 8.0F, 1.2, 1.5));
 
+        this.goalSelector.add(3, new IcicleAttackGoal(UniformIntProvider.create(20, 30), UniformIntProvider.create(15, 25)));
         this.goalSelector.add(4, new FrostWandAttackGoal(this));
-        this.goalSelector.add(4, new IcicleAttackGoal(UniformIntProvider.create(20, 30)));
 
         this.goalSelector.add(6, new DestroyHeatSourcesGoal(15));
 
@@ -515,21 +515,8 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         @Override
         public boolean canStart() {
-            // no super call as that requires a target to be selected
-            if (FrostologerEntity.this.isSpellcasting()) {
-                return false;
-            } else if (FrostologerEntity.this.age < this.startTime) {
-                return false;
-            } else if (!FrostologerEntity.this.hasTarget()) {
-                return false;
-            } else {
-                return FrostologerEntity.this.thermoo$getTemperatureScale() <= -0.95f;
-            }
-        }
-
-        @Override
-        public boolean shouldContinue() {
-            return this.spellCooldown > 0;
+            FrostologerEntity frostologer = FrostologerEntity.this;
+            return super.canStart() && frostologer.thermoo$getTemperature() <= frostologer.thermoo$getMinTemperature();
         }
 
         @Override
@@ -561,7 +548,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         @Override
         protected void castSpell() {
-
             World world = getWorld();
             if (!world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
                 return;
@@ -569,6 +555,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
             BlockPos origin = FrostologerEntity.this.getBlockPos();
             Vec3i distance = new Vec3i(this.range, this.range, this.range);
+
             for (BlockPos pos : BlockPos.iterate(origin.subtract(distance), origin.add(distance))) {
                 BlockState state = world.getBlockState(pos);
                 if (EnvironmentManager.INSTANCE.getController().isHeatSource(state) && world instanceof ServerWorld serverWorld) {
@@ -611,12 +598,13 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         private final IntProvider numIciclesProvider;
 
-        private static final int ICICLE_ATTACK_COOL_DOWN = 20;
+        private final IntProvider cooldownProvider;
 
         private int nextStartTime = -1;
 
-        public IcicleAttackGoal(IntProvider numIciclesProvider) {
+        public IcicleAttackGoal(IntProvider numIciclesProvider, IntProvider cooldownProvider) {
             this.numIciclesProvider = numIciclesProvider;
+            this.cooldownProvider = cooldownProvider;
         }
 
         @Override
@@ -632,8 +620,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         public boolean canStart() {
             if (FrostologerEntity.this.age <= nextStartTime) {
                 return false;
-            } else if (FrostologerEntity.this.random.nextInt(2) == 0) {
-                return false;
             } else if (!super.canStart()) {
                 return false;
             } else {
@@ -646,7 +632,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             ServerWorld serverWorld = (ServerWorld) getWorld();
 
             int numIcicles = this.numIciclesProvider.get(random);
-            nextStartTime = FrostologerEntity.this.age + ICICLE_ATTACK_COOL_DOWN;
+            nextStartTime = FrostologerEntity.this.age + cooldownProvider.get(random) * 20;
             for (int i = 0; i < numIcicles; ++i) {
                 BlockPos blockPos = FrostologerEntity.this.getBlockPos()
                         .add(
