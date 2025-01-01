@@ -2,13 +2,17 @@ package com.github.thedeathlycow.frostiful.entity;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
+import com.github.thedeathlycow.frostiful.entity.damage.FDamageTypes;
+import com.github.thedeathlycow.frostiful.registry.tag.FDamageTypeTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -54,6 +58,18 @@ public interface RootedEntity {
         };
     }
 
+    static void afterDamage(LivingEntity entity, DamageSource source, float baseDamageTaken, float damageTaken, boolean blocked) {
+        boolean breakRoot = !blocked
+                && damageTaken > 0f
+                && !source.isIn(FDamageTypeTags.DOES_NOT_BREAK_ROOT)
+                && entity instanceof RootedEntity rooted
+                && rooted.frostiful$isRooted();
+
+        if (breakRoot) {
+            RootedEntity.breakRootOnEntity(entity);
+        }
+    }
+
     static void breakRootOnEntity(LivingEntity victim) {
         RootedEntity rootedEntity = (RootedEntity) victim;
         World world = victim.getWorld();
@@ -82,6 +98,4 @@ public interface RootedEntity {
                 1.0f, 0.75f
         );
     }
-
-
 }

@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.profiler.Profiler;
 import net.minecraft.world.World;
@@ -59,17 +60,6 @@ public abstract class RootedEntityImplMixin extends Entity implements RootedEnti
         }
 
         return instance.thermoo$canFreeze();
-    }
-
-    @Inject(
-            method = "damage",
-            at = @At("RETURN")
-    )
-    private void shatterIceOnDamaged(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (!cir.getReturnValue() || source.isOf(FDamageTypes.BROKEN_ICE) || !this.frostiful$isRooted()) {
-            return;
-        }
-        RootedEntity.breakRootOnEntity((LivingEntity) (Object) this);
     }
 
     @Inject(
