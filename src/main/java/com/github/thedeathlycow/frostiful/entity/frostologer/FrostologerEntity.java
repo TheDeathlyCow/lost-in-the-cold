@@ -149,11 +149,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         if (state.isIn(FBlockTags.FROSTOLOGER_CANNOT_FREEZE)) {
             frozenState = state;
         } else if (blockPos.equals(this.getBlockPos())) {
-            if (fluidState.isIn(FluidTags.WATER)) {
-                frozenState = Blocks.WATER.getDefaultState();
-            } else {
-                frozenState = Blocks.AIR.getDefaultState();
-            }
+            frozenState = Blocks.AIR.getDefaultState();
         } else if (state.isIn(FBlockTags.HOT_FLOOR)) {
             frozenState = Blocks.COBBLESTONE.getDefaultState();
         } else if (state.isFullCube(world, blockPos)) {
@@ -163,8 +159,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         } else if (heatedBlock instanceof AbstractTorchBlock) {
             BlockState torch = FrozenTorchBlock.freezeTorch(state);
             frozenState = torch != null ? torch : Blocks.AIR.getDefaultState();
-        } else if (state.contains(Properties.WATERLOGGED) && Boolean.TRUE.equals(state.get(Properties.WATERLOGGED))) {
-            frozenState = Blocks.ICE.getDefaultState();
         } else {
             frozenState = Blocks.AIR.getDefaultState();
         }
@@ -549,7 +543,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             } else if (!FrostologerEntity.this.hasTarget()) {
                 return false;
             } else {
-                return FrostologerEntity.this.thermoo$getTemperatureScale() >= -0.05f;
+                return FrostologerEntity.this.thermoo$getTemperatureScale() <= -0.95f;
             }
         }
 
@@ -576,6 +570,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             }
 
             int heatDrain = Frostiful.getConfig().combatConfig.getFrostologerHeatDrainPerTick();
+            FrostologerEntity.this.thermoo$addTemperature(heatDrain, HeatingModes.ACTIVE);
             for (LivingEntity victim : world.getEntitiesByClass(LivingEntity.class, box, entity -> true)) {
                 victim.thermoo$addTemperature(-heatDrain, HeatingModes.ACTIVE);
 
