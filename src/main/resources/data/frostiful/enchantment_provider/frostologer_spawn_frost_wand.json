@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:by_cost_with_difficulty",
+    "enchantments": [
+        "frostiful:frozen_touch_curse",
+        "frostiful:ice_breaker"
+    ],
+    "max_cost_span": 20,
+    "min_cost": 5
+}
