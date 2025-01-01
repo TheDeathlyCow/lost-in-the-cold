@@ -76,7 +76,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class FrostologerEntity extends SpellcastingIllagerEntity implements RangedAttackMob {
 
-    private static final TrackedData<Boolean> IS_USING_FROST_WAND = DataTracker.registerData(
+    static final TrackedData<Boolean> IS_USING_FROST_WAND = DataTracker.registerData(
             FrostologerEntity.class, TrackedDataHandlerRegistry.BOOLEAN
     );
 
@@ -211,7 +211,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new SpellcastingIllagerEntity.LookAtTargetGoal());
 
-        this.goalSelector.add(2, new FrostWandCastGoal(this, 1.0, 40, 10f));
+        this.goalSelector.add(2, new FrostWandCastGoal(this, this, 1.0, 40, 10f));
 
         this.goalSelector.add(2, new FleeEntityGoal<>(this, IronGolemEntity.class, 8.0F, 1.2, 1.5));
 
@@ -518,49 +518,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putBoolean("IsUsingFrostWand", this.dataTracker.get(IS_USING_FROST_WAND));
-    }
-
-    protected class FrostWandCastGoal extends ProjectileAttackGoal {
-
-        public FrostWandCastGoal(RangedAttackMob mob, double mobSpeed, int intervalTicks, float maxShootRange) {
-            super(mob, mobSpeed, intervalTicks, maxShootRange);
-        }
-
-        @Override
-        public boolean canStart() {
-            return super.canStart()
-                    && FrostologerEntity.this.hasTarget()
-                    && !FrostologerEntity.this.isTargetRooted()
-                    && FrostologerEntity.this.getMainHandStack().isOf(FItems.FROST_WAND);
-        }
-
-        @Override
-        public void start() {
-            super.start();
-            FrostologerEntity.this.setAttacking(true);
-            FrostologerEntity.this.setCurrentHand(Hand.MAIN_HAND);
-            this.startUsingFrostWand();
-        }
-
-        @Override
-        public void stop() {
-            super.stop();
-            FrostologerEntity.this.setAttacking(false);
-            FrostologerEntity.this.clearActiveItem();
-            this.stopUsingFrostWand();
-        }
-
-        private void startUsingFrostWand() {
-            FrostologerEntity.this.playSound(
-                    FSoundEvents.ITEM_FROST_WAND_PREPARE_CAST,
-                    1.0f, 1.0f
-            );
-            FrostologerEntity.this.dataTracker.set(IS_USING_FROST_WAND, true);
-        }
-
-        private void stopUsingFrostWand() {
-            FrostologerEntity.this.dataTracker.set(IS_USING_FROST_WAND, false);
-        }
     }
 
     protected class DestroyHeatSourcesGoal extends SpellcastingIllagerEntity.CastSpellGoal {
