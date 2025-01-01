@@ -214,7 +214,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         this.goalSelector.add(2, new FleeEntityGoal<>(this, IronGolemEntity.class, 8.0F, 1.2, 1.5));
 
         this.goalSelector.add(4, new FrostWandAttackGoal());
-        this.goalSelector.add(4, new SummonMinionsGoal());
         this.goalSelector.add(4, new IcicleAttackGoal(UniformIntProvider.create(20, 30)));
 
         this.goalSelector.add(6, new DestroyHeatSourcesGoal(15));
@@ -604,8 +603,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             } else if (!FrostologerEntity.this.hasTarget()) {
                 return false;
             } else {
-                return FrostologerEntity.this.isOnFire()
-                        || FrostologerEntity.this.isInHeatedArea();
+                return FrostologerEntity.this.thermoo$getTemperatureScale() >= -0.05f;
             }
         }
 
@@ -691,99 +689,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             return Spell.DISAPPEAR;
         }
 
-    }
-
-    protected class SummonMinionsGoal extends SpellcastingIllagerEntity.CastSpellGoal {
-        private static final TargetPredicate IS_MINION = TargetPredicate.createNonAttackable()
-                .setBaseMaxDistance(16.0)
-                .ignoreVisibility()
-                .ignoreDistanceScalingFactor();
-
-        // I could make this configurable, but it's for the sake of stopping biter spam and not really a significant mechanic
-        private static final int SUMMON_BITER_COOL_DOWN = 5 * 20;
-
-        private int nextStartTime = -1;
-
-        @Override
-        public void start() {
-            super.start();
-            if (FrostologerEntity.this.isOnFire()) {
-                FrostologerEntity.this.extinguish();
-                FrostologerEntity.this.playExtinguishSound();
-            }
-        }
-
-        @Override
-        public boolean canStart() {
-            if (FrostologerEntity.this.age <= nextStartTime) {
-                return false;
-            } else if (FrostologerEntity.this.random.nextInt(2) == 0) {
-                return false;
-            } else if (!super.canStart()) {
-                return false;
-            } else if (!FrostologerEntity.this.isTargetRooted()) {
-                return false;
-            } else {
-                int numNearbyMinions = getWorld().getTargets(
-                        BiterEntity.class,
-                        IS_MINION,
-                        FrostologerEntity.this,
-                        FrostologerEntity.this.getBoundingBox().expand(16.0)
-                ).size();
-
-                return FrostologerEntity.this.random.nextInt(8) + 1 > numNearbyMinions;
-            }
-        }
-
-        @Override
-        protected void castSpell() {
-            ServerWorld serverWorld = (ServerWorld) getWorld();
-            nextStartTime = FrostologerEntity.this.age + SUMMON_BITER_COOL_DOWN;
-
-            for (int i = 0; i < 3; ++i) {
-                BlockPos blockPos = FrostologerEntity.this.getBlockPos();
-
-                // use vex entity as placeholder for custom minions
-                BiterEntity minionEntity = FEntityTypes.BITER.create(serverWorld);
-
-                if (minionEntity == null) {
-                    return;
-                }
-
-                minionEntity.refreshPositionAndAngles(blockPos, 0.0F, 0.0F);
-
-                minionEntity.initialize(
-                        serverWorld,
-                        serverWorld.getLocalDifficulty(blockPos),
-                        SpawnReason.MOB_SUMMONED,
-                        null
-                );
-                minionEntity.setOwner(FrostologerEntity.this);
-
-                serverWorld.spawnEntityAndPassengers(minionEntity);
-            }
-        }
-
-        @Override
-        protected int getSpellTicks() {
-            return 20;
-        }
-
-        @Override
-        protected int startTimeDelay() {
-            return 20;
-        }
-
-        @Nullable
-        @Override
-        protected SoundEvent getSoundPrepare() {
-            return SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON;
-        }
-
-        @Override
-        protected Spell getSpell() {
-            return Spell.SUMMON_VEX;
-        }
     }
 
     protected class IcicleAttackGoal extends SpellcastingIllagerEntity.CastSpellGoal {
