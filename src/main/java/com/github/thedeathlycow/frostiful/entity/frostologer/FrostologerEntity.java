@@ -80,9 +80,9 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             FrostologerEntity.class, TrackedDataHandlerRegistry.BOOLEAN
     );
 
-    public static final float MAX_POWER_SCALE_START = -0.95f;
+    public static final float MAX_POWER_SCALE_START = -0.75f;
     private static final int NUM_POWER_PARTICLES = 2;
-    private static final float START_PLACING_SNOW_TEMP = -0.8f;
+    private static final float START_PLACING_SNOW_TEMP = -0.75f;
 
 
     public float prevStrideDistance;
