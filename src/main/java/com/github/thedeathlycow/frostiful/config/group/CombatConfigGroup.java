@@ -39,7 +39,7 @@ public class CombatConfigGroup implements ConfigData {
     int frostologerIntolerableHeat = 9;
 
     @ConfigEntry.Gui.RequiresRestart
-    float skateUpgradeTemplateIglooGenerateChance = 0.5f;
+    float skateUpgradeTemplateIglooGenerateChance = 0.75f;
 
     @ConfigEntry.Gui.RequiresRestart
     double veryProtectiveFrostResistanceMultiplier = 1.0;
