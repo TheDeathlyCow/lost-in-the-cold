@@ -215,7 +215,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         this.goalSelector.add(2, new FleeEntityGoal<>(this, IronGolemEntity.class, 8.0F, 1.2, 1.5));
 
-        this.goalSelector.add(4, new FrostWandAttackGoal());
+        this.goalSelector.add(4, new FrostWandAttackGoal(this));
         this.goalSelector.add(4, new IcicleAttackGoal(UniformIntProvider.create(20, 30)));
 
         this.goalSelector.add(6, new DestroyHeatSourcesGoal(15));
@@ -518,19 +518,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
         nbt.putBoolean("IsUsingFrostWand", this.dataTracker.get(IS_USING_FROST_WAND));
-    }
-
-    protected class FrostWandAttackGoal extends AttackGoal {
-        public FrostWandAttackGoal() {
-            super(FrostologerEntity.this);
-        }
-
-        @Override
-        public boolean canStart() {
-            return FrostologerEntity.this.isTargetRooted()
-                    && super.canStart();
-        }
-
     }
 
     protected class FrostWandCastGoal extends ProjectileAttackGoal {
