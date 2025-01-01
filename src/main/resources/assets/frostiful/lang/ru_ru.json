@@ -229,8 +229,7 @@
   "text.autoconfig.frostiful.option.combatConfig.frostologerMaxPassiveFreezing": "Процент пассивного обморожения от Морозбойника (0-1)",
   "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Кол-во обморожения от кусаки, при атаке замороженного игрока (включительно)",
   "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Множитель урона от огня хладному лучнику",
-  "text.autoconfig.frostiful.option.combatConfig.furUpgradeTemplateGenerateChance": "Процент появления Мехового улучшения (0-1)",
-  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateGenerateChance": "Процент появления Улучшения скольжения (0-1)",
+  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Процент появления Улучшения скольжения (0-1)",
   
   "text.autoconfig.frostiful.option.freezingConfig": "Настройки обморожения",
   "text.autoconfig.frostiful.option.freezingConfig.doPassiveFreezing": "Включить пассивное обморожение (для всех игроков)",

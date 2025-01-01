@@ -231,8 +231,7 @@
     "text.autoconfig.frostiful.option.combatConfig.frostologerMaxPassiveFreezing": "Jäälogistin maksimi passivisen jäätymisen prosentti (0-1)",
     "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Maksimipakkasenpureman maksimitaso (inklusiivinen)",
     "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Viilentäjän tulivahingon kerroin",
-    "text.autoconfig.frostiful.option.combatConfig.furUpgradeTemplateGenerateChance": "Turkkipäivityksen generointimahdollisuus (0-1)",
-    "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateGenerateChance": "Luistinpäivityksen generointimahdollisuus (0-1)",
+    "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Luistinpäivityksen generointimahdollisuus (0-1)",
     
     "text.autoconfig.frostiful.option.freezingConfig": "Jäätymisasetukset",
     "text.autoconfig.frostiful.option.freezingConfig.doPassiveFreezing": "Passiivinen jäätyminen (globaali)",

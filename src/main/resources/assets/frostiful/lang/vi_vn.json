@@ -228,8 +228,7 @@
 "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Cường độ tối đa của Cắn Giá của Người Cắn (bao gồm)",
 "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Bội số sát thương lửa của Lạnh Giả",
 "text.autoconfig.frostiful.option.combatConfig.frostologerIntolerableHeat": "Nhiệt độ không thể chịu đựng của Băng Sư",
-"text.autoconfig.frostiful.option.combatConfig.furUpgradeTemplateGenerateChance": "Cơ hội sinh ra mẫu nâng cấp lông (0-1)",
-"text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateGenerateChance": "Cơ hội sinh ra mẫu nâng cấp giày trượt băng (0-1)",
+"text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Cơ hội sinh ra mẫu nâng cấp giày trượt băng (0-1)",
 "text.autoconfig.frostiful.option.combatConfig.veryProtectiveFrostResistanceMultiplier": "Hệ số chống đóng băng rất bảo vệ",
 "text.autoconfig.frostiful.option.combatConfig.protectiveFrostResistanceMultiplier": "Hệ số chống đóng băng bảo vệ",
 

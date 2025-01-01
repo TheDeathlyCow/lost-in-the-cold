@@ -39,10 +39,7 @@ public class CombatConfigGroup implements ConfigData {
     int frostologerIntolerableHeat = 9;
 
     @ConfigEntry.Gui.RequiresRestart
-    float furUpgradeTemplateGenerateChance = 0.5f;
-
-    @ConfigEntry.Gui.RequiresRestart
-    float skateUpgradeTemplateGenerateChance = 0.33f;
+    float skateUpgradeTemplateIglooGenerateChance = 0.5f;
 
     @ConfigEntry.Gui.RequiresRestart
     double veryProtectiveFrostResistanceMultiplier = 1.0;
@@ -108,12 +105,8 @@ public class CombatConfigGroup implements ConfigData {
         return frostologerIntolerableHeat;
     }
 
-    public float getFurUpgradeTemplateGenerateChance() {
-        return MathHelper.clamp(furUpgradeTemplateGenerateChance, 0f, 1f);
-    }
-
-    public float getSkateUpgradeTemplateGenerateChance() {
-        return MathHelper.clamp(skateUpgradeTemplateGenerateChance, 0f, 1f);
+    public float getSkateUpgradeTemplateIglooGenerateChance() {
+        return MathHelper.clamp(skateUpgradeTemplateIglooGenerateChance, 0f, 1f);
     }
 
     public double getVeryProtectiveFrostResistanceMultiplier() {

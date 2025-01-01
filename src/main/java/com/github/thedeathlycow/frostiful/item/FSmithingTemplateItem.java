@@ -26,14 +26,9 @@ public class FSmithingTemplateItem {
     public static void addTemplatesToLoot() {
         FrostifulConfig config = Frostiful.getConfig();
         addTemplateToLoot(
-                FItems.FUR_UPGRADE_TEMPLATE,
-                Identifier.ofVanilla("chests/igloo_chest"),
-                config.combatConfig.getFurUpgradeTemplateGenerateChance()
-        );
-        addTemplateToLoot(
                 FItems.ICE_SKATE_UPGRADE_TEMPLATE,
-                Identifier.ofVanilla("chests/village/village_snowy_house"),
-                config.combatConfig.getSkateUpgradeTemplateGenerateChance()
+                Identifier.ofVanilla("chests/igloo_chest"),
+                config.combatConfig.getSkateUpgradeTemplateIglooGenerateChance()
         );
     }
 

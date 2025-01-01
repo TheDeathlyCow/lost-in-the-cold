@@ -208,8 +208,7 @@
   "text.autoconfig.frostiful.option.combatConfig.frostologerMaxPassiveFreezing": "Відсоток макс. пасивного замороження морозолога (0 — 1)",
   "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Макс. підсилювач макс. обмороження (включно)",
   "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Множник шкоди пострілу морозника",
-  "text.autoconfig.frostiful.option.combatConfig.furUpgradeTemplateGenerateChance": "Шанс генерації хутряного покращення (0 — 1)",
-  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateGenerateChance": "Шанс генерації покращення ковзанів (0 — 1)",
+  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Шанс генерації покращення ковзанів (0 — 1)",
 
   "text.autoconfig.frostiful.option.freezingConfig": "Конфігурація замороження",
   "text.autoconfig.frostiful.option.freezingConfig.doPassiveFreezing": "Пасивне замороження (глобальне)",
