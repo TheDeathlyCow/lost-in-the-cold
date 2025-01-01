@@ -1,9 +1,12 @@
-package com.github.thedeathlycow.frostiful.entity;
+package com.github.thedeathlycow.frostiful.entity.frostologer;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.block.FrozenTorchBlock;
 import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
 import com.github.thedeathlycow.frostiful.config.group.CombatConfigGroup;
+import com.github.thedeathlycow.frostiful.entity.BiterEntity;
+import com.github.thedeathlycow.frostiful.entity.RootedEntity;
+import com.github.thedeathlycow.frostiful.entity.ThrownIcicleEntity;
 import com.github.thedeathlycow.frostiful.item.FrostWandItem;
 import com.github.thedeathlycow.frostiful.item.enchantment.HeatDrainEnchantmentEffect;
 import com.github.thedeathlycow.frostiful.registry.FEntityTypes;
@@ -23,7 +26,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.RangedAttackMob;
-import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -256,7 +258,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
     }
 
     @Override
-    protected void initEquipment(Random random, LocalDifficulty difficulty) {
+    public void initEquipment(Random random, LocalDifficulty difficulty) {
         this.setStackInHand(Hand.MAIN_HAND, new ItemStack(FItems.FROST_WAND));
         this.equipStack(EquipmentSlot.CHEST, new ItemStack(FItems.FROSTOLOGY_CLOAK));
         // TODO: figure out enchanting equipment

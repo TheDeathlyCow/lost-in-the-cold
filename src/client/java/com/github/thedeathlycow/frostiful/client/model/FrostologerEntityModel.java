@@ -1,6 +1,6 @@
 package com.github.thedeathlycow.frostiful.client.model;
 
-import com.github.thedeathlycow.frostiful.entity.FrostologerEntity;
+import com.github.thedeathlycow.frostiful.entity.frostologer.FrostologerEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
