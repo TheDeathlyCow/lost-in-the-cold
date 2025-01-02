@@ -13,4 +13,7 @@ public interface EntityInvoker {
     @Invoker("isInsideBubbleColumn")
     boolean frostiful$invokeIsInsideBubbleColumn();
 
+    @Invoker("playExtinguishSound")
+    void frostiful$invokePlayExtinguishSound();
+
 }
