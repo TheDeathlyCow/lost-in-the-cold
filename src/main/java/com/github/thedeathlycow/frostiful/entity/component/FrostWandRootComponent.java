@@ -71,7 +71,7 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
         if (provider.isSpectator()) {
             this.setRootedTicks(0);
         } else if (this.isRooted()) {
-            this.rootedTicks--;
+            this.setRootedTicks(this.getRootedTicks() - 1);
 
             if (provider.isOnFire()) {
                 this.breakRoot();
