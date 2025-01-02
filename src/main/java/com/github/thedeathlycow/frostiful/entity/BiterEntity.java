@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.frostiful.entity;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
+import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.github.thedeathlycow.frostiful.registry.FStatusEffects;
 import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
@@ -64,16 +65,21 @@ public class BiterEntity extends HostileEntity {
         }
     }
 
+    @Override
     public boolean tryAttack(Entity target) {
         this.attackTicks = ATTACK_TIME;
         this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_ATTACK_SOUND);
         this.playAttackSound();
-        if (target instanceof LivingEntity livingTarget && ((RootedEntity) livingTarget).frostiful$isRooted()) {
-
+        if (target instanceof LivingEntity livingTarget && FComponents.FROST_WAND_ROOT_COMPONENT.get(livingTarget).isRooted()) {
             int maxAmplifier = Frostiful.getConfig().combatConfig.getBiterFrostBiteMaxAmplifier() + 1;
 
             livingTarget.addStatusEffect(
-                    new StatusEffectInstance(FStatusEffects.FROST_BITE, 20 * 15, this.random.nextInt(maxAmplifier)), this
+                    new StatusEffectInstance(
+                            FStatusEffects.FROST_BITE,
+                            20 * 15,
+                            this.random.nextInt(maxAmplifier)
+                    ),
+                    this
             );
         }
         return super.tryAttack(target);
@@ -82,7 +88,7 @@ public class BiterEntity extends HostileEntity {
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        builder.add(ICE_GOLEM_FLAGS, (byte)0);
+        builder.add(ICE_GOLEM_FLAGS, (byte) 0);
     }
 
     protected void initGoals() {
@@ -169,7 +175,7 @@ public class BiterEntity extends HostileEntity {
             flags &= ~mask;
         }
 
-        this.dataTracker.set(ICE_GOLEM_FLAGS, (byte)(flags & 0xff));
+        this.dataTracker.set(ICE_GOLEM_FLAGS, (byte) (flags & 0xff));
     }
 
     public void playAttackSound() {

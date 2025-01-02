@@ -1,6 +1,6 @@
 package com.github.thedeathlycow.frostiful.mixins.entity.root;
 
-import com.github.thedeathlycow.frostiful.entity.RootedEntity;
+import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.util.math.Vec3d;
@@ -20,7 +20,7 @@ public class EntityMovementBlockMixin {
     private void blockMovementForRootedEntities(Vec3d movement, MovementType type, CallbackInfoReturnable<Vec3d> cir) {
         Entity instance = (Entity) (Object) this;
 
-        Vec3d adjustedMovement = RootedEntity.getMovementWhenRooted(type, movement, instance);
+        Vec3d adjustedMovement = FrostWandRootComponent.adjustMovementForRoot(type, movement, instance);
         if (adjustedMovement != null) {
             cir.setReturnValue(adjustedMovement);
         }

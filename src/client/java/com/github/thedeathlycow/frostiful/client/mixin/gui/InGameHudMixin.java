@@ -2,7 +2,6 @@ package com.github.thedeathlycow.frostiful.client.mixin.gui;
 
 import com.github.thedeathlycow.frostiful.client.gui.FrostOverlayRenderer;
 import com.github.thedeathlycow.frostiful.client.gui.RootedOverlayRenderer;
-import com.github.thedeathlycow.frostiful.entity.RootedEntity;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -57,7 +56,7 @@ public abstract class InGameHudMixin {
     private void renderRootedOverlay(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
         if (this.client.player != null) {
             RootedOverlayRenderer.render(
-                    (RootedEntity) this.client.player,
+                    this.client.player,
                     context, tickCounter,
                     this::renderOverlay
             );

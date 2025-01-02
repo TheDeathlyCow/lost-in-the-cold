@@ -22,21 +22,17 @@ public class CombatConfigGroup implements ConfigData {
 
     int frostologerHeatDrainPerTick = 30;
 
+    int frostologerCoolingFromFrostWandHit = 6300 / 6;
+
     int packedSnowballFreezeAmount = 500;
 
     float packedSnowballDamage = 2.0f;
 
     float packedSnowballVulnerableTypesDamage = 5.0f;
 
-    int frostologerPassiveFreezingPerTick = 2;
-
-    float frostologerMaxPassiveFreezing = 0.5f;
-
     int biterFrostBiteMaxAmplifier = 2;
 
     float chillagerFireDamageMultiplier = 1.5f;
-
-    int frostologerIntolerableHeat = 9;
 
     @ConfigEntry.Gui.RequiresRestart
     float skateUpgradeTemplateIglooGenerateChance = 0.75f;
@@ -73,6 +69,10 @@ public class CombatConfigGroup implements ConfigData {
         return 2 * frostologerHeatDrainPerTick;
     }
 
+    public int getFrostologerCoolingFromFrostWandHit() {
+        return frostologerCoolingFromFrostWandHit;
+    }
+
     public int getPackedSnowballFreezeAmount() {
         return packedSnowballFreezeAmount;
     }
@@ -85,24 +85,12 @@ public class CombatConfigGroup implements ConfigData {
         return packedSnowballVulnerableTypesDamage;
     }
 
-    public int getFrostologerPassiveFreezingPerTick() {
-        return frostologerPassiveFreezingPerTick;
-    }
-
-    public float getFrostologerMaxPassiveFreezing() {
-        return frostologerMaxPassiveFreezing;
-    }
-
     public int getBiterFrostBiteMaxAmplifier() {
         return Math.max(0, this.biterFrostBiteMaxAmplifier);
     }
 
     public float getChillagerFireDamageMultiplier() {
         return chillagerFireDamageMultiplier;
-    }
-
-    public int getFrostologerIntolerableHeat() {
-        return frostologerIntolerableHeat;
     }
 
     public float getSkateUpgradeTemplateIglooGenerateChance() {

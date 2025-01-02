@@ -3,6 +3,7 @@ package com.github.thedeathlycow.frostiful.registry;
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.entity.component.BrushableComponent;
 import com.github.thedeathlycow.frostiful.entity.component.LivingEntityComponents;
+import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.OcelotEntity;
 import net.minecraft.entity.passive.PolarBearEntity;
@@ -19,6 +20,11 @@ public class FComponents implements EntityComponentInitializer {
             LivingEntityComponents.class
     );
 
+    public static final ComponentKey<FrostWandRootComponent> FROST_WAND_ROOT_COMPONENT = ComponentRegistry.getOrCreate(
+            Frostiful.id("frost_wand_root"),
+            FrostWandRootComponent.class
+    );
+
     public static final ComponentKey<BrushableComponent> BRUSHABLE_COMPONENT = ComponentRegistry.getOrCreate(
             Frostiful.id("brushable"),
             BrushableComponent.class
@@ -30,6 +36,11 @@ public class FComponents implements EntityComponentInitializer {
                 LivingEntity.class,
                 ENTITY_COMPONENTS,
                 LivingEntityComponents::new
+        );
+        registry.registerFor(
+                LivingEntity.class,
+                FROST_WAND_ROOT_COMPONENT,
+                FrostWandRootComponent::new
         );
         registry.registerFor(
                 PolarBearEntity.class,

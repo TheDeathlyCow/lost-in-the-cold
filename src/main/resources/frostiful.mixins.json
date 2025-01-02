@@ -25,7 +25,6 @@
         "entity.mob.WolfPlayFightMixin",
         "entity.root.EntityMovementBlockMixin",
         "entity.root.PlayerMovementBlockMixin",
-        "entity.root.RootedEntityImplMixin",
         "item.ArmorTrimPatternsMixin",
         "item.ConsumeItemCriterionMixin",
         "item.EnchantmentEntityEffectMixin",

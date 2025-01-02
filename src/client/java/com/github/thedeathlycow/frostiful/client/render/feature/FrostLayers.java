@@ -1,7 +1,7 @@
 package com.github.thedeathlycow.frostiful.client.render.feature;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
-import com.github.thedeathlycow.frostiful.entity.FrostologerEntity;
+import com.github.thedeathlycow.frostiful.entity.frostologer.FrostologerEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.util.Identifier;
@@ -13,8 +13,8 @@ import java.util.stream.Stream;
 public enum FrostLayers {
 
     NONE(0.0f, null),
-    LOW(-0.5f, Frostiful.id("textures/entity/illager/frostologer/low_frost.png")),
-    MEDIUM(-0.75f, Frostiful.id("textures/entity/illager/frostologer/medium_frost.png")),
+    LOW(-0.25f, Frostiful.id("textures/entity/illager/frostologer/low_frost.png")),
+    MEDIUM(-0.5f, Frostiful.id("textures/entity/illager/frostologer/medium_frost.png")),
     HIGH(FrostologerEntity.MAX_POWER_SCALE_START, Frostiful.id("textures/entity/illager/frostologer/high_frost.png"));
 
     public static final FrostLayers[] LAYERS_WITHOUT_NONE = Stream.of(FrostLayers.values())

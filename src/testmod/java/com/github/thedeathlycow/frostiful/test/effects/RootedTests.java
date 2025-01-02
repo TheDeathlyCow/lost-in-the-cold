@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.frostiful.test.effects;
 
-import com.github.thedeathlycow.frostiful.entity.RootedEntity;
+import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
+import com.github.thedeathlycow.frostiful.registry.FComponents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.test.GameTest;
@@ -16,8 +17,8 @@ public class RootedTests {
         BlockPos end = start.add(2, 0, 2);
 
         MobEntity entity = context.spawnMob(EntityType.VILLAGER, start);
-        RootedEntity rootedEntity = (RootedEntity) entity;
-        rootedEntity.frostiful$root(null);
+        FrostWandRootComponent rootComponent = FComponents.FROST_WAND_ROOT_COMPONENT.get(entity);
+        rootComponent.tryRootFromFrostWand(null);
 
         context.startMovingTowards(entity, end, 1.0f);
         context.expectEntityAtEnd(EntityType.VILLAGER, start);
@@ -39,22 +40,22 @@ public class RootedTests {
         BlockPos start = new BlockPos(1, 2, 1);
 
         MobEntity entity = context.spawnMob(EntityType.VILLAGER, start);
-        RootedEntity rootedEntity = (RootedEntity) entity;
+        FrostWandRootComponent rootComponent = FComponents.FROST_WAND_ROOT_COMPONENT.get(entity);
 
         // initial root
-        rootedEntity.frostiful$root(null);
+        rootComponent.tryRootFromFrostWand(null);
 
-        int initialRootTicks = rootedEntity.frostiful$getRootedTicks();
-        context.assertTrue(rootedEntity.frostiful$isRooted(), "Villager is not rooted");
+        int initialRootTicks = rootComponent.getRootedTicks();
+        context.assertTrue(rootComponent.isRooted(), "Villager is not rooted");
 
         context.waitAndRun(
                 10L,
                 () -> {
-                    context.assertTrue(rootedEntity.frostiful$isRooted(), "Villager is not rooted for re-apply");
+                    context.assertTrue(rootComponent.isRooted(), "Villager is not rooted for re-apply");
                     // root again, before root is expired
-                    rootedEntity.frostiful$root(null);
+                    rootComponent.tryRootFromFrostWand(null);
 
-                    int newRootTicks = rootedEntity.frostiful$getRootedTicks();
+                    int newRootTicks = rootComponent.getRootedTicks();
                     context.assertFalse(
                             newRootTicks >= initialRootTicks,
                             "Villager root ticks were not reset"

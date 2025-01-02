@@ -1,6 +1,6 @@
 package com.github.thedeathlycow.frostiful.client.mixin.entity_renderer;
 
-import com.github.thedeathlycow.frostiful.entity.RootedEntity;
+import com.github.thedeathlycow.frostiful.registry.FComponents;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
@@ -45,15 +45,15 @@ public class RootedEffectRenderer<T extends LivingEntity, M extends EntityModel<
             )
     )
     private void renderIceOnEntity(T livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo ci) {
-        if (livingEntity instanceof RootedEntity rootedEntity && rootedEntity.frostiful$isRooted()) {
+        if (FComponents.FROST_WAND_ROOT_COMPONENT.get(livingEntity).isRooted()) {
             matrixStack.push();
             float blockSize = 1.75f;
             Box boundingBox = livingEntity.getBoundingBox();
             BlockPos blockPos = BlockPos.ofFloored(livingEntity.getX(), boundingBox.minY, livingEntity.getZ());
             matrixStack.scale(
-                    blockSize * (float)boundingBox.getLengthX(),
-                    blockSize * (float)boundingBox.getLengthY(),
-                    blockSize * (float)boundingBox.getLengthZ()
+                    blockSize * (float) boundingBox.getLengthX(),
+                    blockSize * (float) boundingBox.getLengthY(),
+                    blockSize * (float) boundingBox.getLengthZ()
             );
             matrixStack.translate(-0.5, -0.3, -0.5);
             this.frostiful$renderBlock(livingEntity, matrixStack, vertexConsumerProvider, blockPos);

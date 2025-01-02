@@ -2,24 +2,15 @@
     "type": "minecraft:chest",
     "pools": [
         {
+            "rolls": 1,
             "bonus_rolls": 0,
             "entries": [
                 {
                     "type": "minecraft:loot_table",
-                    "value": "frostiful:chests/frostologer_castle/ominous/reward_rare",
+                    "value": "frostiful:chests/frostologer_castle/ominous/reward",
                     "weight": 2
-                },
-                {
-                    "type": "minecraft:loot_table",
-                    "value": "frostiful:chests/frostologer_castle/ominous/reward_common",
-                    "weight": 1
                 }
-            ],
-            "rolls": {
-                "type": "minecraft:uniform",
-                "max": 3,
-                "min": 1
-            }
+            ]
         },
         {
             "bonus_rolls": 0,
