@@ -193,7 +193,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new SpellcastingIllagerEntity.LookAtTargetGoal());
 
-        this.goalSelector.add(2, new FrostWandCastGoal(this, this, 1.0, 40, 10f));
+        this.goalSelector.add(2, new FrostWandCastGoal(this, 1.0, 40, 10f));
 
         this.goalSelector.add(2, new FleeEntityGoal<>(this, IronGolemEntity.class, 8.0F, 1.2, 1.5));
 
@@ -241,7 +241,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
     }
 
     @Override
-    protected void updateEnchantments(ServerWorldAccess world, Random random, LocalDifficulty localDifficulty) {
+    protected void enchantMainHandItem(ServerWorldAccess world, Random random, LocalDifficulty localDifficulty) {
         ItemStack stack = this.getEquippedStack(EquipmentSlot.MAINHAND);
         if (!stack.isEmpty()) {
             EnchantmentHelper.applyEnchantmentProvider(

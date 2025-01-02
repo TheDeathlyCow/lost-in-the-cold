@@ -3,8 +3,6 @@ package com.github.thedeathlycow.frostiful.entity.frostologer;
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.registry.FItems;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
-import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
-import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.ProjectileAttackGoal;
 import net.minecraft.util.Hand;
 
@@ -12,9 +10,9 @@ class FrostWandCastGoal extends ProjectileAttackGoal {
 
     private final FrostologerEntity frostologerEntity;
 
-    public FrostWandCastGoal(FrostologerEntity frostologerEntity, RangedAttackMob mob, double mobSpeed, int intervalTicks, float maxShootRange) {
-        super(mob, mobSpeed, intervalTicks, maxShootRange);
-        this.frostologerEntity = frostologerEntity;
+    public FrostWandCastGoal(FrostologerEntity frostologer, double mobSpeed, int intervalTicks, float maxShootRange) {
+        super(frostologer, mobSpeed, intervalTicks, maxShootRange);
+        this.frostologerEntity = frostologer;
     }
 
     @Override
