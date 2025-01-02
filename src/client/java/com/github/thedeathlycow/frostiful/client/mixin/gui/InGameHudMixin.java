@@ -57,7 +57,7 @@ public abstract class InGameHudMixin {
     private void renderRootedOverlay(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
         if (this.client.player != null) {
             RootedOverlayRenderer.render(
-                    (RootedEntity) this.client.player,
+                    this.client.player,
                     context, tickCounter,
                     this::renderOverlay
             );

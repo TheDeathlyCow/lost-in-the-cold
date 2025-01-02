@@ -20,6 +20,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+@Deprecated
 public interface RootedEntity {
 
     int frostiful$getRootedTicks();

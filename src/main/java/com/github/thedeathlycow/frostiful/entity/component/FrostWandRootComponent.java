@@ -85,6 +85,10 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
         }
     }
 
+    public float getRootProgress() {
+        return (float) this.rootedTicks / Frostiful.getConfig().combatConfig.getFrostWandRootTime();
+    }
+
     public void breakRoot() {
         this.setRootedTicks(1); // set to 1 so the icebreaker enchantment can detect it
     }
