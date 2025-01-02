@@ -1,8 +1,10 @@
 package com.github.thedeathlycow.frostiful.entity.component;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
+import com.github.thedeathlycow.frostiful.entity.damage.FDamageSources;
 import com.github.thedeathlycow.frostiful.mixins.entity.EntityInvoker;
 import com.github.thedeathlycow.frostiful.registry.FComponents;
+import com.github.thedeathlycow.frostiful.registry.FEntityAttributes;
 import com.github.thedeathlycow.frostiful.registry.tag.FDamageTypeTags;
 import com.github.thedeathlycow.frostiful.registry.tag.FEntityTypeTags;
 import net.minecraft.block.Blocks;
@@ -29,6 +31,8 @@ import org.ladysnake.cca.api.v3.component.tick.ServerTickingComponent;
 
 public class FrostWandRootComponent implements Component, AutoSyncedComponent, ServerTickingComponent {
 
+    public static final double ICE_BREAK_BASE_DAMAGE = 3.0;
+
     private static final String ROOTED_TICKS_KEY = "rooted_ticks";
 
     private final LivingEntity provider;
@@ -40,26 +44,26 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
     }
 
     public static void afterDamage(
-            LivingEntity entity,
+            LivingEntity provider,
             DamageSource source,
             float baseDamageTaken, float damageTaken,
             boolean blocked
     ) {
-        FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(entity);
+        FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(provider);
         boolean breakRoot = !blocked
                 && damageTaken > 0f
                 && !source.isIn(FDamageTypeTags.DOES_NOT_BREAK_ROOT)
                 && component.isRooted();
 
         if (breakRoot) {
-            component.breakRoot();
+            component.breakRoot(source.getAttacker());
         }
     }
 
     @Nullable
     public static Vec3d adjustMovementForRoot(MovementType type, Vec3d movement, Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
-            FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(entity);
+            FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(livingEntity);
             return component.adjustMovementForRoot(type, movement);
         }
 
@@ -74,7 +78,7 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
             this.setRootedTicks(this.getRootedTicks() - 1);
 
             if (provider.isOnFire()) {
-                this.breakRoot();
+                this.breakRoot(null);
                 provider.extinguish();
                 ((EntityInvoker) provider).frostiful$invokePlayExtinguishSound();
             }
@@ -85,11 +89,19 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
         return (float) this.rootedTicks / Frostiful.getConfig().combatConfig.getFrostWandRootTime();
     }
 
-    public void breakRoot() {
+    public void breakRoot(@Nullable Entity attacker) {
         if (this.isRooted() && provider.getWorld() instanceof ServerWorld serverWorld) {
             this.setRootedTicks(1); // set to 1 so the icebreaker enchantment can detect it
             spawnShatterParticlesAndSound(provider, serverWorld);
         }
+
+        double damage = attacker instanceof LivingEntity livingAttacker
+                ? livingAttacker.getAttributeValue(FEntityAttributes.ICE_BREAKER_DAMAGE)
+                : ICE_BREAK_BASE_DAMAGE;
+
+        DamageSource source = FDamageSources.getDamageSources(provider.getWorld())
+                .frostiful$brokenIce(attacker);
+        provider.damage(source, (float) damage);
     }
 
     public boolean tryRootFromFrostWand(@Nullable Entity originalCaster) {

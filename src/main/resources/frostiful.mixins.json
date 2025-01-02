@@ -12,6 +12,7 @@
         "entity.EntityInvoker",
         "entity.FallingBlockEntityAccessor",
         "entity.FallingIcicleMixin",
+        "entity.LivingEntityMixin",
         "entity.WaterPotionSoakingMixin",
         "entity.brushing.MobBrushingMixin",
         "entity.brushing.OcelotBrushingMixin",
