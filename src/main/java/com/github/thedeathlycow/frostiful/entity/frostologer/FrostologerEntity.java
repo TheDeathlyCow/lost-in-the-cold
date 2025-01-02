@@ -7,10 +7,7 @@ import com.github.thedeathlycow.frostiful.entity.RootedEntity;
 import com.github.thedeathlycow.frostiful.entity.ThrownIcicleEntity;
 import com.github.thedeathlycow.frostiful.item.FrostWandItem;
 import com.github.thedeathlycow.frostiful.item.enchantment.HeatDrainEnchantmentEffect;
-import com.github.thedeathlycow.frostiful.registry.FEnchantmentProviders;
-import com.github.thedeathlycow.frostiful.registry.FEntityTypes;
-import com.github.thedeathlycow.frostiful.registry.FItems;
-import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
+import com.github.thedeathlycow.frostiful.registry.*;
 import com.github.thedeathlycow.frostiful.registry.tag.FBlockTags;
 import com.github.thedeathlycow.frostiful.registry.tag.FDamageTypeTags;
 import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
@@ -394,7 +391,7 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
     public boolean isTargetRooted() {
         LivingEntity target = this.getTarget();
         return target != null
-                && ((RootedEntity) target).frostiful$isRooted();
+                && FComponents.FROST_WAND_ROOT_COMPONENT.get(target).isRooted();
     }
 
     public boolean isUsingFrostWand() {
