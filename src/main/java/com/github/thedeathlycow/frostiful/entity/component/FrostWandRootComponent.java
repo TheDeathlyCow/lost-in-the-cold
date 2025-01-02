@@ -133,7 +133,10 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
     }
 
     public void setRootedTicks(int rootedTicks) {
-        this.rootedTicks = rootedTicks;
+        if (this.rootedTicks != rootedTicks) {
+            this.rootedTicks = rootedTicks;
+            FComponents.FROST_WAND_ROOT_COMPONENT.sync(this.provider);
+        }
     }
 
     private boolean canBeRootedBy(@Nullable Entity originalCaster) {
