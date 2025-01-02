@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(LivingEntity.class)
-public interface LivingEntityMixin {
+public abstract class LivingEntityMixin {
     @ModifyReturnValue(
             method = "createLivingAttributes",
             at = @At("RETURN")

@@ -19,23 +19,16 @@
         "mainhand"
     ],
     "effects": {
-        "minecraft:damage": [
+        "minecraft:attributes": [
             {
-                "effect": {
-                    "type": "minecraft:add",
-                    "value": {
-                        "type": "minecraft:linear",
-                        "base": 3,
-                        "per_level_above_first": 1
-                    }
+                "amount": {
+                    "type": "minecraft:linear",
+                    "base": 1,
+                    "per_level_above_first": 1
                 },
-                "requirements": {
-                    "condition": "frostiful:rooted",
-                    "entity": "this",
-                    "root_ticks_remaining": {
-                        "min": 1
-                    }
-                }
+                "attribute": "frostiful:generic.ice_breaker_damage",
+                "id": "frostiful:enchantment.ice_breaker",
+                "operation": "add_value"
             }
         ],
         "minecraft:post_attack": [
