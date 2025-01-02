@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 public enum FrostLayers {
 
     NONE(0.0f, null),
-    LOW(-25f, Frostiful.id("textures/entity/illager/frostologer/low_frost.png")),
+    LOW(-0.25f, Frostiful.id("textures/entity/illager/frostologer/low_frost.png")),
     MEDIUM(-0.5f, Frostiful.id("textures/entity/illager/frostologer/medium_frost.png")),
     HIGH(FrostologerEntity.MAX_POWER_SCALE_START, Frostiful.id("textures/entity/illager/frostologer/high_frost.png"));
 
