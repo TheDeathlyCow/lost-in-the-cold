@@ -1,7 +1,6 @@
 package com.github.thedeathlycow.frostiful.entity.component;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
-import com.github.thedeathlycow.frostiful.entity.RootedEntity;
 import com.github.thedeathlycow.frostiful.mixins.entity.EntityInvoker;
 import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.registry.tag.FDamageTypeTags;
@@ -41,14 +40,14 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
             float baseDamageTaken, float damageTaken,
             boolean blocked
     ) {
+        FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(entity);
         boolean breakRoot = !blocked
                 && damageTaken > 0f
                 && !source.isIn(FDamageTypeTags.DOES_NOT_BREAK_ROOT)
-                && entity instanceof RootedEntity rooted
-                && rooted.frostiful$isRooted();
+                && component.isRooted();
 
         if (breakRoot) {
-            FComponents.FROST_WAND_ROOT_COMPONENT.get(entity).breakRoot();
+            component.breakRoot();
         }
     }
 
