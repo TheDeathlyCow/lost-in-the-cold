@@ -11,6 +11,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryWrapper;
@@ -113,12 +114,16 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
 
     @Override
     public void readFromNbt(NbtCompound tag, RegistryWrapper.WrapperLookup registryLookup) {
-        this.rootedTicks = tag.getInt(ROOTED_TICKS_KEY);
+        this.rootedTicks = tag.contains(ROOTED_TICKS_KEY, NbtElement.INT_TYPE)
+                ? tag.getInt(ROOTED_TICKS_KEY)
+                : 0;
     }
 
     @Override
     public void writeToNbt(NbtCompound tag, RegistryWrapper.WrapperLookup registryLookup) {
-        tag.putInt(ROOTED_TICKS_KEY, this.rootedTicks);
+        if (this.rootedTicks != 0) {
+            tag.putInt(ROOTED_TICKS_KEY, this.rootedTicks);
+        }
     }
 
     public boolean isRooted() {
