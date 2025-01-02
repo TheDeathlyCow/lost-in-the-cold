@@ -3,6 +3,7 @@ package com.github.thedeathlycow.frostiful;
 import com.github.thedeathlycow.frostiful.compat.FrostifulIntegrations;
 import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
 import com.github.thedeathlycow.frostiful.entity.RootedEntity;
+import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
 import com.github.thedeathlycow.frostiful.entity.loot.StrayLootTableModifier;
 import com.github.thedeathlycow.frostiful.item.FrostedBanner;
 import com.github.thedeathlycow.frostiful.item.cloak.AbstractFrostologyCloakItem;
@@ -78,7 +79,7 @@ public class Frostiful implements ModInitializer {
         FFeatures.initialize();
         FPlacedFeatures.initialize();
 
-        ServerLivingEntityEvents.AFTER_DAMAGE.register(RootedEntity::afterDamage);
+        ServerLivingEntityEvents.AFTER_DAMAGE.register(FrostWandRootComponent::afterDamage);
 
         this.registerThermooEventListeners();
         PayloadTypeRegistry.playS2C().register(

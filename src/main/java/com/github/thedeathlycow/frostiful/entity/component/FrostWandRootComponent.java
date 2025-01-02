@@ -5,6 +5,7 @@ import com.github.thedeathlycow.frostiful.mixins.entity.EntityInvoker;
 import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.registry.tag.FDamageTypeTags;
 import com.github.thedeathlycow.frostiful.registry.tag.FEntityTypeTags;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
@@ -12,10 +13,14 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.network.RegistryByteBuf;
+import net.minecraft.particle.BlockStateParticleEffect;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.Nullable;
 import org.ladysnake.cca.api.v3.component.Component;
@@ -68,16 +73,9 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
         } else if (this.isRooted()) {
             this.rootedTicks--;
 
-            if (provider.isOnFire() && provider.getWorld() instanceof ServerWorld serverWorld) {
+            if (provider.isOnFire()) {
                 this.breakRoot();
                 provider.extinguish();
-                serverWorld.spawnParticles(
-                        ParticleTypes.POOF,
-                        provider.getX(), provider.getY(), provider.getZ(),
-                        100,
-                        0.5, 0.5, 0.5,
-                        0.1f
-                );
                 ((EntityInvoker) provider).frostiful$invokePlayExtinguishSound();
             }
         }
@@ -88,7 +86,10 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
     }
 
     public void breakRoot() {
-        this.setRootedTicks(1); // set to 1 so the icebreaker enchantment can detect it
+        if (this.isRooted() && provider.getWorld() instanceof ServerWorld serverWorld) {
+            this.setRootedTicks(1); // set to 1 so the icebreaker enchantment can detect it
+            spawnShatterParticlesAndSound(provider, serverWorld);
+        }
     }
 
     public boolean tryRootFromFrostWand(@Nullable Entity originalCaster) {
@@ -161,5 +162,25 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
             case SELF, PLAYER -> Vec3d.ZERO.add(0, movement.y < 0 && !provider.hasNoGravity() ? movement.y : 0, 0);
             default -> null;
         };
+    }
+
+    private static void spawnShatterParticlesAndSound(LivingEntity victim, ServerWorld serverWorld) {
+        ParticleEffect shatteredIce = new BlockStateParticleEffect(ParticleTypes.BLOCK, Blocks.BLUE_ICE.getDefaultState());
+
+        serverWorld.spawnParticles(
+                shatteredIce,
+                victim.getX(), victim.getY(), victim.getZ(),
+                500,
+                0.5, 1.0, 0.5,
+                1.0
+        );
+
+        victim.getWorld().playSound(
+                null,
+                victim.getBlockPos(),
+                SoundEvents.BLOCK_GLASS_BREAK,
+                SoundCategory.AMBIENT,
+                1.0f, 0.75f
+        );
     }
 }
