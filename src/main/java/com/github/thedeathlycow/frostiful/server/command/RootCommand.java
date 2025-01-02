@@ -1,11 +1,13 @@
 package com.github.thedeathlycow.frostiful.server.command;
 
-import com.github.thedeathlycow.frostiful.entity.RootedEntity;
+import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
+import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
@@ -44,8 +46,9 @@ public class RootCommand {
 
         int sum = 0;
         for (Entity entity : targets) {
-            if (entity instanceof RootedEntity rootedEntity) {
-                rootedEntity.frostiful$setRootedTicks(duration);
+            if (entity instanceof LivingEntity livingEntity) {
+                FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(livingEntity);
+                component.setRootedTicks(duration);
                 sum += duration;
             }
         }

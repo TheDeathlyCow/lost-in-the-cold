@@ -132,7 +132,7 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
         return rootedTicks;
     }
 
-    private void setRootedTicks(int rootedTicks) {
+    public void setRootedTicks(int rootedTicks) {
         this.rootedTicks = rootedTicks;
     }
 
