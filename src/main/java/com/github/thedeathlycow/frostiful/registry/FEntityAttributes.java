@@ -11,10 +11,10 @@ import net.minecraft.registry.entry.RegistryEntry;
 
 public final class FEntityAttributes {
 
-    public static final RegistryEntry<EntityAttribute> ICE_BREAKER_DAMAGE = register(
+    public static final RegistryEntry<EntityAttribute> ICE_BREAK_DAMAGE = register(
             "generic.ice_breaker_damage",
             new ClampedEntityAttribute(
-                    "attribute.frostiful.generic.ice_breaker_damage",
+                    "attribute.frostiful.generic.ice_break_damage",
                     FrostWandRootComponent.ICE_BREAK_BASE_DAMAGE,
                     0,
                     1024.0
@@ -23,7 +23,7 @@ public final class FEntityAttributes {
 
     // called from mixin
     public static void createLivingAttributes(DefaultAttributeContainer.Builder builder) {
-        builder.add(ICE_BREAKER_DAMAGE);
+        builder.add(ICE_BREAK_DAMAGE);
     }
 
     private static RegistryEntry<EntityAttribute> register(String name, EntityAttribute attribute) {

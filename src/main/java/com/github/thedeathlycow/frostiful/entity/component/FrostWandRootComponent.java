@@ -96,7 +96,7 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
         }
 
         double damage = attacker instanceof LivingEntity livingAttacker
-                ? livingAttacker.getAttributeValue(FEntityAttributes.ICE_BREAKER_DAMAGE)
+                ? livingAttacker.getAttributeValue(FEntityAttributes.ICE_BREAK_DAMAGE)
                 : ICE_BREAK_BASE_DAMAGE;
 
         DamageSource source = FDamageSources.getDamageSources(provider.getWorld())
