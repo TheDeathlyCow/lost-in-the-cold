@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.frostiful.entity.loot;
 
-import com.github.thedeathlycow.frostiful.entity.RootedEntity;
+import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
+import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.registry.FLootConditionTypes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -31,8 +32,9 @@ public record RootedLootCondition(
     @Override
     public boolean test(LootContext lootContext) {
         Entity entity = lootContext.get(LootContextParameters.THIS_ENTITY);
-        if (entity instanceof RootedEntity rootable) {
-            return this.rootTicksRemaining.test(rootable.frostiful$getRootedTicks());
+        if (entity != null) {
+            FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(entity);
+            return this.rootTicksRemaining.test(component.getRootedTicks());
         }
 
         return false;
