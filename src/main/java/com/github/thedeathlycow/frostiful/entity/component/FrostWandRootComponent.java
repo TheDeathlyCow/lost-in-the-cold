@@ -52,15 +52,13 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
     }
 
     @Nullable
-    public Vec3d adjustMovementForRoot(MovementType type, Vec3d movement) {
-        if (!this.isRooted()) {
-            return null;
+    public static Vec3d adjustMovementForRoot(MovementType type, Vec3d movement, Entity entity) {
+        if (entity instanceof LivingEntity livingEntity) {
+            FrostWandRootComponent component = FComponents.FROST_WAND_ROOT_COMPONENT.get(entity);
+            return component.adjustMovementForRoot(type, movement);
         }
 
-        return switch (type) {
-            case SELF, PLAYER -> Vec3d.ZERO.add(0, movement.y < 0 && !provider.hasNoGravity() ? movement.y : 0, 0);
-            default -> null;
-        };
+        return null;
     }
 
     @Override
@@ -151,5 +149,17 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
         }
 
         return provider.thermoo$canFreeze();
+    }
+
+    @Nullable
+    private Vec3d adjustMovementForRoot(MovementType type, Vec3d movement) {
+        if (!this.isRooted()) {
+            return null;
+        }
+
+        return switch (type) {
+            case SELF, PLAYER -> Vec3d.ZERO.add(0, movement.y < 0 && !provider.hasNoGravity() ? movement.y : 0, 0);
+            default -> null;
+        };
     }
 }
