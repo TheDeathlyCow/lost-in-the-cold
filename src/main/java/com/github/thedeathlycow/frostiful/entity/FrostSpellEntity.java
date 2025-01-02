@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.frostiful.entity;
 
+import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.registry.FEntityTypes;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import net.minecraft.entity.Entity;
@@ -70,8 +71,8 @@ public class FrostSpellEntity extends SpellEntity {
     @Override
     protected void applySingleTargetEffect(Entity target) {
         World world = target.getWorld();
-        if (!world.isClient && target instanceof RootedEntity rootedEntity) {
-            if (rootedEntity.frostiful$root(this.getOwner())) {
+        if (!world.isClient) {
+            if (FComponents.FROST_WAND_ROOT_COMPONENT.get(target).tryRootFromFrostWand(this.getOwner())) {
                 world.playSound(
                         null,
                         target.getX(), target.getY(), target.getZ(),
