@@ -60,7 +60,8 @@
     "custom": {
         "cardinal-components": [
             "frostiful:living_entity",
-            "frostiful:brushable"
+            "frostiful:brushable",
+            "frostiful:frost_wand_root"
         ],
         "modmenu": {
             "links": {
