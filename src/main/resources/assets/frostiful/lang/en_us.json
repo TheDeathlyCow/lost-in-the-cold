@@ -147,6 +147,8 @@
   "advancements.frostiful.add_log_to_fire.desc": "Add a log to a campfire",
   "advancements.frostiful.adventure.obtain_ice_skates.title": "Sword Shoes",
   "advancements.frostiful.adventure.obtain_ice_skates.description": "Craft a pair of Ice Skates in the Smithing Table",
+  "advancements.frostiful.adventure.trim_with_all_frostiful_patterns.title": "Winter Has Come",
+  "advancements.frostiful.adventure.trim_with_all_frostiful_patterns.description": "Apply all the smithing templates from Frostiful at least once: Snow Man, Frosty, and Glacial",
   
   "death.attack.frostiful.icicle": "%1$s was impaled on an icicle",
   "death.attack.frostiful.icicle.player": "%1$s was impaled on an icicle whilst fighting %2$s",
