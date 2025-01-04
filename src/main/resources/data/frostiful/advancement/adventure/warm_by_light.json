@@ -29,7 +29,7 @@
                     {
                         "condition": "frostiful:location_warmth",
                         "value": {
-                            "min": 1
+                            "min": 10
                         }
                     }
                 ]

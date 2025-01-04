@@ -16,25 +16,13 @@
         "hidden": false
     },
     "criteria": {
-        "step_on_warm_sun_lichen": {
-            "trigger": "minecraft:tick",
-            "conditions": {
-                "player": [
-                    {
-                        "condition": "minecraft:location_check",
-                        "predicate": {
-                            "block": {
-                                "blocks": "#frostiful:warm_sun_lichens"
-                            }
-                        }
-                    }
-                ]
-            }
+        "step_on_sun_lichen": {
+            "trigger": "frostiful:sun_lichen_discharge"
         }
     },
     "requirements": [
         [
-            "step_on_warm_sun_lichen"
+            "step_on_sun_lichen"
         ]
     ],
     "rewards": {

@@ -3,6 +3,7 @@ package com.github.thedeathlycow.frostiful.block;
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
 import com.github.thedeathlycow.frostiful.registry.FBlocks;
+import com.github.thedeathlycow.frostiful.registry.FCriteria;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.github.thedeathlycow.frostiful.registry.tag.FItemTags;
 import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
@@ -16,6 +17,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -55,10 +57,10 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
 
                 FrostifulConfig config = Frostiful.getConfig();
 
-                // only add heat if cold, but always damage
+                int heatToDischarge = config.freezingConfig.getSunLichenHeatPerLevel() * this.heatLevel;
+                // only add heatToDischarge if cold, but always damage
                 if (livingEntity.thermoo$isCold()) {
-                    int heat = config.freezingConfig.getSunLichenHeatPerLevel() * this.heatLevel;
-                    livingEntity.thermoo$addTemperature(heat, HeatingModes.ACTIVE);
+                    livingEntity.thermoo$addTemperature(heatToDischarge, HeatingModes.ACTIVE);
 
                     // reset temperature if temp change overheated
                     if (livingEntity.thermoo$isWarm()) {
@@ -72,6 +74,9 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
                 }
 
                 entity.damage(world.getDamageSources().hotFloor(), 1);
+                if (livingEntity instanceof ServerPlayerEntity player) {
+                    FCriteria.SUN_LICHEN_DISCHARGE.trigger(player, heatToDischarge);
+                }
                 createFireParticles(world, pos);
 
                 BlockState coldSunLichenState = FBlocks.COLD_SUN_LICHEN.getStateWithProperties(state);
