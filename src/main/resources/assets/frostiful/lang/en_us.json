@@ -131,8 +131,9 @@
   "gamerule.frostiful.doPassiveFreezing": "Do environmental freezing",
   "gamerule.frostiful.doPassiveFreezing.description": "If enabled, players will be slowly frozen by the environment over time. Players wearing a Cloak of Frostology are unaffected by this.",
   "gamerule.category.frostiful": "Frostiful",
-
   
+  "advancements.frostiful.root.title": "Frostiful",
+  "advancements.frostiful.root.description": "A freezing temperature mod",
   "advancements.frostiful.adventure.obtain_frostology_cloak.title": "I'm the Frostologer Now!",
   "advancements.frostiful.adventure.obtain_frostology_cloak.description": "Obtain the Cloak of Frostology",
   "advancements.frostiful.adventure.find_frostologer_castle.title": "Packed In",
