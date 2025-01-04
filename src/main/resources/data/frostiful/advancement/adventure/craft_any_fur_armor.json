@@ -1,5 +1,5 @@
 {
-    "parent": "frostiful:adventure/root",
+    "parent": "frostiful:adventure/brush_polar_bear",
     "display": {
         "icon": {
             "id": "frostiful:fur_chestplate"
