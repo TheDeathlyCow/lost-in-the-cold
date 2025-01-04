@@ -14,7 +14,7 @@
         "announce_to_chat": true,
         "hidden": false
     },
-    "parent": "frostiful:adventure/find_frostologer_castle",
+    "parent": "frostiful:adventure/kill_frostologer",
     "criteria": {
         "frostology_cloak": {
             "trigger": "minecraft:inventory_changed",
