@@ -16,13 +16,13 @@
     },
     "criteria": {
         "player_is_cold": {
-            "trigger": "minecraft:tick",
+            "trigger": "minecraft:location",
             "conditions": {
                 "player": [
                     {
                         "condition": "thermoo:temperature",
-                        "value": {
-                            "max": -630
+                        "scale": {
+                            "max": -0.1
                         }
                     }
                 ]

@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:campfire"
+            "id": "minecraft:spruce_sapling"
         },
         "title": {
             "translate": "advancements.frostiful.add_log_to_fire.title"
@@ -10,7 +10,7 @@
             "translate": "advancements.frostiful.add_log_to_fire.desc"
         }
     },
-    "parent": "frostiful:adventure/root",
+    "parent": "frostiful:adventure/warm_by_light",
     "criteria": {
         "requirement": {
             "trigger": "minecraft:effects_changed",
