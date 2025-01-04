@@ -22,7 +22,7 @@
                     {
                         "condition": "thermoo:temperature",
                         "value": {
-                            "max": -1
+                            "max": -630
                         }
                     }
                 ]
