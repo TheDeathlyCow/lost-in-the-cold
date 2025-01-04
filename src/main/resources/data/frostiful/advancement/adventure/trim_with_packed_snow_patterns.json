@@ -12,25 +12,19 @@
                 "recipe_id": "frostiful:smithing/frosty_trim"
             },
             "trigger": "minecraft:recipe_crafted"
-        },
-        "frostiful:glacial_trim": {
-            "conditions": {
-                "recipe_id": "frostiful:smithing/glacial_trim"
-            },
-            "trigger": "minecraft:recipe_crafted"
         }
     },
     "display": {
         "description": {
-            "translate": "advancements.frostiful.adventure.trim_with_all_frostiful_patterns.description"
+            "translate": "advancements.frostiful.adventure.trim_with_packed_snow_patterns.description"
         },
-        "frame": "challenge",
+        "frame": "task",
         "icon": {
             "count": 1,
-            "id": "frostiful:glacial_armor_trim_smithing_template"
+            "id": "frostiful:snow_man_armor_trim_smithing_template"
         },
         "title": {
-            "translate": "advancements.frostiful.adventure.trim_with_all_frostiful_patterns.title"
+            "translate": "advancements.frostiful.adventure.trim_with_packed_snow_patterns.title"
         }
     },
     "requirements": [
@@ -39,13 +33,10 @@
         ],
         [
             "frostiful:frosty_trim"
-        ],
-        [
-            "frostiful:glacial_trim"
         ]
     ],
     "rewards": {
-        "experience": 150
+        "experience": 50
     },
     "sends_telemetry_event": false
 }

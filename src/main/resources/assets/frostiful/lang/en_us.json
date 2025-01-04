@@ -144,8 +144,11 @@
   "advancements.frostiful.adventure.kill_frostologer.description": "Defeat the Frostologer",
   "advancements.frostiful.adventure.obtain_frostology_cloak.title": "I'm the Frostologer Now!",
   "advancements.frostiful.adventure.obtain_frostology_cloak.description": "Obtain the Cloak of Frostology",
-  "advancements.frostiful.adventure.trim_with_all_frostiful_patterns.title": "Winter Has Come",
-  "advancements.frostiful.adventure.trim_with_all_frostiful_patterns.description": "Apply all the smithing templates from Frostiful at least once: Snow Man, Frosty, and Glacial",
+  
+  "advancements.frostiful.adventure.trim_with_packed_snow_patterns.title": "Frosty the Snow Man",
+  "advancements.frostiful.adventure.trim_with_packed_snow_patterns.description": "Apply both the Frosty and Snow Man trim patterns at least once",
+  "advancements.frostiful.adventure.trim_with_glacial_pattern.title": "King in the North",
+  "advancements.frostiful.adventure.trim_with_glacial_pattern.description": "Apply the Glacial trim pattern at least once",
   
   "advancements.frostiful.adventure.brush_polar_bear.title":"If not friend, why friend shaped?",
   "advancements.frostiful.adventure.brush_polar_bear.description": "Brush a Polar Bear for its fur",
