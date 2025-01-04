@@ -1,5 +1,5 @@
 {
-    "parent": "frostiful:adventure/fur_armor",
+    "parent": "frostiful:adventure/craft_any_fur_armor",
     "display": {
         "icon": {
             "id": "frostiful:fur_padded_chainmail_chestplate"

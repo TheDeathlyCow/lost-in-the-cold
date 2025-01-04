@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "frostiful:fur_boots",
+        "frostiful:fur_padded_chainmail_boots",
+        "frostiful:fur_leggings",
+        "frostiful:fur_padded_chainmail_leggings",
+        "frostiful:fur_chestplate",
+        "frostiful:fur_padded_chainmail_chestplate",
+        "frostiful:fur_helmet",
+        "frostiful:fur_padded_chainmail_helmet"
+    ]
+}
