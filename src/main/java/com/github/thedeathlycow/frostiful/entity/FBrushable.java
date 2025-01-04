@@ -45,7 +45,7 @@ public interface FBrushable {
             animal.emitGameEvent(GameEvent.SHEAR, player);
 
             if (!animal.getWorld().isClient) {
-                heldItem.damage(1, player, LivingEntity.getSlotForHand(hand));
+                heldItem.damage(16, player, LivingEntity.getSlotForHand(hand));
             }
         }
 
