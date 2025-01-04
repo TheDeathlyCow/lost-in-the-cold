@@ -1,0 +1,43 @@
+{
+    "parent": "frostiful:adventure/warm_by_light",
+    "display": {
+        "icon": {
+            "id": "frostiful:hot_sun_lichen"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.step_on_sun_lichen.title"
+        },
+        "description": {
+            "translate": "advancements.frostiful.adventure.step_on_sun_lichen.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "step_on_warm_sun_lichen": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "block": {
+                                "blocks": "#frostiful:warm_sun_lichens"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "step_on_warm_sun_lichen"
+        ]
+    ],
+    "rewards": {
+        "experience": 10
+    }
+}
