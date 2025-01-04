@@ -1,22 +1,22 @@
 {
     "display": {
         "icon": {
-            "id": "frostiful:packed_snowball"
+            "id": "frostiful:glacial_arrow"
         },
         "title": {
-            "translate": "advancements.frostiful.adventure.find_frostologer_castle.title"
+            "translate": "advancements.frostiful.adventure.find_chillager_outpost.title"
         },
         "description": {
-            "translate": "advancements.frostiful.adventure.find_frostologer_castle.description"
+            "translate": "advancements.frostiful.adventure.find_chillager_outpost.description"
         },
         "frame": "task",
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false
     },
-    "parent": "frostiful:adventure/find_chillager_outpost",
+    "parent": "frostiful:adventure/root",
     "criteria": {
-        "castle": {
+        "find_outpost": {
             "trigger": "minecraft:location",
             "conditions": {
                 "player": [
@@ -25,7 +25,7 @@
                         "entity": "this",
                         "predicate": {
                             "location": {
-                                "structures": "frostiful:frostologer_castle"
+                                "structures": "frostiful:chillager_outpost"
                             }
                         }
                     }
@@ -35,7 +35,7 @@
     },
     "requirements": [
         [
-            "castle"
+            "find_outpost"
         ]
     ]
 }

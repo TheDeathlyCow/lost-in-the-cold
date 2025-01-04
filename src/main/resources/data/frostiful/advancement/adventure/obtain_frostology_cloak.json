@@ -12,7 +12,7 @@
         "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,
-        "hidden": true
+        "hidden": false
     },
     "parent": "frostiful:adventure/find_frostologer_castle",
     "criteria": {

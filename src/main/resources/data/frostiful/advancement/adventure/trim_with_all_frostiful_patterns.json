@@ -1,5 +1,5 @@
 {
-    "parent": "minecraft:adventure/trim_with_any_armor_pattern",
+    "parent": "frostiful:adventure/find_frostologer_castle",
     "criteria": {
         "frostiful:snow_man_trim": {
             "conditions": {

@@ -10,7 +10,7 @@
             "translate": "advancements.frostiful.add_log_to_fire.desc"
         }
     },
-    "parent": "minecraft:adventure/sleep_in_bed",
+    "parent": "frostiful:adventure/root",
     "criteria": {
         "requirement": {
             "trigger": "minecraft:effects_changed",
