@@ -9,7 +9,6 @@ import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.Angerable;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -49,7 +48,7 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
      * @param hand   The hand they used to interact
      * @param base   Original action result for the interaction
      */
-    public static ActionResult interactWithMob(MobEntity animal, PlayerEntity player, Hand hand, ActionResult base) {
+    public static ActionResult interactWithMob(AnimalEntity animal, PlayerEntity player, Hand hand, ActionResult base) {
         if (player.isSpectator() || base != ActionResult.PASS) {
             return base;
         }
