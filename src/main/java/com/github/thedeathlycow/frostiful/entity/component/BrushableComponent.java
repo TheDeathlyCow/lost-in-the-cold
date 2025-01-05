@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.frostiful.entity.component;
 
+import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.registry.FLootTables;
 import com.github.thedeathlycow.frostiful.registry.tag.FEntityTypeTags;
@@ -126,9 +127,16 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
 
         if (!world.isClient) {
             RegistryKey<LootTable> furLootTable = getLootTableForAnimal(provider);
+
             if (furLootTable != null) {
                 FLootHelper.dropLootFromEntity(provider, furLootTable);
+            } else {
+                Frostiful.LOGGER.warn(
+                        "Attempted to brush an animal type {} that does not drop fur!",
+                        provider.getType().getRegistryEntry().toString()
+                );
             }
+
             this.setLastBrushTime(world.getTime());
             this.setAngryAt(brusher);
         }
