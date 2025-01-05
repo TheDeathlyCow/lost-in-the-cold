@@ -38,5 +38,8 @@
         [
             "brush_polar_bear"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 15
+    }
 }

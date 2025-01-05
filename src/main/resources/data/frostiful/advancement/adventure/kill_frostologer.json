@@ -35,5 +35,8 @@
         [
             "frostologer"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 50
+    }
 }
