@@ -102,7 +102,8 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
     public boolean isBrushable() {
         return this.provider.isAlive()
                 && !this.provider.isBaby()
-                && !this.wasBrushed();
+                && !this.wasBrushed()
+                && this.provider.getType().isIn(FEntityTypeTags.IS_BRUSHABLE);
     }
 
     public boolean wasBrushed() {
