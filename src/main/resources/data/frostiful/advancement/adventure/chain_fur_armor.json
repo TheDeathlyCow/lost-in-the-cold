@@ -15,9 +15,6 @@
         "announce_to_chat": true,
         "hidden": false
     },
-    "rewards": {
-        "experience": 15
-    },
     "criteria": {
         "has_full_suit": {
             "trigger": "minecraft:inventory_changed",
@@ -51,5 +48,8 @@
         [
             "has_full_suit"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 15
+    }
 }

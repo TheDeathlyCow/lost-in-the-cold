@@ -1,4 +1,5 @@
 {
+    "parent": "frostiful:adventure/root",
     "display": {
         "icon": {
             "id": "minecraft:brush"
@@ -14,7 +15,6 @@
         "announce_to_chat": true,
         "hidden": false
     },
-    "parent": "frostiful:adventure/root",
     "criteria": {
         "brush_polar_bear": {
             "trigger": "minecraft:player_interacted_with_entity",

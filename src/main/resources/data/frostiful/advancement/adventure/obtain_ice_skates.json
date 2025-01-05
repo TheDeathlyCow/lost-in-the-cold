@@ -15,9 +15,6 @@
         "announce_to_chat": true,
         "hidden": false
     },
-    "rewards": {
-        "experience": 15
-    },
     "criteria": {
         "has_ice_skates": {
             "trigger": "minecraft:inventory_changed",
@@ -34,5 +31,8 @@
         [
             "has_ice_skates"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 15
+    }
 }

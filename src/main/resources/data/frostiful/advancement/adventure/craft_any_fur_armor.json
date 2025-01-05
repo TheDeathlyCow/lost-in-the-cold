@@ -15,9 +15,6 @@
         "announce_to_chat": true,
         "hidden": false
     },
-    "rewards": {
-        "experience": 10
-    },
     "criteria": {
         "has_any_fur_armor_piece": {
             "trigger": "minecraft:inventory_changed",
@@ -34,5 +31,8 @@
         [
             "has_any_fur_armor_piece"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 10
+    }
 }
