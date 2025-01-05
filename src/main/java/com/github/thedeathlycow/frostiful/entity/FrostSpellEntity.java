@@ -21,7 +21,7 @@ import java.util.List;
 
 public class FrostSpellEntity extends SpellEntity {
 
-    private static final double EFFECT_CLOUD_SIZE = 4.0;
+    private static final double EFFECT_CLOUD_SIZE = 3.0;
 
     public FrostSpellEntity(World world, LivingEntity owner, Vec3d velocity) {
         super(FEntityTypes.FROST_SPELL, world, owner, velocity);
