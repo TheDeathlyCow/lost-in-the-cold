@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.predicate.NumberRange;
 import net.minecraft.predicate.entity.EntityPredicate;
@@ -20,10 +21,10 @@ public class FrozenByFrostWandCriterion extends AbstractCriterion<FrozenByFrostW
         return Conditions.CODEC;
     }
 
-    public void trigger(ServerPlayerEntity player, Collection<Entity> frozenEntities) {
+    public void trigger(ServerPlayerEntity player, Collection<LivingEntity> frozenEntities) {
         List<LootContext> victimContexts = new ArrayList<>(frozenEntities.size());
 
-        for (Entity frozenEntity : frozenEntities) {
+        for (LivingEntity frozenEntity : frozenEntities) {
             victimContexts.add(EntityPredicate.createAdvancementEntityLootContext(player, frozenEntity));
         }
 
@@ -68,7 +69,6 @@ public class FrozenByFrostWandCriterion extends AbstractCriterion<FrozenByFrostW
                     boolean matched = false;
 
                     Iterator<LootContext> iterator = unmatchedVictims.iterator();
-
                     while (iterator.hasNext()) {
                         LootContext lootContext = iterator.next();
                         if (predicate.test(lootContext)) {
@@ -83,7 +83,6 @@ public class FrozenByFrostWandCriterion extends AbstractCriterion<FrozenByFrostW
                     }
                 }
             }
-
             return this.entitiesFrozen.test(entitiesFrozenCount);
         }
 
