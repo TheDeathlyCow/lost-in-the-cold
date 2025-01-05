@@ -1,6 +1,8 @@
 {
     "replace": false,
     "values": [
-        "frostiful:frosty_armor_trim_smithing_template"
+        "frostiful:frosty_armor_trim_smithing_template",
+        "frostiful:glacial_armor_trim_smithing_template",
+        "frostiful:snow_man_armor_trim_smithing_template"
     ]
 }

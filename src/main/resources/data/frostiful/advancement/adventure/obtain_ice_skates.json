@@ -1,5 +1,5 @@
 {
-    "parent": "frostiful:adventure/fur_armor",
+    "parent": "frostiful:adventure/craft_any_fur_armor",
     "display": {
         "icon": {
             "id": "frostiful:ice_skates"
@@ -14,9 +14,6 @@
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false
-    },
-    "rewards": {
-        "experience": 15
     },
     "criteria": {
         "has_ice_skates": {
@@ -34,5 +31,8 @@
         [
             "has_ice_skates"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 25
+    }
 }

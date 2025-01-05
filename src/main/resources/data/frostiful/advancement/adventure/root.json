@@ -1,0 +1,38 @@
+{
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "frostiful:frost_wand"
+        },
+        "title": {
+            "translate": "advancements.frostiful.root.title"
+        },
+        "description": {
+            "translate": "advancements.frostiful.root.description"
+        },
+        "announce_to_chat": false,
+        "show_toast": true,
+        "background": "frostiful:textures/block/brittle_ice/cracked_0.png"
+    },
+    "criteria": {
+        "player_is_cold": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "thermoo:temperature",
+                        "scale": {
+                            "max": -0.1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "player_is_cold"
+        ]
+    ],
+    "sends_telemetry_event": false
+}

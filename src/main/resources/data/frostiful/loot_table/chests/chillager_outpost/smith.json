@@ -48,7 +48,10 @@
             ]
         },
         {
-            "rolls": 1,
+            "rolls": {
+                "min": 1,
+                "max": 2
+            },
             "entries": [
                 {
                     "type": "minecraft:item",
@@ -58,13 +61,31 @@
                 {
                     "type": "minecraft:item",
                     "name": "frostiful:fur_padding",
-                    "weight": 1
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "minecraft:tag",
                     "name": "frostiful:fur_tufts",
-                    "expand": false,
-                    "weight": 2
+                    "expand": true,
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -91,6 +112,22 @@
                     "name": "minecraft:chainmail_boots"
                 }
             ]
+        },
+        {
+            "rolls": 1,
+            "conditions": [
+                {
+                    "condition": "minecraft:random_chance",
+                    "chance": 0.25
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "frostiful:snow_man_armor_trim_smithing_template"
+                }
+            ]
         }
-    ]
+    ],
+    "random_sequence": "frostiful:chests/chillager_outpost/smith"
 }

@@ -55,6 +55,10 @@
   
   "item.frostiful.frosty_armor_trim_smithing_template": "Smithing Template",
   "trim_pattern.frostiful.frosty": "Frosty Armor Trim",
+  "item.frostiful.glacial_armor_trim_smithing_template": "Smithing Template",
+  "trim_pattern.frostiful.glacial": "Glacial Armor Trim",
+  "item.frostiful.snow_man_armor_trim_smithing_template": "Smithing Template",
+  "trim_pattern.frostiful.snow_man": "Snow Man Armor Trim",
   
   "item.frostiful.snowflake_banner_pattern": "Banner Pattern",
   "item.frostiful.snowflake_banner_pattern.desc": "Snowflake",
@@ -69,6 +73,7 @@
   "tag.item.frostiful.ice_skates": "Ice Skates",
   "tag.item.frostiful.sun_lichens": "Sun Lichens",
   "tag.item.frostiful.fur_boots": "Fur Boots",
+  "tag.item.frostiful.fur_armor": "Fur Armor",
   "tag.item.frostiful.powder_snow_walkable": "Powder Snow Walkable",
   "tag.item.frostiful.enchantable.frost_wand": "Enchantable Frost Wands",
   "tag.item.frostiful.supports_heat_drain": "Supports Enervation and Curse of Frozen Touch",
@@ -130,22 +135,43 @@
   "gamerule.frostiful.doPassiveFreezing": "Do environmental freezing",
   "gamerule.frostiful.doPassiveFreezing.description": "If enabled, players will be slowly frozen by the environment over time. Players wearing a Cloak of Frostology are unaffected by this.",
   "gamerule.category.frostiful": "Frostiful",
-
   
-  "advancements.frostiful.adventure.obtain_frostology_cloak.title": "I'm the Frostologer Now!",
-  "advancements.frostiful.adventure.obtain_frostology_cloak.description": "Obtain the Cloak of Frostology",
+  "advancements.frostiful.root.title": "Frostiful",
+  "advancements.frostiful.root.description": "A freezing temperature mod",
+  
+  "advancements.frostiful.adventure.find_chillager_outpost.title": "Making Camp",
+  "advancements.frostiful.adventure.find_chillager_outpost.description": "Find a Chillager Outpost",
   "advancements.frostiful.adventure.find_frostologer_castle.title": "Packed In",
   "advancements.frostiful.adventure.find_frostologer_castle.description": "Find the Frostologer's Castle",
   "advancements.frostiful.adventure.kill_frostologer.title": "Just Getting Warmed Up",
   "advancements.frostiful.adventure.kill_frostologer.description": "Defeat the Frostologer",
-  "advancements.frostiful.adventure.fur_armor.title": "A Fur Suit",
-  "advancements.frostiful.adventure.fur_armor.description": "Obtain a full suit of Fur Armor",
-  "advancements.frostiful.adventure.chain_fur_armor.title": "Chained Up",
+  "advancements.frostiful.adventure.obtain_frostology_cloak.title": "I'm the Frostologer Now!",
+  "advancements.frostiful.adventure.obtain_frostology_cloak.description": "Obtain the Cloak of Frostology",
+  "advancements.frostiful.adventure.freeze_creepers.title": "Stop Right There!",
+  "advancements.frostiful.adventure.freeze_creepers.description": "Freeze 3 creepers with one shot using the Frost Wand",
+  
+  "advancements.frostiful.adventure.trim_with_packed_snow_patterns.title": "Frosty the Snow Man",
+  "advancements.frostiful.adventure.trim_with_packed_snow_patterns.description": "Apply both the Frosty and Snow Man trim patterns at least once",
+  "advancements.frostiful.adventure.trim_with_glacial_pattern.title": "King in the North",
+  "advancements.frostiful.adventure.trim_with_glacial_pattern.description": "Apply the Glacial trim pattern at least once",
+  
+  "advancements.frostiful.adventure.brush_polar_bear.title":"If not friend, why friend shaped?",
+  "advancements.frostiful.adventure.brush_polar_bear.description": "Brush a Polar Bear for its fur",
+  
+  "advancements.frostiful.adventure.craft_any_fur_armor.title": "Winter Wardrobe",
+  "advancements.frostiful.adventure.craft_any_fur_armor.description": "Keep yourself warm with Fur Armor",
+  "advancements.frostiful.adventure.chain_fur_armor.title": "Armored Furry",
   "advancements.frostiful.adventure.chain_fur_armor.description": "Obtain a full suit of Fur Padded Chainmail Armor",
-  "advancements.frostiful.add_log_to_fire.title": "Timber Hearth",
-  "advancements.frostiful.add_log_to_fire.desc": "Add a log to a campfire",
   "advancements.frostiful.adventure.obtain_ice_skates.title": "Sword Shoes",
   "advancements.frostiful.adventure.obtain_ice_skates.description": "Craft a pair of Ice Skates in the Smithing Table",
+  
+  "advancements.frostiful.adventure.warm_by_light.title": "A Warm and Beautiful Light",
+  "advancements.frostiful.adventure.warm_by_light.description": "Use light to keep warm",
+  "advancements.frostiful.adventure.add_log_to_fire.title": "Timber Hearth",
+  "advancements.frostiful.adventure.add_log_to_fire.description": "Add a log to a campfire",
+  "advancements.frostiful.adventure.step_on_sun_lichen.title": "Ouch! That Burns!",
+  "advancements.frostiful.adventure.step_on_sun_lichen.description": "Use Sun Lichen to warm yourself",
+  
   
   "death.attack.frostiful.icicle": "%1$s was impaled on an icicle",
   "death.attack.frostiful.icicle.player": "%1$s was impaled on an icicle whilst fighting %2$s",
@@ -237,8 +263,7 @@
   "text.autoconfig.frostiful.option.combatConfig.packedSnowballVulnerableTypesDamage": "Packed snowball vulnerable types damage",
   "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Max Frost Bite Max Amplifier (inclusive)",
   "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Chillager fire damage multiplier",
-  "text.autoconfig.frostiful.option.combatConfig.furUpgradeTemplateGenerateChance": "Fur upgrade generate chance (0-1)",
-  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateGenerateChance": "Ice Skate upgrade generate chance (0-1)",
+  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Ice Skate upgrade generate chance in Igloos (0-1)",
   "text.autoconfig.frostiful.option.combatConfig.veryProtectiveFrostResistanceMultiplier": "Very protective Frost Resistance multiplier",
   "text.autoconfig.frostiful.option.combatConfig.protectiveFrostResistanceMultiplier": "Protective Frost Resistance multiplier",
   

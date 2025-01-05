@@ -1,0 +1,33 @@
+{
+    "parent": "frostiful:adventure/trim_with_packed_snow_patterns",
+    "criteria": {
+        "frostiful:glacial_trim": {
+            "conditions": {
+                "recipe_id": "frostiful:smithing/glacial_trim"
+            },
+            "trigger": "minecraft:recipe_crafted"
+        }
+    },
+    "display": {
+        "description": {
+            "translate": "advancements.frostiful.adventure.trim_with_glacial_pattern.description"
+        },
+        "frame": "challenge",
+        "icon": {
+            "count": 1,
+            "id": "frostiful:glacial_armor_trim_smithing_template"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.trim_with_glacial_pattern.title"
+        }
+    },
+    "requirements": [
+        [
+            "frostiful:glacial_trim"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    },
+    "sends_telemetry_event": false
+}

@@ -1,0 +1,47 @@
+{
+    "parent": "frostiful:adventure/root",
+    "display": {
+        "icon": {
+            "id": "minecraft:campfire"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.warm_by_light.title"
+        },
+        "description": {
+            "translate": "advancements.frostiful.adventure.warm_by_light.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "place_torch_while_cold": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "thermoo:temperature",
+                        "scale": {
+                            "max": -0.1
+                        }
+                    },
+                    {
+                        "condition": "frostiful:location_warmth",
+                        "value": {
+                            "min": 10
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "place_torch_while_cold"
+        ]
+    ],
+    "rewards": {
+        "experience": 15
+    }
+}

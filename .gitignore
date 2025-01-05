@@ -33,3 +33,5 @@ bin/
 run/
 
 src/main/resources/pack.mcmeta
+.mixin.out/
+logs/

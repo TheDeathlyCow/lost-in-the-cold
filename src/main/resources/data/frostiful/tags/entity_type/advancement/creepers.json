@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:creeper",
+        {
+            "required": false,
+            "id": "#c:creepers"
+        }
+    ]
+}

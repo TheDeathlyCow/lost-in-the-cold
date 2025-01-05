@@ -81,6 +81,7 @@ dependencies {
     }
 
     testImplementation "net.fabricmc:fabric-loader-junit:${project.loader_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter"
     testImplementation "org.mockito:mockito-core:3.+"
 
     //// Bring depends into testmod ////
@@ -95,6 +96,8 @@ dependencies {
 
             testmodImplementation project("${it.name}:").sourceSets.testmod.output
         }
+
+        testmodImplementation "org.mockito:mockito-core:3.+"
     }
 }
 

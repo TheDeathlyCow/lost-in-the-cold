@@ -1,0 +1,62 @@
+{
+    "parent": "frostiful:adventure/kill_frostologer",
+    "display": {
+        "icon": {
+            "id": "frostiful:frost_wand"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.freeze_creepers.title"
+        },
+        "description": {
+            "translate": "advancements.frostiful.adventure.freeze_creepers.description"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "freeze_creepers": {
+            "trigger": "frostiful:frozen_by_frost_wand",
+            "conditions": {
+                "victims": [
+                    [
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "type": "#frostiful:advancement/creepers"
+                            }
+                        }
+                    ],
+                    [
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "type": "#frostiful:advancement/creepers"
+                            }
+                        }
+                    ],
+                    [
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "type": "#frostiful:advancement/creepers"
+                            }
+                        }
+                    ]
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "freeze_creepers"
+        ]
+    ],
+    "rewards": {
+        "experience": 50
+    }
+}

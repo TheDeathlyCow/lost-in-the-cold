@@ -1,0 +1,7 @@
+{
+    "asset_id": "frostiful:glacial",
+    "description": {
+        "translate": "trim_pattern.frostiful.glacial"
+    },
+    "template_item": "frostiful:glacial_armor_trim_smithing_template"
+}

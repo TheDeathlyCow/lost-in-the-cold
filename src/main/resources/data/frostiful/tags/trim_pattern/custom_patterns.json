@@ -1,6 +1,8 @@
 {
     "replace": false,
     "values": [
-        "frostiful:frosty"
+        "frostiful:frosty",
+        "frostiful:glacial",
+        "frostiful:snow_man"
     ]
 }

@@ -1,16 +1,16 @@
 {
+    "parent": "frostiful:adventure/warm_by_light",
     "display": {
         "icon": {
-            "id": "minecraft:campfire"
+            "id": "minecraft:spruce_sapling"
         },
         "title": {
-            "translate": "advancements.frostiful.add_log_to_fire.title"
+            "translate": "advancements.frostiful.adventure.add_log_to_fire.title"
         },
         "description": {
-            "translate": "advancements.frostiful.add_log_to_fire.desc"
+            "translate": "advancements.frostiful.adventure.add_log_to_fire.description"
         }
     },
-    "parent": "minecraft:adventure/sleep_in_bed",
     "criteria": {
         "requirement": {
             "trigger": "minecraft:effects_changed",
@@ -24,6 +24,6 @@
         }
     },
     "rewards": {
-        "experience": 25
+        "experience": 15
     }
 }

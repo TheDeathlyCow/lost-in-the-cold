@@ -133,8 +133,8 @@
   "advancements.frostiful.adventure.fur_armor.description": "Получите полный комплект меховой брони",
   "advancements.frostiful.adventure.chain_fur_armor.title": "Оцепенение",
   "advancements.frostiful.adventure.chain_fur_armor.description": "Получите полный комплект обитой мехом кольчужной брони",
-  "advancements.frostiful.add_log_to_fire.title": "Поддай жару",
-  "advancements.frostiful.add_log_to_fire.desc": "Подбросьте брёвен в костёр",
+  "advancements.frostiful.adventure.add_log_to_fire.title": "Поддай жару",
+  "advancements.frostiful.adventure.add_log_to_fire.description": "Подбросьте брёвен в костёр",
   "advancements.frostiful.adventure.obtain_ice_skates.title": "Обувка с лезвиями",
   "advancements.frostiful.adventure.obtain_ice_skates.description": "Создайте коньки на столе кузнеца",
   
@@ -229,8 +229,7 @@
   "text.autoconfig.frostiful.option.combatConfig.frostologerMaxPassiveFreezing": "Процент пассивного обморожения от Морозбойника (0-1)",
   "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Кол-во обморожения от кусаки, при атаке замороженного игрока (включительно)",
   "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Множитель урона от огня хладному лучнику",
-  "text.autoconfig.frostiful.option.combatConfig.furUpgradeTemplateGenerateChance": "Процент появления Мехового улучшения (0-1)",
-  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateGenerateChance": "Процент появления Улучшения скольжения (0-1)",
+  "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Процент появления Улучшения скольжения (0-1)",
   
   "text.autoconfig.frostiful.option.freezingConfig": "Настройки обморожения",
   "text.autoconfig.frostiful.option.freezingConfig.doPassiveFreezing": "Включить пассивное обморожение (для всех игроков)",

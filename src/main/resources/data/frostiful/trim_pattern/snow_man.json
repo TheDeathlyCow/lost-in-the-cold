@@ -1,0 +1,7 @@
+{
+    "asset_id": "frostiful:snow_man",
+    "description": {
+        "translate": "trim_pattern.frostiful.snow_man"
+    },
+    "template_item": "frostiful:snow_man_armor_trim_smithing_template"
+}

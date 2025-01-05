@@ -1,0 +1,35 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_glacial_armor_trim_smithing_template": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "frostiful:glacial_armor_trim_smithing_template"
+                        ]
+                    }
+                ]
+            }
+        },
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "frostiful:shaped/glacial_armor_trim_smithing_template"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_glacial_armor_trim_smithing_template",
+            "has_the_recipe"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "frostiful:shaped/glacial_armor_trim_smithing_template"
+        ]
+    },
+    "sends_telemetry_event": false
+}

@@ -107,20 +107,26 @@
                 {
                     "type": "minecraft:item",
                     "name": "minecraft:crossbow",
-                    "weight": 1
+                    "weight": 2
                 },
                 {
                     "type": "minecraft:item",
                     "name": "minecraft:goat_horn",
-                    "weight": 1,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "minecraft:set_instrument",
                             "options": "#minecraft:regular_goat_horns"
                         }
                     ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "frostiful:fur_upgrade_template",
+                    "weight": 1
                 }
             ]
         }
-    ]
+    ],
+    "random_sequence": "frostiful:chests/chillager_outpost/fletcher"
 }

@@ -25,6 +25,8 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.util.TriState;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.SharedConstants;
+import net.minecraft.server.command.SpawnArmorTrimsCommand;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
@@ -53,6 +55,8 @@ public class Frostiful implements ModInitializer {
                         RootCommand.register(dispatcher);
                         WindCommand.register(dispatcher);
                     });
+
+            SharedConstants.isDevelopment = true;
         }
 
         // TODO: remove to dev only before merge
@@ -77,6 +81,7 @@ public class Frostiful implements ModInitializer {
         FFeatures.initialize();
         FPlacedFeatures.initialize();
         FEntityAttributes.initialize();
+        FCriteria.initialize();
 
         ServerLivingEntityEvents.AFTER_DAMAGE.register(FrostWandRootComponent::afterDamage);
 

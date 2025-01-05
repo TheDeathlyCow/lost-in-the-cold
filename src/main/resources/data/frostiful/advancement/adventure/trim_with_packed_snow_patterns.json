@@ -1,0 +1,42 @@
+{
+    "parent": "frostiful:adventure/find_frostologer_castle",
+    "display": {
+        "description": {
+            "translate": "advancements.frostiful.adventure.trim_with_packed_snow_patterns.description"
+        },
+        "frame": "task",
+        "icon": {
+            "count": 1,
+            "id": "frostiful:snow_man_armor_trim_smithing_template"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.trim_with_packed_snow_patterns.title"
+        }
+    },
+    "criteria": {
+        "frostiful:snow_man_trim": {
+            "conditions": {
+                "recipe_id": "frostiful:smithing/snow_man_trim"
+            },
+            "trigger": "minecraft:recipe_crafted"
+        },
+        "frostiful:frosty_trim": {
+            "conditions": {
+                "recipe_id": "frostiful:smithing/frosty_trim"
+            },
+            "trigger": "minecraft:recipe_crafted"
+        }
+    },
+    "requirements": [
+        [
+            "frostiful:snow_man_trim"
+        ],
+        [
+            "frostiful:frosty_trim"
+        ]
+    ],
+    "rewards": {
+        "experience": 50
+    },
+    "sends_telemetry_event": false
+}

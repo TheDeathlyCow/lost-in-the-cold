@@ -1,0 +1,35 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_snow_man_armor_trim_smithing_template": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "frostiful:snow_man_armor_trim_smithing_template"
+                        ]
+                    }
+                ]
+            }
+        },
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "frostiful:shaped/snow_man_armor_trim_smithing_template"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_snow_man_armor_trim_smithing_template",
+            "has_the_recipe"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "frostiful:shaped/snow_man_armor_trim_smithing_template"
+        ]
+    },
+    "sends_telemetry_event": false
+}

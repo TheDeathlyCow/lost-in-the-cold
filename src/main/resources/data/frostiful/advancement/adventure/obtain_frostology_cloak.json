@@ -1,4 +1,5 @@
 {
+    "parent": "frostiful:adventure/kill_frostologer",
     "display": {
         "icon": {
             "id": "frostiful:frostology_cloak"
@@ -12,9 +13,8 @@
         "frame": "challenge",
         "show_toast": true,
         "announce_to_chat": true,
-        "hidden": true
+        "hidden": false
     },
-    "parent": "frostiful:adventure/find_frostologer_castle",
     "criteria": {
         "frostology_cloak": {
             "trigger": "minecraft:inventory_changed",
@@ -35,6 +35,6 @@
         ]
     ],
     "rewards": {
-        "experience": 100
+        "experience": 150
     }
 }

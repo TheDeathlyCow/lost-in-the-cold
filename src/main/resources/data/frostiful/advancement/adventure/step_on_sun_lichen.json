@@ -1,0 +1,31 @@
+{
+    "parent": "frostiful:adventure/warm_by_light",
+    "display": {
+        "icon": {
+            "id": "frostiful:hot_sun_lichen"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.step_on_sun_lichen.title"
+        },
+        "description": {
+            "translate": "advancements.frostiful.adventure.step_on_sun_lichen.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "step_on_sun_lichen": {
+            "trigger": "frostiful:sun_lichen_discharge"
+        }
+    },
+    "requirements": [
+        [
+            "step_on_sun_lichen"
+        ]
+    ],
+    "rewards": {
+        "experience": 15
+    }
+}

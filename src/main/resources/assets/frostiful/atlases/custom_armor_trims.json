@@ -4,7 +4,11 @@
 			"type": "paletted_permutations",
 			"textures": [
 				"frostiful:trims/models/armor/frosty",
-				"frostiful:trims/models/armor/frosty_leggings"
+				"frostiful:trims/models/armor/frosty_leggings",
+				"frostiful:trims/models/armor/glacial",
+				"frostiful:trims/models/armor/glacial_leggings",
+				"frostiful:trims/models/armor/snow_man",
+				"frostiful:trims/models/armor/snow_man_leggings"
 			],
 			"palette_key": "trims/color_palettes/trim_palette",
 			"permutations": {

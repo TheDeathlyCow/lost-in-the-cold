@@ -38,8 +38,6 @@ public abstract class SpellEntity extends ExplosiveProjectileEntity {
 
     protected abstract void applyEffectCloud();
 
-    protected abstract void applySingleTargetEffect(Entity target);
-
     public void tick() {
         super.tick();
 
@@ -59,7 +57,6 @@ public abstract class SpellEntity extends ExplosiveProjectileEntity {
     public void onEntityHit(EntityHitResult hitResult) {
         super.onEntityHit(hitResult);
         if (!getWorld().isClient && this.isAlive()) {
-            this.applySingleTargetEffect(hitResult.getEntity());
             this.applyEffectCloud();
         }
     }

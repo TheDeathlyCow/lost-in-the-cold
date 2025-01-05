@@ -1,0 +1,38 @@
+{
+    "parent": "frostiful:adventure/brush_polar_bear",
+    "display": {
+        "icon": {
+            "id": "frostiful:fur_chestplate"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.craft_any_fur_armor.title"
+        },
+        "description": {
+            "translate": "advancements.frostiful.adventure.craft_any_fur_armor.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "has_any_fur_armor_piece": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "#frostiful:fur_armor"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_any_fur_armor_piece"
+        ]
+    ],
+    "rewards": {
+        "experience": 15
+    }
+}

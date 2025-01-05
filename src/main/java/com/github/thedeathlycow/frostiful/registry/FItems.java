@@ -338,6 +338,16 @@ public class FItems {
             new Item(new Item.Settings())
     );
 
+    public static final Item GLACIAL_ARMOR_TRIM_SMITHING_TEMPLATE = register(
+            "glacial_armor_trim_smithing_template",
+            SmithingTemplateItem.of(FArmorTrimPatterns.GLACIAL)
+    );
+
+    public static final Item SNOW_MAN_ARMOR_TRIM_SMITHING_TEMPLATE = register(
+            "snow_man_armor_trim_smithing_template",
+            SmithingTemplateItem.of(FArmorTrimPatterns.SNOW_MAN)
+    );
+
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful items");
         FSmithingTemplateItem.addTemplatesToLoot();

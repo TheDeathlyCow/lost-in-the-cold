@@ -1,0 +1,44 @@
+{
+    "parent": "frostiful:adventure/root",
+    "display": {
+        "icon": {
+            "id": "frostiful:glacial_arrow"
+        },
+        "title": {
+            "translate": "advancements.frostiful.adventure.find_chillager_outpost.title"
+        },
+        "description": {
+            "translate": "advancements.frostiful.adventure.find_chillager_outpost.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "find_outpost": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "location": {
+                                "structures": "frostiful:chillager_outpost"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "find_outpost"
+        ]
+    ],
+    "rewards": {
+        "experience": 25
+    }
+}

@@ -3,6 +3,7 @@ package com.github.thedeathlycow.frostiful.block;
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
 import com.github.thedeathlycow.frostiful.registry.FBlocks;
+import com.github.thedeathlycow.frostiful.registry.FCriteria;
 import com.github.thedeathlycow.frostiful.registry.FSoundEvents;
 import com.github.thedeathlycow.frostiful.registry.tag.FItemTags;
 import com.github.thedeathlycow.thermoo.api.temperature.HeatingModes;
@@ -16,6 +17,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -43,7 +45,7 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
     public SunLichenBlock(int heatLevel, Settings settings) {
         super(settings);
         this.heatLevel = heatLevel;
-        if (heatLevel > COLD_LEVEL){
+        if (heatLevel > COLD_LEVEL) {
             LandPathNodeTypesRegistry.register(this, PathNodeType.DAMAGE_OTHER, PathNodeType.DANGER_OTHER);
         }
     }
@@ -52,13 +54,14 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
             if (this.heatLevel > COLD_LEVEL && this.canBurnEntity(livingEntity)) {
-
                 FrostifulConfig config = Frostiful.getConfig();
 
-                // only add heat if cold, but always damage
-                if (livingEntity.thermoo$isCold()) {
-                    int heat = config.freezingConfig.getSunLichenHeatPerLevel() * this.heatLevel;
-                    livingEntity.thermoo$addTemperature(heat, HeatingModes.ACTIVE);
+                int heatToDischarge = config.freezingConfig.getSunLichenHeatPerLevel() * this.heatLevel;
+                // burn if hot sun lichen and target is warm
+                if (livingEntity.thermoo$getTemperature() > 0 && this.heatLevel == HOT_LEVEL) {
+                    livingEntity.setFireTicks(config.freezingConfig.getSunLichenBurnTime());
+                } else if (livingEntity.thermoo$isCold()) { // only add heatToDischarge if cold, but always damage
+                    livingEntity.thermoo$addTemperature(heatToDischarge, HeatingModes.ACTIVE);
 
                     // reset temperature if temp change overheated
                     if (livingEntity.thermoo$isWarm()) {
@@ -66,12 +69,10 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
                     }
                 }
 
-                // burn if hot sun lichen and target is warm
-                if (livingEntity.thermoo$isWarm() && this.heatLevel == HOT_LEVEL) {
-                    livingEntity.setFireTicks(config.freezingConfig.getSunLichenBurnTime());
-                }
-
                 entity.damage(world.getDamageSources().hotFloor(), 1);
+                if (livingEntity instanceof ServerPlayerEntity player) {
+                    FCriteria.SUN_LICHEN_DISCHARGE.trigger(player, heatToDischarge);
+                }
                 createFireParticles(world, pos);
 
                 BlockState coldSunLichenState = FBlocks.COLD_SUN_LICHEN.getStateWithProperties(state);

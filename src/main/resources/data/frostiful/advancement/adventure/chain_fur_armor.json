@@ -1,5 +1,5 @@
 {
-    "parent": "frostiful:adventure/fur_armor",
+    "parent": "frostiful:adventure/craft_any_fur_armor",
     "display": {
         "icon": {
             "id": "frostiful:fur_padded_chainmail_chestplate"
@@ -14,9 +14,6 @@
         "show_toast": true,
         "announce_to_chat": true,
         "hidden": false
-    },
-    "rewards": {
-        "experience": 15
     },
     "criteria": {
         "has_full_suit": {
@@ -51,5 +48,8 @@
         [
             "has_full_suit"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 25
+    }
 }

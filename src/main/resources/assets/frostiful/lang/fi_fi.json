@@ -136,8 +136,8 @@
     "advancements.frostiful.adventure.fur_armor.description": "Hanki täysi puku turkkia",
     "advancements.frostiful.adventure.chain_fur_armor.title": "Kahlittu",
     "advancements.frostiful.adventure.chain_fur_armor.description": "Hanki läysi puku turkkipehmustettua rengashaarniskaa",
-    "advancements.frostiful.add_log_to_fire.title": "Timber Hearth",
-    "advancements.frostiful.add_log_to_fire.desc": "Lisää puunhalko nuotioon",
+    "advancements.frostiful.adventure.add_log_to_fire.title": "Timber Hearth",
+    "advancements.frostiful.adventure.add_log_to_fire.description": "Lisää puunhalko nuotioon",
     "advancements.frostiful.adventure.obtain_ice_skates.title": "Vasta teroitettu",
     "advancements.frostiful.adventure.obtain_ice_skates.description": "Hanki luistimet Takomispöydältä",
     
@@ -231,8 +231,7 @@
     "text.autoconfig.frostiful.option.combatConfig.frostologerMaxPassiveFreezing": "Jäälogistin maksimi passivisen jäätymisen prosentti (0-1)",
     "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Maksimipakkasenpureman maksimitaso (inklusiivinen)",
     "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Viilentäjän tulivahingon kerroin",
-    "text.autoconfig.frostiful.option.combatConfig.furUpgradeTemplateGenerateChance": "Turkkipäivityksen generointimahdollisuus (0-1)",
-    "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateGenerateChance": "Luistinpäivityksen generointimahdollisuus (0-1)",
+    "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Luistinpäivityksen generointimahdollisuus (0-1)",
     
     "text.autoconfig.frostiful.option.freezingConfig": "Jäätymisasetukset",
     "text.autoconfig.frostiful.option.freezingConfig.doPassiveFreezing": "Passiivinen jäätyminen (globaali)",

@@ -1,6 +1,9 @@
 package com.github.thedeathlycow.frostiful.test.sun_lichen;
 
+import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.registry.FBlocks;
+import com.github.thedeathlycow.frostiful.test.FrostifulGameTest;
+import com.github.thedeathlycow.thermoo.api.ThermooAttributes;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentControllerDecorator;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentManager;
 import com.github.thedeathlycow.thermoo.api.temperature.TemperatureAware;
@@ -9,6 +12,8 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -103,18 +108,35 @@ public final class SunLichenCollisionTests implements FabricGameTest {
     }
 
     @GameTest(batchId = "sunLichenCollision", templateName = "frostiful-test:sun_lichen_tests.platform")
-    public void sun_lichen_overheat_burns_villager(TestContext context) {
+    public void warm_villager_is_burned_by_hot_sun_lichen(TestContext context) {
         final BlockPos pos = new BlockPos(1, 2, 1);
-
-        final MobEntity entity = context.spawnMob(EntityType.VILLAGER, pos);
-
-        int freezeAmount = -500;
-        entity.thermoo$setTemperature(freezeAmount);
-        context.expectEntityWithData(pos, EntityType.VILLAGER, TemperatureAware::thermoo$getTemperature, freezeAmount);
+        int temperature = 500;
+        MobEntity entity = setupWarmVillagerTest(context, pos, temperature);
 
         context.setBlockState(pos, FBlocks.HOT_SUN_LICHEN.getDefaultState());
 
-        context.expectEntityWithDataEnd(pos, EntityType.VILLAGER, Entity::isOnFire, true);
+        context.waitAndRun(1L, () -> {
+            context.expectEntityWithData(pos, EntityType.VILLAGER, TemperatureAware::thermoo$getTemperature, temperature);
+            context.expectEntityWithData(pos, EntityType.VILLAGER, Entity::isOnFire, true);
+
+            context.complete();
+        });
+    }
+
+    @GameTest(batchId = "sunLichenCollision", templateName = "frostiful-test:sun_lichen_tests.platform")
+    public void warm_villager_is_not_burned_by_cool_sun_lichen(TestContext context) {
+        final BlockPos pos = new BlockPos(1, 2, 1);
+        int temperature = 500;
+        MobEntity entity = setupWarmVillagerTest(context, pos, temperature);
+
+        context.setBlockState(pos, FBlocks.COOL_SUN_LICHEN.getDefaultState());
+
+        context.waitAndRun(1L, () -> {
+            context.expectEntityWithData(pos, EntityType.VILLAGER, TemperatureAware::thermoo$getTemperature, temperature);
+            context.expectEntityWithData(pos, EntityType.VILLAGER, Entity::isOnFire, false);
+
+            context.complete();
+        });
     }
 
     @GameTest(batchId = "sunLichenCollision", templateName = "frostiful-test:sun_lichen_tests.platform")
@@ -156,5 +178,24 @@ public final class SunLichenCollisionTests implements FabricGameTest {
                 );
             });
         });
+    }
+
+    private static MobEntity setupWarmVillagerTest(TestContext context, BlockPos pos, int temperature) {
+        final MobEntity entity = context.spawnMob(EntityType.VILLAGER, pos);
+
+        EntityAttributeInstance maxTemperature = entity.getAttributeInstance(ThermooAttributes.MAX_TEMPERATURE);
+        context.assertFalse(maxTemperature == null, "Villager does not have a max temperature attribute");
+        maxTemperature.addTemporaryModifier(
+                new EntityAttributeModifier(
+                        FrostifulGameTest.id("max_temperature"),
+                        40,
+                        EntityAttributeModifier.Operation.ADD_VALUE
+                )
+        );
+
+        entity.thermoo$setTemperature(temperature);
+        context.expectEntityWithData(pos, EntityType.VILLAGER, TemperatureAware::thermoo$getTemperature, temperature);
+
+        return entity;
     }
 }

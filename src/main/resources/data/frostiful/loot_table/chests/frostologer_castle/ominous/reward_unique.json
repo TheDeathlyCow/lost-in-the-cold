@@ -7,7 +7,7 @@
                 {
                     "type": "minecraft:item",
                     "name": "minecraft:enchanted_golden_apple",
-                    "weight": 3
+                    "weight": 5
                 },
                 {
                     "type": "minecraft:item",
@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "minecraft:item",
-                    "name": "frostiful:frosty_armor_trim_smithing_template",
+                    "name": "frostiful:glacial_armor_trim_smithing_template",
                     "weight": 2
                 }
             ],

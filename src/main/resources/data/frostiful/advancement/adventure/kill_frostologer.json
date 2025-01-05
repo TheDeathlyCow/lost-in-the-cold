@@ -1,7 +1,8 @@
 {
+    "parent": "frostiful:adventure/find_frostologer_castle",
     "display": {
         "icon": {
-            "id": "frostiful:frost_wand"
+            "id": "frostiful:glacial_heart"
         },
         "title": {
             "translate": "advancements.frostiful.adventure.kill_frostologer.title"
@@ -14,7 +15,6 @@
         "announce_to_chat": true,
         "hidden": false
     },
-    "parent": "frostiful:adventure/find_frostologer_castle",
     "criteria": {
         "frostologer": {
             "trigger": "minecraft:player_killed_entity",
@@ -35,5 +35,8 @@
         [
             "frostologer"
         ]
-    ]
+    ],
+    "rewards": {
+        "experience": 50
+    }
 }
