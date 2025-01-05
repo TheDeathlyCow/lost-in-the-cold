@@ -1,6 +1,10 @@
 {
     "replace": false,
     "values": [
-        "minecraft:ocelot"
+        "minecraft:ocelot",
+        {
+            "required": false,
+            "id": "#c:ocelots"
+        }
     ]
 }

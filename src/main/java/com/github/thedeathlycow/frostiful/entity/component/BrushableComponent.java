@@ -49,7 +49,7 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
      * @param base   Original action result for the interaction
      */
     public static ActionResult interactWithMob(MobEntity animal, PlayerEntity player, Hand hand, ActionResult base) {
-        if (base != ActionResult.PASS) {
+        if (player.isSpectator() || base != ActionResult.PASS) {
             return base;
         }
 
@@ -57,13 +57,13 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
         BrushableComponent component = FComponents.BRUSHABLE_COMPONENT.getNullable(animal);
         if (component != null && component.isBrushable() && heldItem.isIn(ConventionalItemTags.BRUSH_TOOLS)) {
             component.brush(player);
-
             if (!animal.getWorld().isClient) {
                 heldItem.damage(16, player, LivingEntity.getSlotForHand(hand));
             }
+            return ActionResult.success(animal.getWorld().isClient);
         }
 
-        return ActionResult.success(animal.getWorld().isClient);
+        return ActionResult.PASS;
     }
 
     @Override
@@ -154,6 +154,10 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
      * @param brusher the player who brushed the provider
      */
     private void setAngryAt(PlayerEntity brusher) {
+        if (brusher.isCreative()) {
+            return;
+        }
+
         if (provider instanceof TameableEntity tameable && tameable.isTamed()) {
             return;
         }

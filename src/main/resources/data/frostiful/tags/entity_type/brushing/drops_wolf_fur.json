@@ -1,6 +1,10 @@
 {
     "replace": false,
     "values": [
-        "minecraft:wolf"
+        "minecraft:wolf",
+        {
+            "required": false,
+            "id": "#c:wolves"
+        }
     ]
 }
