@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-//@SuppressWarnings("unused")
+@SuppressWarnings("unused")
 public class FrozenByFrostWandCriterionTest {
 
     private static final int NUM_PREDICATES = 3;
