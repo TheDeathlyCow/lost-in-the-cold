@@ -75,7 +75,7 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
 
                 entity.damage(world.getDamageSources().hotFloor(), 1);
                 if (livingEntity instanceof ServerPlayerEntity player) {
-                    FCriteria.SUN_LICHEN_DISCHARGE.trigger(player, heatToDischarge);
+                    FCriteria.FROZEN_BY_FROST_WAND.trigger(player, heatToDischarge);
                 }
                 createFireParticles(world, pos);
 
