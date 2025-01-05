@@ -45,7 +45,7 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
     public SunLichenBlock(int heatLevel, Settings settings) {
         super(settings);
         this.heatLevel = heatLevel;
-        if (heatLevel > COLD_LEVEL){
+        if (heatLevel > COLD_LEVEL) {
             LandPathNodeTypesRegistry.register(this, PathNodeType.DAMAGE_OTHER, PathNodeType.DANGER_OTHER);
         }
     }
@@ -54,23 +54,19 @@ public class SunLichenBlock extends GlowLichenBlock implements Heatable {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
             if (this.heatLevel > COLD_LEVEL && this.canBurnEntity(livingEntity)) {
-
                 FrostifulConfig config = Frostiful.getConfig();
 
                 int heatToDischarge = config.freezingConfig.getSunLichenHeatPerLevel() * this.heatLevel;
-                // only add heatToDischarge if cold, but always damage
-                if (livingEntity.thermoo$isCold()) {
+                // burn if hot sun lichen and target is warm
+                if (livingEntity.thermoo$getTemperature() > 0 && this.heatLevel == HOT_LEVEL) {
+                    livingEntity.setFireTicks(config.freezingConfig.getSunLichenBurnTime());
+                } else if (livingEntity.thermoo$isCold()) { // only add heatToDischarge if cold, but always damage
                     livingEntity.thermoo$addTemperature(heatToDischarge, HeatingModes.ACTIVE);
 
                     // reset temperature if temp change overheated
                     if (livingEntity.thermoo$isWarm()) {
                         livingEntity.thermoo$setTemperature(0);
                     }
-                }
-
-                // burn if hot sun lichen and target is warm
-                if (livingEntity.thermoo$isWarm() && this.heatLevel == HOT_LEVEL) {
-                    livingEntity.setFireTicks(config.freezingConfig.getSunLichenBurnTime());
                 }
 
                 entity.damage(world.getDamageSources().hotFloor(), 1);
