@@ -7,8 +7,10 @@ import com.github.thedeathlycow.frostiful.util.FLootHelper;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootTable;
@@ -47,8 +49,8 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
      * @param base   Original action result for the interaction
      */
     public static ActionResult interactWithMob(MobEntity animal, PlayerEntity player, Hand hand, ActionResult base) {
-        if (base == ActionResult.FAIL) {
-            return ActionResult.FAIL;
+        if (base != ActionResult.PASS) {
+            return base;
         }
 
         ItemStack heldItem = player.getStackInHand(hand);
@@ -127,9 +129,9 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
             if (furLootTable != null) {
                 FLootHelper.dropLootFromEntity(provider, furLootTable);
             }
+            this.setLastBrushTime(world.getTime());
+            this.setAngryAt(brusher);
         }
-
-        this.setLastBrushTime(world.getTime());
     }
 
     @Nullable
@@ -143,6 +145,22 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
             return FLootTables.OCELOT_BRUSHING_GAMEPLAY;
         } else {
             return null;
+        }
+    }
+
+    /**
+     * Sets the provider to be angry at the brusher if the provider is not tamed
+     *
+     * @param brusher the player who brushed the provider
+     */
+    private void setAngryAt(PlayerEntity brusher) {
+        if (provider instanceof TameableEntity tameable && tameable.isTamed()) {
+            return;
+        }
+
+        if (provider instanceof Angerable angerable) {
+            angerable.chooseRandomAngerTime();
+            angerable.setAngryAt(brusher.getUuid());
         }
     }
 }
