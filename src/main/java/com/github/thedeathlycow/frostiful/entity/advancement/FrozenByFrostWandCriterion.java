@@ -28,7 +28,7 @@ public class FrozenByFrostWandCriterion extends AbstractCriterion<FrozenByFrostW
             victimContexts.add(EntityPredicate.createAdvancementEntityLootContext(player, frozenEntity));
         }
 
-        this.trigger(player, conditions -> conditions.matches(victimContexts, victimContexts.size()));
+        this.trigger(player, conditions -> conditions.matches(victimContexts));
     }
 
     public record Conditions(
@@ -58,10 +58,9 @@ public class FrozenByFrostWandCriterion extends AbstractCriterion<FrozenByFrostW
          * returns false. Otherwise, checks the entities frozen count
          *
          * @param victims victims frozen
-         * @param entitiesFrozenCount number of victims frozen
          * @return returns true
          */
-        public boolean matches(Collection<LootContext> victims, int entitiesFrozenCount) {
+        public boolean matches(Collection<LootContext> victims) {
             if (!this.victims.isEmpty()) {
                 List<LootContext> unmatchedVictims = new ArrayList<>(victims);
 
@@ -83,7 +82,7 @@ public class FrozenByFrostWandCriterion extends AbstractCriterion<FrozenByFrostW
                     }
                 }
             }
-            return this.entitiesFrozen.test(entitiesFrozenCount);
+            return this.entitiesFrozen.test(victims.size());
         }
 
         @Override

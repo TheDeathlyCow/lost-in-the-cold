@@ -1,22 +1,23 @@
 {
-	"schemaVersion": 1,
-	"id": "frostiful-test",
-	"name": "Frostiful Test Mod",
-	"version": "1.0.0",
-	"environment": "*",
-	"license": "Apache-2.0",
-	"entrypoints": {
-		"fabric-gametest": [
-			"com.github.thedeathlycow.frostiful.test.icicle.IcicleBreakTests",
-			"com.github.thedeathlycow.frostiful.test.icicle.FrostTippedArrowTests",
-			"com.github.thedeathlycow.frostiful.test.sun_lichen.SunLichenCollisionTests",
-			"com.github.thedeathlycow.frostiful.test.sun_lichen.SunLichenPathfindingTests",
-			"com.github.thedeathlycow.frostiful.test.effects.RootedTests",
-			"com.github.thedeathlycow.frostiful.test.effects.LocalTemperatureTests",
-			"com.github.thedeathlycow.frostiful.test.frostologer.FrostologerDestroyHeatSourcesTests",
-			"com.github.thedeathlycow.frostiful.test.frostologer.ChillagerDropTests",
-			"com.github.thedeathlycow.frostiful.test.powder_snow_walkable.EntityPowderSnowTests",
-			"com.github.thedeathlycow.frostiful.test.damage.HotFloorTests"
-		]
-	}
+    "schemaVersion": 1,
+    "id": "frostiful-test",
+    "name": "Frostiful Test Mod",
+    "version": "1.0.0",
+    "environment": "*",
+    "license": "LGPL-3.0",
+    "entrypoints": {
+        "fabric-gametest": [
+            "com.github.thedeathlycow.frostiful.test.icicle.IcicleBreakTests",
+            "com.github.thedeathlycow.frostiful.test.icicle.FrostTippedArrowTests",
+            "com.github.thedeathlycow.frostiful.test.sun_lichen.SunLichenCollisionTests",
+            "com.github.thedeathlycow.frostiful.test.sun_lichen.SunLichenPathfindingTests",
+            "com.github.thedeathlycow.frostiful.test.effects.RootedTests",
+            "com.github.thedeathlycow.frostiful.test.effects.LocalTemperatureTests",
+            "com.github.thedeathlycow.frostiful.test.frostologer.FrostologerDestroyHeatSourcesTests",
+            "com.github.thedeathlycow.frostiful.test.frostologer.ChillagerDropTests",
+            "com.github.thedeathlycow.frostiful.test.powder_snow_walkable.EntityPowderSnowTests",
+            "com.github.thedeathlycow.frostiful.test.damage.HotFloorTests",
+            "com.github.thedeathlycow.frostiful.test.loot.FrozenByFrostWandCriterionTest"
+        ]
+    }
 }

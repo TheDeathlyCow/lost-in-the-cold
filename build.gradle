@@ -96,6 +96,8 @@ dependencies {
 
             testmodImplementation project("${it.name}:").sourceSets.testmod.output
         }
+
+        testmodImplementation "org.mockito:mockito-core:3.+"
     }
 }
 

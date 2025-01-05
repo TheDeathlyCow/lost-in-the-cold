@@ -10,6 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -49,25 +51,19 @@ class LocationWarmthLootConditionTest {
         EnvironmentManager.INSTANCE.peelController();
     }
 
-    @Test
-    void areaTemperature_OutsideBoundary_false() {
-        areaTemperature.set(0);
+    @ParameterizedTest
+    @ValueSource(ints = {Integer.MIN_VALUE, -1, 0, 5, 9})
+    void areaTemperature_OutsideBoundary_false(int temperature) {
+        areaTemperature.set(temperature);
         var condition = new LocationWarmthLootCondition(NumberRange.IntRange.atLeast(10));
 
         Assertions.assertFalse(condition.test(mockContext));
     }
 
-    @Test
-    void areaTemperature_AtBoundary_true() {
-        areaTemperature.set(10);
-        var condition = new LocationWarmthLootCondition(NumberRange.IntRange.atLeast(10));
-
-        Assertions.assertTrue(condition.test(mockContext));
-    }
-
-    @Test
-    void areaTemperature_AboveBoundary_true() {
-        areaTemperature.set(15);
+    @ParameterizedTest
+    @ValueSource(ints = {10, 11, 15, 25, 32132, Integer.MAX_VALUE})
+    void areaTemperature_InBoundary_true(int temperature) {
+        areaTemperature.set(temperature);
         var condition = new LocationWarmthLootCondition(NumberRange.IntRange.atLeast(10));
 
         Assertions.assertTrue(condition.test(mockContext));
