@@ -2,6 +2,7 @@ package com.github.thedeathlycow.frostiful.entity.component;
 
 import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.util.FLootHelper;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -49,7 +50,7 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
 
         ItemStack heldItem = player.getStackInHand(hand);
         BrushableComponent component = FComponents.BRUSHABLE_COMPONENT.getNullable(animal);
-        if (component != null && component.isBrushable() && heldItem.isOf(Items.BRUSH)) {
+        if (component != null && component.isBrushable() && heldItem.isIn(ConventionalItemTags.BRUSH_TOOLS)) {
             component.brush(player, null);
 
             if (!animal.getWorld().isClient) {
