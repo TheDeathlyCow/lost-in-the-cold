@@ -11,7 +11,6 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
@@ -111,7 +110,7 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
                 && this.provider.getWorld().getTimeOfDay() - lastBrushTime <= BRUSH_COOLDOWN;
     }
 
-    private void brush(PlayerEntity player) {
+    private void brush(PlayerEntity brusher) {
         World world = provider.getWorld();
         world.playSoundFromEntity(
                 null,
@@ -120,7 +119,7 @@ public class BrushableComponent implements Component, AutoSyncedComponent {
                 SoundCategory.PLAYERS,
                 1.0f, 1.0f
         );
-        provider.emitGameEvent(GameEvent.SHEAR, player);
+        provider.emitGameEvent(GameEvent.SHEAR, brusher);
 
         if (!world.isClient) {
             RegistryKey<LootTable> furLootTable = getLootTableForAnimal(provider);
