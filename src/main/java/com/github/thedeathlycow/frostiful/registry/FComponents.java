@@ -5,6 +5,7 @@ import com.github.thedeathlycow.frostiful.entity.component.BrushableComponent;
 import com.github.thedeathlycow.frostiful.entity.component.LivingEntityComponents;
 import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.OcelotEntity;
 import net.minecraft.entity.passive.PolarBearEntity;
 import net.minecraft.entity.passive.WolfEntity;
@@ -43,17 +44,7 @@ public class FComponents implements EntityComponentInitializer {
                 FrostWandRootComponent::new
         );
         registry.registerFor(
-                PolarBearEntity.class,
-                BRUSHABLE_COMPONENT,
-                BrushableComponent::new
-        );
-        registry.registerFor(
-                OcelotEntity.class,
-                BRUSHABLE_COMPONENT,
-                BrushableComponent::new
-        );
-        registry.registerFor(
-                WolfEntity.class,
+                AnimalEntity.class,
                 BRUSHABLE_COMPONENT,
                 BrushableComponent::new
         );
