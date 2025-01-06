@@ -34,6 +34,8 @@ public class CombatConfigGroup implements ConfigData {
 
     float chillagerFireDamageMultiplier = 1.5f;
 
+    float frostologerFireDamageMultiplier = 2.0f;
+
     @ConfigEntry.Gui.RequiresRestart
     float skateUpgradeTemplateIglooGenerateChance = 0.75f;
 
@@ -93,6 +95,10 @@ public class CombatConfigGroup implements ConfigData {
 
     public float getChillagerFireDamageMultiplier() {
         return chillagerFireDamageMultiplier;
+    }
+
+    public float getFrostologerFireDamageMultiplier() {
+        return frostologerFireDamageMultiplier;
     }
 
     public float getSkateUpgradeTemplateIglooGenerateChance() {

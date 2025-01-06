@@ -263,6 +263,7 @@
   "text.autoconfig.frostiful.option.combatConfig.packedSnowballVulnerableTypesDamage": "Packed snowball vulnerable types damage",
   "text.autoconfig.frostiful.option.combatConfig.biterFrostBiteMaxAmplifier": "Max Frost Bite Max Amplifier (inclusive)",
   "text.autoconfig.frostiful.option.combatConfig.chillagerFireDamageMultiplier": "Chillager fire damage multiplier",
+  "text.autoconfig.frostiful.option.combatConfig.frostologerFireDamageMultiplier": "Frostologer fire damage multiplier",
   "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Ice Skate upgrade generate chance in Igloos (0-1)",
   "text.autoconfig.frostiful.option.combatConfig.veryProtectiveFrostResistanceMultiplier": "Very protective Frost Resistance multiplier",
   "text.autoconfig.frostiful.option.combatConfig.protectiveFrostResistanceMultiplier": "Protective Frost Resistance multiplier",

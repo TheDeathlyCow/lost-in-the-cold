@@ -2,6 +2,7 @@ package com.github.thedeathlycow.frostiful.entity.frostologer;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.block.FrozenTorchBlock;
+import com.github.thedeathlycow.frostiful.config.FrostifulConfig;
 import com.github.thedeathlycow.frostiful.entity.BiterEntity;
 import com.github.thedeathlycow.frostiful.entity.ThrownIcicleEntity;
 import com.github.thedeathlycow.frostiful.item.FrostWandItem;
@@ -272,9 +273,25 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
 
         this.updateCapeAngles();
 
-        if (this.getWorld().isClient && this.isAtMaxPower()) {
+        World world = this.getWorld();
+        if (world.isClient() && this.isAtMaxPower()) {
             this.spawnPowerParticles();
         }
+
+        if (!world.isClient() && this.isOnFire()) {
+            int fireTicks = this.getFireTicks();
+            this.setFireTicks(Math.min(10, fireTicks));
+        }
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (source.isIn(DamageTypeTags.IS_FIRE)) {
+            FrostifulConfig config = Frostiful.getConfig();
+            amount *= config.combatConfig.getFrostologerFireDamageMultiplier();
+        }
+
+        return super.damage(source, amount);
     }
 
     @Override
@@ -514,17 +531,13 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
         @Override
         public void start() {
             super.start();
-            if (FrostologerEntity.this.isOnFire()) {
-                FrostologerEntity.this.extinguish();
-                FrostologerEntity.this.playExtinguishSound();
-            }
             FrostologerEntity.this.isChanneling = true;
         }
 
         @Override
         public boolean canStart() {
             FrostologerEntity frostologer = FrostologerEntity.this;
-            return super.canStart() && frostologer.thermoo$getTemperature() <= frostologer.thermoo$getMinTemperature();
+            return super.canStart() && frostologer.thermoo$getTemperatureScale() <= -0.9f;
         }
 
         @Override
@@ -532,11 +545,6 @@ public class FrostologerEntity extends SpellcastingIllagerEntity implements Rang
             FrostologerEntity frostologer = FrostologerEntity.this;
 
             Box box = frostologer.getBoundingBox().expand(this.range);
-
-            if (frostologer.isOnFire()) {
-                frostologer.extinguish();
-                frostologer.playExtinguishSound();
-            }
 
             World world = frostologer.getWorld();
 
