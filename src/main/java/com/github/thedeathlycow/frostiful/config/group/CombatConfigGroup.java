@@ -43,6 +43,8 @@ public class CombatConfigGroup implements ConfigData {
     @ConfigEntry.Gui.RequiresRestart
     double protectiveFrostResistanceMultiplier = 0.5;
 
+    double iceBreakFallbackDamage = 3.0;
+
 
     public boolean doChillagerPatrols() {
         return doChillagerPatrols;
@@ -111,5 +113,15 @@ public class CombatConfigGroup implements ConfigData {
 
     public double getHarmfulFrostResistanceMultiplier() {
         return -protectiveFrostResistanceMultiplier;
+    }
+
+    public double getIceBreakFallbackDamage() {
+        return iceBreakFallbackDamage;
+    }
+
+    @Override
+    public void validatePostLoad() throws ValidationException {
+        ConfigData.super.validatePostLoad();
+        this.iceBreakFallbackDamage = Math.max(0, this.iceBreakFallbackDamage);
     }
 }

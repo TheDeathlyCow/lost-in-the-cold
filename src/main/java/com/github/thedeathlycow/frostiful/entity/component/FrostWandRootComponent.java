@@ -31,8 +31,6 @@ import org.ladysnake.cca.api.v3.component.tick.ServerTickingComponent;
 
 public class FrostWandRootComponent implements Component, AutoSyncedComponent, ServerTickingComponent {
 
-    public static final double ICE_BREAK_BASE_DAMAGE = 3.0;
-
     private static final String ROOTED_TICKS_KEY = "rooted_ticks";
 
     private final LivingEntity provider;
@@ -97,7 +95,7 @@ public class FrostWandRootComponent implements Component, AutoSyncedComponent, S
 
         double damage = attacker instanceof LivingEntity livingAttacker
                 ? livingAttacker.getAttributeValue(FEntityAttributes.ICE_BREAK_DAMAGE)
-                : ICE_BREAK_BASE_DAMAGE;
+                : Frostiful.getConfig().combatConfig.getIceBreakFallbackDamage();
 
         DamageSource source = FDamageSources.getDamageSources(provider.getWorld())
                 .frostiful$brokenIce(attacker);

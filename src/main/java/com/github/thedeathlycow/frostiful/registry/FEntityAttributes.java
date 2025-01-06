@@ -1,7 +1,6 @@
 package com.github.thedeathlycow.frostiful.registry;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
-import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
 import net.minecraft.entity.attribute.ClampedEntityAttribute;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttribute;
@@ -14,10 +13,7 @@ public final class FEntityAttributes {
     public static final RegistryEntry<EntityAttribute> ICE_BREAK_DAMAGE = register(
             "generic.ice_breaker_damage",
             new ClampedEntityAttribute(
-                    "attribute.frostiful.generic.ice_break_damage",
-                    FrostWandRootComponent.ICE_BREAK_BASE_DAMAGE,
-                    0,
-                    1024.0
+                    "attribute.frostiful.generic.ice_break_damage", 1.5, 0, 1024.0
             ).setTracked(true)
     );
 

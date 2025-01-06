@@ -266,6 +266,7 @@
   "text.autoconfig.frostiful.option.combatConfig.skateUpgradeTemplateIglooGenerateChance": "Ice Skate upgrade generate chance in Igloos (0-1)",
   "text.autoconfig.frostiful.option.combatConfig.veryProtectiveFrostResistanceMultiplier": "Very protective Frost Resistance multiplier",
   "text.autoconfig.frostiful.option.combatConfig.protectiveFrostResistanceMultiplier": "Protective Frost Resistance multiplier",
+  "text.autoconfig.frostiful.option.combatConfig.iceBreakFallbackDamage": "Ice Break fallback damage",
   
   "text.autoconfig.frostiful.option.freezingConfig": "Freezing Config",
   "text.autoconfig.frostiful.option.freezingConfig.doPassiveFreezing": "Do passive freezing (global)",
