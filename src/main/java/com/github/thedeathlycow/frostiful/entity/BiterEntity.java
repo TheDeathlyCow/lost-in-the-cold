@@ -51,7 +51,7 @@ public class BiterEntity extends HostileEntity {
         return HostileEntity.createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0)
-                .add(ThermooAttributes.MIN_TEMPERATURE, 5.0);
+                .add(ThermooAttributes.MIN_TEMPERATURE, 45.0);
     }
 
     @Override

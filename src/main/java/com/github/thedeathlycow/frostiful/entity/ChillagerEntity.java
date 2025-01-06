@@ -27,7 +27,7 @@ public class ChillagerEntity extends PillagerEntity {
 
     public static DefaultAttributeContainer.Builder createChillagerAttributes() {
         return PillagerEntity.createPillagerAttributes()
-                .add(ThermooAttributes.MIN_TEMPERATURE, 5.0)
+                .add(ThermooAttributes.MIN_TEMPERATURE, 45.0)
                 .add(ThermooAttributes.FROST_RESISTANCE, 10.0);
     }
 
