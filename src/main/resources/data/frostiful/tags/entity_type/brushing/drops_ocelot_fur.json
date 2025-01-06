@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:ocelot",
+        {
+            "required": false,
+            "id": "#c:ocelots"
+        }
+    ]
+}

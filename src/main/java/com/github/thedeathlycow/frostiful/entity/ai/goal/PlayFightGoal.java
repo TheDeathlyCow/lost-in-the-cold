@@ -1,5 +1,7 @@
 package com.github.thedeathlycow.frostiful.entity.ai.goal;
 
+import com.github.thedeathlycow.frostiful.entity.component.BrushableComponent;
+import com.github.thedeathlycow.frostiful.registry.FComponents;
 import com.github.thedeathlycow.frostiful.util.FLootHelper;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.Goal;
@@ -104,7 +106,11 @@ public class PlayFightGoal<T extends PathAwareEntity> extends Goal {
             return;
         }
 
-        FLootHelper.dropLootFromEntity(this.mob, this.furLootTable);
+        BrushableComponent brushableComponent = FComponents.BRUSHABLE_COMPONENT.getNullable(this.mob);
+        if (brushableComponent == null || !brushableComponent.wasBrushed()) {
+            FLootHelper.dropLootFromEntity(this.mob, this.furLootTable);
+        }
+
         this.droppedFur = true;
     }
 

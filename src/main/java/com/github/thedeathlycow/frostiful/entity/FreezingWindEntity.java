@@ -26,7 +26,7 @@ public class FreezingWindEntity extends WindEntity {
     }
 
     public static void freezeEntity(LivingEntity entity, int frost) {
-        if (entity.isPlayer()) {
+        if (entity.getType() == EntityType.PLAYER) {
             entity.thermoo$addTemperature(-frost, HeatingModes.ACTIVE);
         }
     }
