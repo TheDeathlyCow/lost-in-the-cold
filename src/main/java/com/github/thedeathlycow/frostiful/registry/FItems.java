@@ -308,6 +308,14 @@ public class FItems {
             )
     );
 
+    public static final Item ICICLE_BANNER_PATTERN = register(
+            "icicle_banner_pattern",
+            new BannerPatternItem(
+                    FBannerPatternTags.ICICLE_PATTERN_ITEM,
+                    new Item.Settings().maxCount(1)
+            )
+    );
+
     public static final Item ICY_TRIAL_SPAWNER = register(
             "icy_trial_spawner",
             new BlockItem(FBlocks.ICY_TRIAL_SPAWNER, new Item.Settings())

@@ -72,6 +72,7 @@ public class FItemGroups {
                         entries.add(new ItemStack(FItems.FROSTY_ARMOR_TRIM_SMITHING_TEMPLATE));
                         entries.add(new ItemStack(FItems.GLACIAL_ARMOR_TRIM_SMITHING_TEMPLATE));
                         entries.add(new ItemStack(FItems.SNOWFLAKE_BANNER_PATTERN));
+                        entries.add(new ItemStack(FItems.ICICLE_BANNER_PATTERN));
 
                         entries.add(new ItemStack(FItems.ICICLE));
                         entries.add(new ItemStack(FItems.GLACIAL_ARROW));

@@ -62,6 +62,8 @@
   
   "item.frostiful.snowflake_banner_pattern": "Banner Pattern",
   "item.frostiful.snowflake_banner_pattern.desc": "Snowflake",
+  "item.frostiful.icicle_banner_pattern": "Banner Pattern",
+  "item.frostiful.icicle_banner_pattern.desc": "Icicle",
   
   "filled_map.frostiful.frostologer_castle": "Snowy Castle Explorer Map",
   
@@ -107,6 +109,7 @@
   "block.frostiful.frosted_banner": "Frosted Banner",
   
   "block.minecraft.banner.frostiful.snowflake": "Snowflake",
+  "block.minecraft.banner.frostiful.icicle": "Icicle",
 
   "entity.frostiful.frost_spell": "Frost Spell",
   "entity.frostiful.packed_snowball": "Packed Snowball",
