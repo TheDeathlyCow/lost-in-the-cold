@@ -54,16 +54,9 @@ public class Frostiful implements ModInitializer {
                     (dispatcher, registryAccess, environment) -> {
                         RootCommand.register(dispatcher);
                         WindCommand.register(dispatcher);
+                        FrostedBanner.registerCommand(dispatcher);
                     });
-
-            SharedConstants.isDevelopment = true;
         }
-
-        // TODO: remove to dev only before merge
-        CommandRegistrationCallback.EVENT.register(
-                (dispatcher, registryAccess, environment) -> {
-                    FrostedBanner.registerCommand(dispatcher);
-                });
 
         LootTableEvents.MODIFY.register(StrayLootTableModifier::addFrostTippedArrows);
 
