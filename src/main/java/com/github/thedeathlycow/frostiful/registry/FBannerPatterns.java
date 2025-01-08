@@ -10,9 +10,13 @@ import net.minecraft.registry.RegistryKeys;
 public class FBannerPatterns {
 
     public static final RegistryKey<BannerPattern> SNOWFLAKE = key("snowflake");
+    public static final RegistryKey<BannerPattern> ICICLE = key("icicle");
+    public static final RegistryKey<BannerPattern> FROSTOLOGY = key("frostology");
 
-    public static void register(Registerable<BannerPattern> registry) {
+    public static void bootstrap(Registerable<BannerPattern> registry) {
         BannerPatterns.register(registry, SNOWFLAKE);
+        BannerPatterns.register(registry, ICICLE);
+        BannerPatterns.register(registry, FROSTOLOGY);
     }
 
     private static RegistryKey<BannerPattern> key(String id) {

@@ -64,6 +64,8 @@
   "item.frostiful.snowflake_banner_pattern.desc": "Snowflake",
   "item.frostiful.icicle_banner_pattern": "Banner Pattern",
   "item.frostiful.icicle_banner_pattern.desc": "Icicle",
+  "item.frostiful.frostology_banner_pattern": "Banner Pattern",
+  "item.frostiful.frostology_banner_pattern.desc": "Frostology",
   
   "filled_map.frostiful.frostologer_castle": "Snowy Castle Explorer Map",
   
@@ -141,6 +143,24 @@
   "block.minecraft.banner.frostiful.icicle.purple": "Purple Icicle",
   "block.minecraft.banner.frostiful.icicle.magenta": "Magenta Icicle",
   "block.minecraft.banner.frostiful.icicle.pink": "Pink Icicle",
+  
+  "block.minecraft.banner.frostiful.frostology.white": "White Frostology",
+  "block.minecraft.banner.frostiful.frostology.light_gray": "Light Gray Frostology",
+  "block.minecraft.banner.frostiful.frostology.gray": "Gray Frostology",
+  "block.minecraft.banner.frostiful.frostology.black": "Black Frostology",
+  "block.minecraft.banner.frostiful.frostology.brown": "Brown Frostology",
+  "block.minecraft.banner.frostiful.frostology.red": "Red Frostology",
+  "block.minecraft.banner.frostiful.frostology.orange": "Orange Frostology",
+  "block.minecraft.banner.frostiful.frostology.yellow": "Yellow Frostology",
+  "block.minecraft.banner.frostiful.frostology.lime": "Lime Frostology",
+  "block.minecraft.banner.frostiful.frostology.green": "Green Frostology",
+  "block.minecraft.banner.frostiful.frostology.cyan": "Cyan Frostology",
+  "block.minecraft.banner.frostiful.frostology.light_blue": "Light Blue Frostology",
+  "block.minecraft.banner.frostiful.frostology.blue": "Blue Frostology",
+  "block.minecraft.banner.frostiful.frostology.purple": "Purple Frostology",
+  "block.minecraft.banner.frostiful.frostology.magenta": "Magenta Frostology",
+  "block.minecraft.banner.frostiful.frostology.pink": "Pink Frostology",
+  
 
   "entity.frostiful.frost_spell": "Frost Spell",
   "entity.frostiful.packed_snowball": "Packed Snowball",

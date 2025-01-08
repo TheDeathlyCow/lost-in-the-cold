@@ -316,6 +316,14 @@ public class FItems {
             )
     );
 
+    public static final Item FROSTOLOGY_BANNER_PATTERN = register(
+            "frostology_banner_pattern",
+            new BannerPatternItem(
+                    FBannerPatternTags.FROSTOLOGY_PATTERN_ITEM,
+                    new Item.Settings().maxCount(1)
+            )
+    );
+
     public static final Item ICY_TRIAL_SPAWNER = register(
             "icy_trial_spawner",
             new BlockItem(FBlocks.ICY_TRIAL_SPAWNER, new Item.Settings())

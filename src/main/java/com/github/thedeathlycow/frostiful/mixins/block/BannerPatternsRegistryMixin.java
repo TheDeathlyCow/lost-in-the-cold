@@ -22,7 +22,7 @@ public class BannerPatternsRegistryMixin {
     private static void registerFrostifulBannerPatterns(
             Registerable<BannerPattern> registry, CallbackInfo ci
     ) {
-        FBannerPatterns.register(registry);
+        FBannerPatterns.bootstrap(registry);
     }
 
 }
