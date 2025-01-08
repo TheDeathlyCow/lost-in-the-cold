@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.frostiful.item;
 
+import com.github.thedeathlycow.frostiful.registry.FBannerPatterns;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.block.entity.BannerPatterns;
@@ -37,9 +38,9 @@ public final class FrostedBanner {
                 .add(lookup, BannerPatterns.BORDER, DyeColor.LIGHT_GRAY)
                 .add(lookup, BannerPatterns.STRIPE_MIDDLE, DyeColor.BLACK)
                 .add(lookup, BannerPatterns.CIRCLE, DyeColor.LIGHT_GRAY)
-                .add(lookup, BannerPatterns.GUSTER, DyeColor.CYAN)
                 .add(lookup, BannerPatterns.HALF_HORIZONTAL, DyeColor.LIGHT_GRAY)
                 .add(lookup, BannerPatterns.BORDER, DyeColor.BLACK)
+                .add(lookup, FBannerPatterns.FROSTOLOGY, DyeColor.CYAN)
                 .build();
         stack.set(DataComponentTypes.BANNER_PATTERNS, bannerPatterns);
         stack.set(DataComponentTypes.HIDE_ADDITIONAL_TOOLTIP, Unit.INSTANCE);
