@@ -12,6 +12,9 @@ public class FTexturedRenderLayers {
 
     public static final Identifier ARMOR_TRIMS_ATLAS_TEXTURE = Frostiful.id("textures/atlas/custom_armor_trims.png");
     public static final RenderLayer ARMOR_TRIMS_RENDER_LAYER = RenderLayer.getArmorCutoutNoCull(ARMOR_TRIMS_ATLAS_TEXTURE);
+
+    private static final RenderLayer ARMOR_TRIMS_DECAL_RENDER_LAYER = RenderLayer.createArmorDecalCutoutNoCull(ARMOR_TRIMS_ATLAS_TEXTURE);
+
     public static final Map<Identifier, Identifier> LAYERS_TO_LOADERS = Util.make(
             () -> {
                 Map<Identifier, Identifier> map = new HashMap<>();
@@ -19,6 +22,10 @@ public class FTexturedRenderLayers {
                 return map;
             }
     );
+
+    public static RenderLayer getArmorTrims(boolean decal) {
+        return decal ? ARMOR_TRIMS_DECAL_RENDER_LAYER : ARMOR_TRIMS_RENDER_LAYER;
+    }
 
     private FTexturedRenderLayers() {
 
