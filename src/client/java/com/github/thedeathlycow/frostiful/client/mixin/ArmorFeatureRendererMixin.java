@@ -1,6 +1,8 @@
 package com.github.thedeathlycow.frostiful.client.mixin;
 
 import com.github.thedeathlycow.frostiful.client.render.feature.CustomArmorTrimRenderer;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
@@ -23,23 +25,26 @@ public class ArmorFeatureRendererMixin<T extends LivingEntity, M extends BipedEn
 
     @Unique
     @Nullable
-    private CustomArmorTrimRenderer<A> frostiful$customRenderer;
+    private CustomArmorTrimRenderer<A> frostifulTrimRenderer;
 
     @Inject(
             method = "<init>",
             at = @At("TAIL")
     )
     private void initCustomTrimAtlas(FeatureRendererContext<T, M> context, A innerModel, A outerModel, BakedModelManager bakery, CallbackInfo ci) {
-        this.frostiful$customRenderer = new CustomArmorTrimRenderer<>(bakery);
+        this.frostifulTrimRenderer = new CustomArmorTrimRenderer<>(bakery);
     }
 
 
-    @Inject(
-            method = "renderTrim",
-            at = @At("HEAD"),
-            cancellable = true
+    @WrapOperation(
+            method = "renderArmor",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/render/entity/feature/ArmorFeatureRenderer;renderTrim(Lnet/minecraft/registry/entry/RegistryEntry;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;ILnet/minecraft/item/trim/ArmorTrim;Lnet/minecraft/client/render/entity/model/BipedEntityModel;Z)V"
+            )
     )
     private void renderCustomTrim(
+            ArmorFeatureRenderer<T, M, A> instance,
             RegistryEntry<ArmorMaterial> armorMaterial,
             MatrixStack matrices,
             VertexConsumerProvider vertexConsumers,
@@ -47,12 +52,12 @@ public class ArmorFeatureRendererMixin<T extends LivingEntity, M extends BipedEn
             ArmorTrim trim,
             A model,
             boolean leggings,
-            CallbackInfo ci
+            Operation<Void> original
     ) {
-        boolean rendered = this.frostiful$customRenderer != null
-                && this.frostiful$customRenderer.renderCustomTrim(armorMaterial, matrices, vertexConsumers, light, trim, model, leggings);
-        if (rendered) {
-            ci.cancel();
+        if (this.frostifulTrimRenderer != null) {
+            this.frostifulTrimRenderer.renderCustomTrim(armorMaterial, matrices, vertexConsumers, light, trim, model, leggings);
+        } else {
+            original.call(instance, armorMaterial, matrices, vertexConsumers, light, trim, model, leggings);
         }
     }
 }
