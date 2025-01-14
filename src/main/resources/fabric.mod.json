@@ -58,10 +58,10 @@
         }
     ],
     "depends": {
-        "fabricloader": ">=0.16.9",
-        "fabric-api": ">=0.108.0",
-        "minecraft": "1.21.1",
-        "thermoo": ">=4.2.5",
+        "fabricloader": ">=0.16.10",
+        "fabric-api": ">=0.114.0",
+        "minecraft": ">=1.21.2 <1.21.4",
+        "thermoo": ">=5.0.2",
         "java": ">=21"
     },
     "suggests": {
