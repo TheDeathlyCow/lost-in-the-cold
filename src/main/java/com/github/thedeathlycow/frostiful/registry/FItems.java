@@ -6,54 +6,58 @@ import com.github.thedeathlycow.frostiful.item.cloak.AbstractFrostologyCloakItem
 import com.github.thedeathlycow.frostiful.item.cloak.FrostologyCloakItem;
 import com.github.thedeathlycow.frostiful.item.cloak.InertFrostologyCloakItem;
 import com.github.thedeathlycow.frostiful.registry.tag.FBannerPatternTags;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.*;
+import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.Direction;
+
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class FItems {
 
     public static final Item FUR_HELMET = register(
             "fur_helmet",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR,
-                    ArmorItem.Type.HELMET,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(5))
+                    EquipmentType.HELMET,
+                    settings.maxDamage(EquipmentType.HELMET.getMaxDamage(5))
             )
     );
     public static final Item FUR_CHESTPLATE = register(
             "fur_chestplate",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(5))
+                    EquipmentType.CHESTPLATE,
+                    settings.maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(5))
             )
     );
     public static final Item FUR_LEGGINGS = register(
             "fur_leggings",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(5))
+                    EquipmentType.LEGGINGS,
+                    settings.maxDamage(EquipmentType.LEGGINGS.getMaxDamage(5))
             )
     );
     public static final Item FUR_BOOTS = register(
             "fur_boots",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(5))
+                    EquipmentType.BOOTS,
+                    settings.maxDamage(EquipmentType.BOOTS.getMaxDamage(5))
             )
     );
 
-    public static final Item FUR_PADDING = register("fur_padding", new Item(new Item.Settings()));
+    public static final Item FUR_PADDING = register("fur_padding");
 
     public static final Item FUR_UPGRADE_TEMPLATE = register(
             "fur_upgrade_template",
@@ -73,54 +77,47 @@ public class FItems {
 
     public static final Item FUR_PADDED_CHAINMAIL_HELMET = register(
             "fur_padded_chainmail_helmet",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR_LINED_CHAINMAIL,
-                    ArmorItem.Type.HELMET,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))
+                    EquipmentType.HELMET,
+                    settings
+                            .maxDamage(EquipmentType.HELMET.getMaxDamage(15))
             )
     );
     public static final Item FUR_PADDED_CHAINMAIL_CHESTPLATE = register(
             "fur_padded_chainmail_chestplate",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR_LINED_CHAINMAIL,
-                    ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))
+                    EquipmentType.CHESTPLATE,
+                    settings.maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15))
             )
     );
     public static final Item FUR_PADDED_CHAINMAIL_LEGGINGS = register(
             "fur_padded_chainmail_leggings",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR_LINED_CHAINMAIL,
-                    ArmorItem.Type.LEGGINGS,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))
+                    EquipmentType.LEGGINGS,
+                    settings.maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15))
             )
     );
     public static final Item FUR_PADDED_CHAINMAIL_BOOTS = register(
             "fur_padded_chainmail_boots",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR_LINED_CHAINMAIL,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))
+                    EquipmentType.BOOTS,
+                    settings.maxDamage(EquipmentType.BOOTS.getMaxDamage(15))
             )
     );
 
     public static final Item GLACIAL_HEART = register(
             "glacial_heart",
-            new Item(
-                    new Item.Settings()
-                            .rarity(Rarity.UNCOMMON)
-            )
+            settings -> new Item(settings.rarity(Rarity.UNCOMMON))
     );
 
     public static final Item INERT_FROSTOLOGY_CLOAK = register(
             "inert_frostology_cloak",
-            new InertFrostologyCloakItem(
-                    new Item.Settings()
-                            .equipmentSlot(AbstractFrostologyCloakItem::getPreferredEquipmentSlot)
+            settings -> new InertFrostologyCloakItem(
+                    settings.equipmentSlot(AbstractFrostologyCloakItem::getPreferredEquipmentSlot)
                             .maxCount(1)
                             .rarity(Rarity.UNCOMMON)
             )
@@ -128,9 +125,8 @@ public class FItems {
 
     public static final Item FROSTOLOGY_CLOAK = register(
             "frostology_cloak",
-            new FrostologyCloakItem(
-                    new Item.Settings()
-                            .equipmentSlot(AbstractFrostologyCloakItem::getPreferredEquipmentSlot)
+            settings -> new FrostologyCloakItem(
+                    settings.equipmentSlot(AbstractFrostologyCloakItem::getPreferredEquipmentSlot)
                             .attributeModifiers(FrostologyCloakItem.createAttributeModifiers())
                             .rarity(Rarity.EPIC)
                             .maxCount(1)
@@ -141,50 +137,35 @@ public class FItems {
             "ice_skates",
             new ArmorItem(
                     FArmorMaterials.FUR,
-                    ArmorItem.Type.BOOTS,
+                    EquipmentType.BOOTS,
                     new Item.Settings()
-                            .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(5))
+                            .maxDamage(EquipmentType.BOOTS.getMaxDamage(5))
             )
     );
 
     public static final Item ARMORED_ICE_SKATES = register(
             "armored_ice_skates",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR_LINED_CHAINMAIL,
-                    ArmorItem.Type.BOOTS,
-                    new Item.Settings()
-                            .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))
+                    EquipmentType.BOOTS,
+                    settings.maxDamage(EquipmentType.BOOTS.getMaxDamage(15))
             )
     );
 
-    public static final Item POLAR_BEAR_FUR_TUFT = register("polar_bear_fur_tuft", new Item(new Item.Settings()));
-    public static final Item WOLF_FUR_TUFT = register("wolf_fur_tuft", new Item(new Item.Settings()));
-    public static final Item OCELOT_FUR_TUFT = register("ocelot_fur_tuft", new Item(new Item.Settings()));
+    public static final Item POLAR_BEAR_FUR_TUFT = register("polar_bear_fur_tuft");
+    public static final Item WOLF_FUR_TUFT = register("wolf_fur_tuft");
+    public static final Item OCELOT_FUR_TUFT = register("ocelot_fur_tuft");
 
-    public static final Item ICICLE = register(
-            "icicle",
-            new IcicleItem(FBlocks.ICICLE, new Item.Settings())
-    );
-    public static final Item COLD_SUN_LICHEN = register(
-            "cold_sun_lichen",
-            new BlockItem(FBlocks.COLD_SUN_LICHEN, new Item.Settings())
-    );
-    public static final Item COOL_SUN_LICHEN = register(
-            "cool_sun_lichen",
-            new BlockItem(FBlocks.COOL_SUN_LICHEN, new Item.Settings())
-    );
-    public static final Item WARM_SUN_LICHEN = register(
-            "warm_sun_lichen",
-            new BlockItem(FBlocks.WARM_SUN_LICHEN, new Item.Settings())
-    );
-    public static final Item HOT_SUN_LICHEN = register(
-            "hot_sun_lichen",
-            new BlockItem(FBlocks.HOT_SUN_LICHEN, new Item.Settings())
-    );
+    public static final Item ICICLE = register(FBlocks.ICICLE);
+    public static final Item COLD_SUN_LICHEN = register(FBlocks.COLD_SUN_LICHEN);
+    public static final Item COOL_SUN_LICHEN = register(FBlocks.COOL_SUN_LICHEN);
+    public static final Item WARM_SUN_LICHEN = register(FBlocks.WARM_SUN_LICHEN);
+    public static final Item HOT_SUN_LICHEN = register(FBlocks.HOT_SUN_LICHEN);
+
     public static final Item FROST_WAND = register(
             "frost_wand",
-            new FrostWandItem(
-                    new Item.Settings()
+            settings -> new FrostWandItem(
+                    settings
                             .maxCount(1)
                             .maxDamage(250)
                             .attributeModifiers(FrostWandItem.createAttributeModifiers())
@@ -194,165 +175,93 @@ public class FItems {
     );
     public static final Item GLACIAL_ARROW = register(
             "glacial_arrow",
-            new GlacialArrowItem(new Item.Settings())
+            GlacialArrowItem::new
     );
 
     public static final Item FROSTOLOGER_SPAWN_EGG = register(
             "frostologer_spawn_egg",
-            new SpawnEggItem(
+            settings -> new SpawnEggItem(
                     FEntityTypes.FROSTOLOGER,
                     0x473882, 0xBEB2EB,
-                    new Item.Settings()
+                    settings
             )
     );
     public static final Item CHILLAGER_SPAWN_EGG = register(
             "chillager_spawn_egg",
-            new SpawnEggItem(
+            settings -> new SpawnEggItem(
                     FEntityTypes.CHILLAGER,
                     0x3432A8, 0xA2CCFC,
-                    new Item.Settings()
+                    settings
             )
     );
 
     public static final Item BITER_SPAWN_EGG = register(
             "biter_spawn_egg",
-            new SpawnEggItem(
+            settings -> new SpawnEggItem(
                     FEntityTypes.BITER,
                     0xEBFEFF,
                     0x2E64C3,
-                    new Item.Settings()
+                    settings
             )
     );
 
     public static final Item FROZEN_TORCH = register(
             "frozen_torch",
-            new VerticallyAttachableBlockItem(
+            settings -> new VerticallyAttachableBlockItem(
                     FBlocks.FROZEN_TORCH,
                     FBlocks.FROZEN_WALL_TORCH,
-                    new Item.Settings(),
-                    Direction.DOWN
+                    Direction.DOWN,
+                    settings
             )
     );
 
-    public static final Item PACKED_SNOW = register(
-            "packed_snow",
-            new BlockItem(FBlocks.PACKED_SNOW, new Item.Settings())
-    );
+    public static final Item PACKED_SNOW = register(FBlocks.PACKED_SNOW);
     public static final Item PACKED_SNOWBALL = register(
             "packed_snowball",
-            new PackedSnowBallItem(new Item.Settings().maxCount(16))
+            settings -> new PackedSnowBallItem(settings.maxCount(16))
     );
-    public static final Item PACKED_SNOW_BLOCK = register(
-            "packed_snow_block",
-            new BlockItem(FBlocks.PACKED_SNOW_BLOCK, new Item.Settings())
-    );
-    public static final Item PACKED_SNOW_BRICKS = register(
-            "packed_snow_bricks",
-            new BlockItem(FBlocks.PACKED_SNOW_BRICKS, new Item.Settings())
-    );
-    public static final Item PACKED_SNOW_BRICK_STAIRS = register(
-            "packed_snow_brick_stairs",
-            new BlockItem(FBlocks.PACKED_SNOW_BRICK_STAIRS, new Item.Settings())
-    );
-    public static final Item PACKED_SNOW_BRICK_SLAB = register(
-            "packed_snow_brick_slab",
-            new BlockItem(FBlocks.PACKED_SNOW_BRICK_SLAB, new Item.Settings())
-    );
-    public static final Item PACKED_SNOW_BRICK_WALL = register(
-            "packed_snow_brick_wall",
-            new BlockItem(FBlocks.PACKED_SNOW_BRICK_WALL, new Item.Settings())
-    );
+    public static final Item PACKED_SNOW_BLOCK = register(FBlocks.PACKED_SNOW_BLOCK);
+    public static final Item PACKED_SNOW_BRICKS = register(FBlocks.PACKED_SNOW_BRICKS);
+    public static final Item PACKED_SNOW_BRICK_STAIRS = register(FBlocks.PACKED_SNOW_BRICK_STAIRS);
+    public static final Item PACKED_SNOW_BRICK_SLAB = register(FBlocks.PACKED_SNOW_BRICK_SLAB);
+    public static final Item PACKED_SNOW_BRICK_WALL = register(FBlocks.PACKED_SNOW_BRICK_WALL);
 
-    public static final Item ICE_PANE = register(
-            "ice_pane",
-            new BlockItem(FBlocks.ICE_PANE, new Item.Settings())
-    );
-    public static final Item CUT_PACKED_ICE = register(
-            "cut_packed_ice",
-            new BlockItem(FBlocks.CUT_PACKED_ICE, new Item.Settings())
-    );
-    public static final Item CUT_PACKED_ICE_STAIRS = register(
-            "cut_packed_ice_stairs",
-            new BlockItem(FBlocks.CUT_PACKED_ICE_STAIRS, new Item.Settings())
-    );
-    public static final Item CUT_PACKED_ICE_SLAB = register(
-            "cut_packed_ice_slab",
-            new BlockItem(FBlocks.CUT_PACKED_ICE_SLAB, new Item.Settings())
-    );
-    public static final Item CUT_PACKED_ICE_WALL = register(
-            "cut_packed_ice_wall",
-            new BlockItem(FBlocks.CUT_PACKED_ICE_WALL, new Item.Settings())
-    );
-    public static final Item CUT_BLUE_ICE = register(
-            "cut_blue_ice",
-            new BlockItem(FBlocks.CUT_BLUE_ICE, new Item.Settings())
-    );
-    public static final Item CUT_BLUE_ICE_STAIRS = register(
-            "cut_blue_ice_stairs",
-            new BlockItem(FBlocks.CUT_BLUE_ICE_STAIRS, new Item.Settings())
-    );
-    public static final Item CUT_BLUE_ICE_SLAB = register(
-            "cut_blue_ice_slab",
-            new BlockItem(FBlocks.CUT_BLUE_ICE_SLAB, new Item.Settings())
-    );
-    public static final Item CUT_BLUE_ICE_WALL = register(
-            "cut_blue_ice_wall",
-            new BlockItem(FBlocks.CUT_BLUE_ICE_WALL, new Item.Settings())
-    );
+    public static final Item ICE_PANE = register(FBlocks.ICE_PANE);
+    public static final Item CUT_PACKED_ICE = register(FBlocks.CUT_PACKED_ICE);
+    public static final Item CUT_PACKED_ICE_STAIRS = register(FBlocks.CUT_PACKED_ICE_STAIRS);
+    public static final Item CUT_PACKED_ICE_SLAB = register(FBlocks.CUT_PACKED_ICE_SLAB);
+    public static final Item CUT_PACKED_ICE_WALL = register(FBlocks.CUT_PACKED_ICE_WALL);
+    public static final Item CUT_BLUE_ICE = register(FBlocks.CUT_BLUE_ICE);
+    public static final Item CUT_BLUE_ICE_STAIRS = register(FBlocks.CUT_BLUE_ICE_STAIRS);
+    public static final Item CUT_BLUE_ICE_SLAB = register(FBlocks.CUT_BLUE_ICE_SLAB);
+    public static final Item CUT_BLUE_ICE_WALL = register(FBlocks.CUT_BLUE_ICE_WALL);
 
     public static final Item SNOWFLAKE_BANNER_PATTERN = register(
             "snowflake_banner_pattern",
-            new BannerPatternItem(
-                    FBannerPatternTags.SNOWFLAKE_PATTERN_ITEM,
-                    new Item.Settings().maxCount(1)
-            )
+            settings -> new BannerPatternItem(FBannerPatternTags.SNOWFLAKE_PATTERN_ITEM, settings.maxCount(1))
     );
 
     public static final Item ICICLE_BANNER_PATTERN = register(
             "icicle_banner_pattern",
-            new BannerPatternItem(
-                    FBannerPatternTags.ICICLE_PATTERN_ITEM,
-                    new Item.Settings().maxCount(1)
-            )
+            settings -> new BannerPatternItem(FBannerPatternTags.ICICLE_PATTERN_ITEM, settings.maxCount(1))
     );
 
     public static final Item FROSTOLOGY_BANNER_PATTERN = register(
             "frostology_banner_pattern",
-            new BannerPatternItem(
-                    FBannerPatternTags.FROSTOLOGY_PATTERN_ITEM,
-                    new Item.Settings().maxCount(1)
-            )
+            settings -> new BannerPatternItem(FBannerPatternTags.FROSTOLOGY_PATTERN_ITEM, settings.maxCount(1))
     );
 
-    public static final Item ICY_TRIAL_SPAWNER = register(
-            "icy_trial_spawner",
-            new BlockItem(FBlocks.ICY_TRIAL_SPAWNER, new Item.Settings())
-    );
+    public static final Item ICY_TRIAL_SPAWNER = register(FBlocks.ICY_TRIAL_SPAWNER);
 
-    public static final Item ICY_VAULT = register(
-            "icy_vault",
-            new BlockItem(FBlocks.ICY_VAULT, new Item.Settings())
-    );
+    public static final Item ICY_VAULT = register(FBlocks.ICY_VAULT);
 
-    public static final Item CASTLE_KEY = register(
-            "castle_key",
-            new Item(new Item.Settings())
-    );
+    public static final Item CASTLE_KEY = register("castle_key");
 
-    public static final Item OMINOUS_CASTLE_KEY = register(
-            "ominous_castle_key",
-            new Item(new Item.Settings())
-    );
+    public static final Item OMINOUS_CASTLE_KEY = register("ominous_castle_key");
 
-    public static final Item BRITTLE_ICE = register(
-            "brittle_ice",
-            new BlockItem(FBlocks.BRITTLE_ICE, new Item.Settings())
-    );
+    public static final Item BRITTLE_ICE = register(FBlocks.BRITTLE_ICE);
 
-    public static final Item FROZEN_ROD = register(
-            "frozen_rod",
-            new Item(new Item.Settings())
-    );
+    public static final Item FROZEN_ROD = register("frozen_rod");
 
     public static final Item GLACIAL_ARMOR_TRIM_SMITHING_TEMPLATE = register(
             "glacial_armor_trim_smithing_template",
@@ -369,8 +278,28 @@ public class FItems {
         FSmithingTemplateItem.addTemplatesToLoot();
     }
 
-    private static Item register(String id, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(Frostiful.MODID, id), item);
+    private static Item register(Block block) {
+        return register(block, new Item.Settings());
+    }
+
+    private static Item register(Block block, Item.Settings settings) {
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, block.getRegistryEntry().registryKey().getValue());
+        return register(key, keyedSettings -> new BlockItem(block, keyedSettings), settings);
+    }
+
+    private static Item register(String id) {
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Frostiful.id(id));
+        return register(key, Item::new, new Item.Settings());
+    }
+
+    private static Item register(String id, Function<Item.Settings, Item> factory) {
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Frostiful.id(id));
+        return register(key, factory, new Item.Settings());
+    }
+
+    private static Item register(RegistryKey<Item> key, Function<Item.Settings, Item> factory, Item.Settings settings) {
+        Item item = factory.apply(settings.registryKey(key));
+        return Registry.register(Registries.ITEM, key, item);
     }
 
     private FItems() {
