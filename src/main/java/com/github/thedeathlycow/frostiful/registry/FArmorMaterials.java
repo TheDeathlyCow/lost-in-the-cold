@@ -5,6 +5,8 @@ import com.github.thedeathlycow.frostiful.registry.tag.FItemTags;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Items;
+import net.minecraft.item.equipment.ArmorMaterial;
+import net.minecraft.item.equipment.ArmorMaterials;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -19,6 +21,7 @@ import java.util.function.Supplier;
 
 public class FArmorMaterials {
 
+    ArmorMaterials
 
     public static final RegistryEntry<ArmorMaterial> FUR = register(
             "fur",
