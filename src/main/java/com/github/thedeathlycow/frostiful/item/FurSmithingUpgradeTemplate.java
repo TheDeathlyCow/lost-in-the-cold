@@ -1,6 +1,7 @@
 package com.github.thedeathlycow.frostiful.item;
 
 import com.github.thedeathlycow.frostiful.Frostiful;
+import net.minecraft.item.Item;
 import net.minecraft.item.SmithingTemplateItem;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -12,12 +13,6 @@ public class FurSmithingUpgradeTemplate {
 
 
     /// Text ///
-    private static final Text FUR_UPGRADE_TEXT = Text.translatable(
-            Util.createTranslationKey(
-                    "upgrade",
-                    Frostiful.id("fur_upgrade")
-            )
-    ).formatted(FSmithingTemplateItem.TITLE_FORMATTING);
     private static final Text FUR_UPGRADE_APPLIES_TO_TEXT = Text.translatable(
             Util.createTranslationKey(
                     "item",
@@ -44,15 +39,15 @@ public class FurSmithingUpgradeTemplate {
     private static final Identifier EMPTY_SLOT_FUR_PADDING_TEXTURE = Frostiful.id("item/empty/fur_padding");
 
 
-    public static SmithingTemplateItem createItem() {
+    public static SmithingTemplateItem createItem(Item.Settings settings) {
         return new SmithingTemplateItem(
                 FUR_UPGRADE_APPLIES_TO_TEXT,
                 FUR_UPGRADE_INGREDIENTS_TEXT,
-                FUR_UPGRADE_TEXT,
                 FUR_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT,
                 FUR_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT,
                 getFurUpgradeEmptyBaseSlotTextures(),
-                getFurUpgradeEmptyAdditionsSlotTextures()
+                getFurUpgradeEmptyAdditionsSlotTextures(),
+                settings
         );
     }
 

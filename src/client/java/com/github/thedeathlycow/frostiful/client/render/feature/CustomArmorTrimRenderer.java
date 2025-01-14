@@ -12,7 +12,7 @@ import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.trim.ArmorTrim;
+import net.minecraft.item.equipment.trim.ArmorTrim;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 

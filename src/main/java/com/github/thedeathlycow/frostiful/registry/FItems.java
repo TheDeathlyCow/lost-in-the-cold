@@ -61,18 +61,28 @@ public class FItems {
 
     public static final Item FUR_UPGRADE_TEMPLATE = register(
             "fur_upgrade_template",
-            FurSmithingUpgradeTemplate.createItem()
+            FurSmithingUpgradeTemplate::createItem
     );
 
 
     public static final Item ICE_SKATE_UPGRADE_TEMPLATE = register(
             "ice_skate_upgrade_template",
-            IceSkateUpgradeTemplate.createItem()
+            IceSkateUpgradeTemplate::createItem
+    );
+
+    public static final Item GLACIAL_ARMOR_TRIM_SMITHING_TEMPLATE = register(
+            "glacial_armor_trim_smithing_template",
+            settings -> SmithingTemplateItem.of(settings.rarity(Rarity.EPIC))
     );
 
     public static final Item FROSTY_ARMOR_TRIM_SMITHING_TEMPLATE = register(
             "frosty_armor_trim_smithing_template",
-            SmithingTemplateItem.of(FArmorTrimPatterns.FROSTY)
+            settings -> SmithingTemplateItem.of(settings.rarity(Rarity.RARE))
+    );
+
+    public static final Item SNOW_MAN_ARMOR_TRIM_SMITHING_TEMPLATE = register(
+            "snow_man_armor_trim_smithing_template",
+            settings -> SmithingTemplateItem.of(settings.rarity(Rarity.UNCOMMON))
     );
 
     public static final Item FUR_PADDED_CHAINMAIL_HELMET = register(
@@ -262,16 +272,6 @@ public class FItems {
     public static final Item BRITTLE_ICE = register(FBlocks.BRITTLE_ICE);
 
     public static final Item FROZEN_ROD = register("frozen_rod");
-
-    public static final Item GLACIAL_ARMOR_TRIM_SMITHING_TEMPLATE = register(
-            "glacial_armor_trim_smithing_template",
-            SmithingTemplateItem.of(FArmorTrimPatterns.GLACIAL)
-    );
-
-    public static final Item SNOW_MAN_ARMOR_TRIM_SMITHING_TEMPLATE = register(
-            "snow_man_armor_trim_smithing_template",
-            SmithingTemplateItem.of(FArmorTrimPatterns.SNOW_MAN)
-    );
 
     public static void initialize() {
         Frostiful.LOGGER.debug("Initialized Frostiful items");

@@ -9,7 +9,7 @@ import net.minecraft.client.render.model.BakedModelManager;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ArmorMaterial;
-import net.minecraft.item.trim.ArmorTrim;
+import net.minecraft.item.equipment.trim.ArmorTrim;
 import net.minecraft.registry.entry.RegistryEntry;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
