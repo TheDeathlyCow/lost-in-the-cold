@@ -29,7 +29,7 @@ public class FItems {
             settings -> new ArmorItem(
                     FArmorMaterials.FUR,
                     EquipmentType.HELMET,
-                    settings.maxDamage(EquipmentType.HELMET.getMaxDamage(5))
+                    settings
             )
     );
     public static final Item FUR_CHESTPLATE = register(
@@ -37,7 +37,7 @@ public class FItems {
             settings -> new ArmorItem(
                     FArmorMaterials.FUR,
                     EquipmentType.CHESTPLATE,
-                    settings.maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(5))
+                    settings
             )
     );
     public static final Item FUR_LEGGINGS = register(
@@ -45,7 +45,7 @@ public class FItems {
             settings -> new ArmorItem(
                     FArmorMaterials.FUR,
                     EquipmentType.LEGGINGS,
-                    settings.maxDamage(EquipmentType.LEGGINGS.getMaxDamage(5))
+                    settings
             )
     );
     public static final Item FUR_BOOTS = register(
@@ -53,7 +53,7 @@ public class FItems {
             settings -> new ArmorItem(
                     FArmorMaterials.FUR,
                     EquipmentType.BOOTS,
-                    settings.maxDamage(EquipmentType.BOOTS.getMaxDamage(5))
+                    settings
             )
     );
 
@@ -145,11 +145,10 @@ public class FItems {
 
     public static final Item ICE_SKATES = register(
             "ice_skates",
-            new ArmorItem(
+            settings -> new ArmorItem(
                     FArmorMaterials.FUR,
                     EquipmentType.BOOTS,
-                    new Item.Settings()
-                            .maxDamage(EquipmentType.BOOTS.getMaxDamage(5))
+                    settings
             )
     );
 
