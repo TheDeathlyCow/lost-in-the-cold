@@ -94,7 +94,7 @@ public class FItemGroups {
     private static void addEnchantedFrostologyCloak(ItemGroup.DisplayContext context, ItemGroup.Entries entries) {
         ItemStack frostologyCloak = new ItemStack(FItems.FROSTOLOGY_CLOAK);
         context.lookup()
-                .getWrapperOrThrow(RegistryKeys.ENCHANTMENT)
+                .getOrThrow(RegistryKeys.ENCHANTMENT)
                 .getOptional(Enchantments.BINDING_CURSE)
                 .ifPresent(bindingCurse -> frostologyCloak.addEnchantment(bindingCurse, 1));
         entries.add(frostologyCloak);

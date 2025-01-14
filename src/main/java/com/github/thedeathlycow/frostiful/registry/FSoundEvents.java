@@ -65,7 +65,7 @@ public class FSoundEvents {
 
     private static SoundEvent register(String name) {
         SoundEvent event = SoundEvent.of(Frostiful.id(name));
-        Registry.register(Registries.SOUND_EVENT, event.getId(), event);
+        Registry.register(Registries.SOUND_EVENT, event.id(), event);
         return event;
     }
 
