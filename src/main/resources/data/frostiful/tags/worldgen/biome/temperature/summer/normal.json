@@ -1,7 +1,6 @@
 {
     "replace": false,
     "values": [
-        "#frostiful:temperature/spring/normal",
-        "#frostiful:temperature/spring/cool"
+        "minecraft:stony_peaks"
     ]
 }
