@@ -90,4 +90,10 @@ public class EnvironmentConfigGroup implements ConfigData {
     public boolean enableSeasonsIntegration() {
         return enableSeasonsIntegration;
     }
+
+    @Override
+    public void validatePostLoad() throws ValidationException {
+        ConfigData.super.validatePostLoad();
+        this.maxSnowAccumulationTicks = Math.max(0, this.maxSnowAccumulationTicks);
+    }
 }
