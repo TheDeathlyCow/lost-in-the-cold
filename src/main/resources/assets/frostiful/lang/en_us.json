@@ -378,5 +378,6 @@
   "text.autoconfig.frostiful.option.environmentConfig.warmthPerLightLevel": "Warmth per light level",
   "text.autoconfig.frostiful.option.environmentConfig.minLightForWarmth": "Minimum block light level for warmth",
   "text.autoconfig.frostiful.option.environmentConfig.ultrawarmWarmRate": "Ultrawarm dimension warm rate",
+  "text.autoconfig.frostiful.option.environmentConfig.maxSnowAccumulationTicks": "Maximum snow accumulation ticks",
   "text.autoconfig.frostiful.option.environmentConfig.enableSeasonsIntegration": "Enable seasons integration (requires Thermoo Patches)"
 }

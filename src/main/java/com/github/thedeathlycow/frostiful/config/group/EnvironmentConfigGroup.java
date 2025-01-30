@@ -27,6 +27,8 @@ public class EnvironmentConfigGroup implements ConfigData {
 
     int ultrawarmWarmRate = 15;
 
+    int maxSnowAccumulationTicks = 100;
+
     boolean enableSeasonsIntegration = true;
 
     public boolean doDryBiomeNightFreezing() {
@@ -79,6 +81,10 @@ public class EnvironmentConfigGroup implements ConfigData {
 
     public int getUltrawarmWarmRate() {
         return ultrawarmWarmRate;
+    }
+
+    public int getMaxSnowAccumulationTicks() {
+        return maxSnowAccumulationTicks;
     }
 
     public boolean enableSeasonsIntegration() {

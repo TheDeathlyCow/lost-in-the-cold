@@ -1,5 +1,6 @@
 package com.github.thedeathlycow.frostiful.entity.component;
 
+import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentController;
 import com.github.thedeathlycow.thermoo.api.temperature.EnvironmentManager;
 import net.minecraft.entity.LivingEntity;
@@ -73,7 +74,7 @@ public class SnowAccumulationComponent implements Component, ServerTickingCompon
     }
 
     private void addSnowAccumulation() {
-        if (this.snowAccumulation < 200) { // TODO: config magic value
+        if (this.snowAccumulation < Frostiful.getConfig().environmentConfig.getMaxSnowAccumulationTicks()) {
             this.snowAccumulation++;
         }
     }
