@@ -73,7 +73,8 @@
         "cardinal-components": [
             "frostiful:living_entity",
             "frostiful:brushable",
-            "frostiful:frost_wand_root"
+            "frostiful:frost_wand_root",
+            "frostiful:snow_accumulation"
         ],
         "modmenu": {
             "links": {

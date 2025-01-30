@@ -4,6 +4,7 @@ import com.github.thedeathlycow.frostiful.Frostiful;
 import com.github.thedeathlycow.frostiful.entity.component.BrushableComponent;
 import com.github.thedeathlycow.frostiful.entity.component.FrostWandRootComponent;
 import com.github.thedeathlycow.frostiful.entity.component.LivingEntityComponents;
+import com.github.thedeathlycow.frostiful.entity.component.SnowAccumulationComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import org.ladysnake.cca.api.v3.component.ComponentKey;
@@ -28,6 +29,11 @@ public class FComponents implements EntityComponentInitializer {
             BrushableComponent.class
     );
 
+    public static final ComponentKey<SnowAccumulationComponent> SNOW_ACCUMULATION = ComponentRegistry.getOrCreate(
+            Frostiful.id("snow_accumulation"),
+            SnowAccumulationComponent.class
+    );
+
     @Override
     public void registerEntityComponentFactories(EntityComponentFactoryRegistry registry) {
         registry.registerFor(
@@ -44,6 +50,11 @@ public class FComponents implements EntityComponentInitializer {
                 AnimalEntity.class,
                 BRUSHABLE_COMPONENT,
                 BrushableComponent::new
+        );
+        registry.registerFor(
+                LivingEntity.class,
+                SNOW_ACCUMULATION,
+                SnowAccumulationComponent::new
         );
     }
 }
