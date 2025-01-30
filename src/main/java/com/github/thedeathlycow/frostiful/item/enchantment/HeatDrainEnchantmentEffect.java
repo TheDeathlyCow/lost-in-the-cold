@@ -61,13 +61,13 @@ public record HeatDrainEnchantmentEffect(
         }
 
         int heatDrainedFromTarget = MathHelper.floor(this.heatToDrain.getValue(level));
-        source.thermoo$addTemperature(-heatDrainedFromTarget, HeatingModes.ACTIVE);
+        if (source.thermoo$isCold()) {
+            source.thermoo$addTemperature(-heatDrainedFromTarget, HeatingModes.ACTIVE);
+        }
 
-        int heatAddedToOwner = MathHelper.floor(heatDrainedFromTarget * this.efficiency);
-        destination.thermoo$addTemperature(heatAddedToOwner, HeatingModes.ACTIVE);
-
-        if (destination.thermoo$isWarm()) {
-            destination.thermoo$setTemperature(0);
+        if (destination.thermoo$isCold()) {
+            int heatAddedToOwner = MathHelper.floor(heatDrainedFromTarget * this.efficiency);
+            destination.thermoo$addTemperature(heatAddedToOwner, HeatingModes.ACTIVE);
         }
 
         if (heatDrainedFromTarget != 0) {
