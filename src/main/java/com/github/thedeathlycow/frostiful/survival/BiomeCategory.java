@@ -41,7 +41,7 @@ public enum BiomeCategory {
         SeasonalBiomeTags tags = SeasonalBiomeTags.forSeason(season);
 
         BiomeCategory category;
-        if (biomeEntry.isIn(FBiomeTags.FREEZING_BLACKLIST_BIOMES)) {
+        if (biomeEntry.isIn(tags.normal()) || biomeEntry.isIn(FBiomeTags.FREEZING_BLACKLIST_BIOMES)) {
             category = NORMAL;
         } else if (biomeEntry.isIn(tags.freezing())) {
             category = FREEZING;

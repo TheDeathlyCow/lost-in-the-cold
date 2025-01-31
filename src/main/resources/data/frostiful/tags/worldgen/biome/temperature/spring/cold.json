@@ -3,6 +3,7 @@
     "values": [
         "#c:is_snowy",
         "#c:is_snowy_plains",
+        "#c:is_mountain/slope",
         {
             "required": false,
             "id": "#frostiful:cold_biomes"

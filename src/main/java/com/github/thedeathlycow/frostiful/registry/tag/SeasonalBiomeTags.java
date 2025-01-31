@@ -7,28 +7,33 @@ import net.minecraft.world.biome.Biome;
 public record SeasonalBiomeTags(
         TagKey<Biome> freezing,
         TagKey<Biome> cold,
-        TagKey<Biome> cool
+        TagKey<Biome> cool,
+        TagKey<Biome> normal
 ) {
 
     private static final SeasonalBiomeTags SPRING_TAGS = new SeasonalBiomeTags(
             FBiomeTags.register("temperature/spring/freezing"),
             FBiomeTags.register("temperature/spring/cold"),
-            FBiomeTags.register("temperature/spring/cool")
+            FBiomeTags.register("temperature/spring/cool"),
+            FBiomeTags.register("temperature/spring/normal")
     );
     private static final SeasonalBiomeTags SUMMER_TAGS = new SeasonalBiomeTags(
             FBiomeTags.register("temperature/summer/freezing"),
             FBiomeTags.register("temperature/summer/cold"),
-            FBiomeTags.register("temperature/summer/cool")
+            FBiomeTags.register("temperature/summer/cool"),
+            FBiomeTags.register("temperature/summer/normal")
     );
     private static final SeasonalBiomeTags AUTUMN_TAGS = new SeasonalBiomeTags(
             FBiomeTags.register("temperature/autumn/freezing"),
             FBiomeTags.register("temperature/autumn/cold"),
-            FBiomeTags.register("temperature/autumn/cool")
+            FBiomeTags.register("temperature/autumn/cool"),
+            FBiomeTags.register("temperature/autumn/normal")
     );
     private static final SeasonalBiomeTags WINTER_TAGS = new SeasonalBiomeTags(
             FBiomeTags.register("temperature/winter/freezing"),
             FBiomeTags.register("temperature/winter/cold"),
-            FBiomeTags.register("temperature/winter/cool")
+            FBiomeTags.register("temperature/winter/cool"),
+            FBiomeTags.register("temperature/winter/normal")
     );
 
     /**

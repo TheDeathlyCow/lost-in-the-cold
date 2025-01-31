@@ -2,6 +2,7 @@
     "replace": false,
     "values": [
         "#c:is_icy",
+        "#c:is_mountain/peak",
         {
             "required": false,
             "id": "#frostiful:freezing_biomes"
